@@ -1,66 +1,30 @@
-## Foundry
+# Blue Social Web3
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Welcome to the Blue Social Web3 repository! This project aims to incorporate Web3 functionalities into the Blue Social iOS app, allowing users to earn rewards through real-life social interactions using the innovative Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
 
-Foundry consists of:
+# Introduction
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Blue Social gamifies real-life social interactions by rewarding users with tokens through its Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
 
-## Documentation
+# Features
 
-https://book.getfoundry.sh/
+- Wallet Integration: Use Coinbase Smart Wallet for easy wallet creation and management.
+- User Authentication: Authenticate users based on their wallet addresses.
+- Proof-of-Interaction Protocol: Record and verify social interactions on the blockchain.
+- Token Rewards: Distribute Blue Social tokens as rewards for verified interactions.
+- User Interface Enhancements: Display user token balances, transaction history, and interaction statuses.
+- Backend Integration: Secure storage and management of user interaction data and token balances.
+- Security Measures: Ensure secure data encryption and smart contract audits.
 
-## Usage
+# Prerequisites
 
-### Build
+Before you begin, ensure you have met the following requirements:
 
-```shell
-$ forge build
-```
+Xcode installed for iOS development.
+Node.js and npm installed on your machine for backend development.
+An Infura project ID for Ethereum network connections.
+Coinbase Wallet for testing wallet connections.
 
-### Test
+# License
 
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Deploy.s.sol --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project is licensed under the MIT License. See the LICENSE file for details.
