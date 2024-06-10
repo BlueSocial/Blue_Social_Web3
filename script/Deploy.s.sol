@@ -17,7 +17,9 @@ contract DeployPOIRewards is Script {
             uint256 _iceBreakerFee,
             uint256 _minimumRewardInterval,
             address _blueToken,
-            address _treasury
+            address _treasury,
+            address _consumerContract,
+            uint64 _chainlinkSubId
         ) = helperConfig.activeNetworkConfig();
 
         vm.startBroadcast();
@@ -27,7 +29,9 @@ contract DeployPOIRewards is Script {
             _iceBreakerFee,
             _minimumRewardInterval,
             _blueToken,
-            _treasury
+            _treasury,
+            _consumerContract,
+            _chainlinkSubId
         );
         vm.stopBroadcast();
 

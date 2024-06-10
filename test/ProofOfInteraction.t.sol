@@ -3,18 +3,23 @@ pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol";
 import {ProofOfInteraction} from "../src/ProofOfInteraction.sol";
+import {BlueSocialConsumer} from "../src/BlueSocialConsumer.sol";
 import {BlueToken} from "test/mocks/BlueToken.sol";
 
 contract ProofOfInteractionTest is Test {
     ProofOfInteraction public proofOfInteraction;
+    BlueSocialConsumer public consumerContract;
     BlueToken public blueToken;
     address public user = address(1);
     address public invitee = address(2);
     address public treasury = address(3);
+    uint64 public chainlinkSubId;
 
     function setUp() public {
         // Deploy the mock ERC20 token
         blueToken = new BlueToken("Blue Token", "BLUE", 18);
+        consumerContract = new BlueSocialConsumer();
+        chainlinkSubId = 64;
 
         // Deploy the ProofOfInteraction contract
         proofOfInteraction = new ProofOfInteraction(
@@ -23,7 +28,9 @@ contract ProofOfInteractionTest is Test {
             1e18, // Ice breaker fee
             1 seconds, // Minimum reward interval
             address(blueToken), // Address of the mock ERC20 token
-            treasury // treasury address
+            treasury, // treasury address
+            address(consumerContract), // Address of the consumer contract
+            chainlinkSubId // Chainlink subscription ID
         );
 
         // Allocate some tokens to the user and the treasury
@@ -94,7 +101,7 @@ contract ProofOfInteractionTest is Test {
         console.log("Treasury's balance:", treasuryBalance);
     }
 
-    function testRewardUsers() public {
+    function testRewardUsers(string[] memory _callData) public {
         // Simulate the owner calling the rewardUsers function
         vm.prank(address(this));
         uint256 rewardValue = proofOfInteraction.calculateRewards(
@@ -103,7 +110,7 @@ contract ProofOfInteractionTest is Test {
         );
         uint256 initialUserBalance = blueToken.balanceOf(user);
 
-        proofOfInteraction.rewardUsers(user, invitee);
+        proofOfInteraction.callConsumer(user, invitee, _callData);
 
         console.log("testRewardUsers ~ rewardValue:", rewardValue);
 
@@ -127,27 +134,14 @@ contract ProofOfInteractionTest is Test {
         console.log("User's balance:", userBalance);
         console.log("Invitee's balance:", inviteeBalance);
 
-        // Check total rewards and last reward time
-        uint256 userTotalRewards = proofOfInteraction.getUserRewards(user);
-        uint256 inviteeTotalRewards = proofOfInteraction.getUserRewards(
+        uint256 userLastRewardTime = proofOfInteraction.getLastRewardTime(
+            user,
             invitee
         );
-        assertEq(
-            userTotalRewards,
-            rewardValue,
-            "User's total rewards should be 0.5 tokens"
-        );
-        assertEq(
-            inviteeTotalRewards,
-            rewardValue,
-            "Invitee's total rewards should be 0.5 tokens"
-        );
-
-        uint256 userLastRewardTime = proofOfInteraction.getUserLastRewardTime(
+        uint256 inviteeLastRewardTime = proofOfInteraction.getLastRewardTime(
+            invitee,
             user
         );
-        uint256 inviteeLastRewardTime = proofOfInteraction
-            .getUserLastRewardTime(invitee);
         assertEq(
             userLastRewardTime,
             block.timestamp,
@@ -158,8 +152,5 @@ contract ProofOfInteractionTest is Test {
             block.timestamp,
             "Invitee's last reward time should be the current block timestamp"
         );
-
-        console.log("User's total rewards:", userTotalRewards);
-        console.log("Invitee's total rewards:", inviteeTotalRewards);
     }
 }
