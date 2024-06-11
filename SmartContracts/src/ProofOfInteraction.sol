@@ -4,6 +4,7 @@ pragma solidity ^0.8.25;
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 import {ReentrancyGuard} from "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import {BlueSocialConsumer} from "./BlueSocialConsumer.sol";
 
 /**
@@ -12,6 +13,14 @@ import {BlueSocialConsumer} from "./BlueSocialConsumer.sol";
  * @notice A contract that rewards users for Proof of Interaction
  */
 contract ProofOfInteraction is Ownable, ReentrancyGuard {
+
+    /*                    */
+    /*  ADDING LIBRARIES  */
+    /*                    */
+
+    using SafeERC20 for IERC20;
+
+
     /*                    */
     /*  TYPE DEFINITIONS  */
     /*                    */
@@ -62,6 +71,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     error OnlyConsumerError();
     error InteractionError();
     error TipUserError();
+    error WithdrawalError();
 
     /*             */
     /*  MODIFIERS  */
@@ -125,17 +135,18 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @dev Sends an ice breaker fee to the treasury and emits an event
      */
     function sendIceBreaker(address _invitee) external nonReentrant {
+        //@note custom errors saves gas
+        //@note no need for this check because the transfer will revert
         require(
             i_blueToken.balanceOf(msg.sender) >= iceBreakerFee,
             "Insufficient balance"
         );
 
-        bool success = i_blueToken.transferFrom(
+        i_blueToken.safeTransferFrom(
             msg.sender,
             s_treasury,
             iceBreakerFee
         );
-        require(success, "Transfer failed");
 
         emit IceBreakerSent(msg.sender, _invitee);
     }
@@ -215,20 +226,19 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      *
      * @notice This function is only callable by the owner and after the reward interval has passed since the last reward
      */
+
+    //@note the onlyAfterRewardInterval modifier should not be called here, rather it should be called at callConsumer function
+    //@
     function rewardUser(
         address _userA,
         address _userB,
         uint256 _rewardValue
     ) internal onlyAfterRewardInterval(_userA, _userB) {
-        bool success = i_blueToken.transferFrom(
+        i_blueToken.safeTransferFrom(
             s_treasury,
             _userA,
             _rewardValue
         );
-        if (!success) {
-            revert RewardTransferFailedError();
-        }
-
         emit RewardUser(_userA, _rewardValue);
     }
 
@@ -239,10 +249,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @dev Tips a user with the specified amount of BLUE tokens
      */
     function tipUser(address _user, uint256 _amount) external nonReentrant {
-        bool success = i_blueToken.transferFrom(msg.sender, _user, _amount);
-        if (!success) {
-            revert TipUserError();
-        }
+        i_blueToken.safeTransferFrom(msg.sender, _user, _amount);
         emit TipSent(msg.sender, _user, _amount);
     }
 
@@ -269,7 +276,10 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @param _userB address of the second user
      * @dev Increments the interaction count between two users
      */
-    function incrementInteractionCount(address _userA, address _userB) public {
+
+    //@note danger this should be internal, anyone can call it to abuse the people interacting 
+    //@note from public to internal 
+    function incrementInteractionCount(address _userA, address _userB) internal {
         // sort the addresses to avoid duplicate counts
         // Ensure the addresses are sorted to avoid duplicates
         uint256 hashedAddresses = hashAddresses(_userA, _userB);
@@ -376,7 +386,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @dev Withdraws the contract balance to the owner
      */
     function withdraw() public nonReentrant onlyOwner {
-        payable(owner()).transfer(address(this).balance);
-        emit BalanceWithdrawn(owner(), address(this).balance);
+        //@note cache the values to save gas
+        uint256 balance = address(this).balance;
+        address receiver = owner();
+        //@note use call instead of transfer
+        (bool success, ) = payable(receiver).call{value: balance}("0x");
+        if (!success) revert WithdrawalError();
+        emit BalanceWithdrawn(receiver, balance);
     }
 }
