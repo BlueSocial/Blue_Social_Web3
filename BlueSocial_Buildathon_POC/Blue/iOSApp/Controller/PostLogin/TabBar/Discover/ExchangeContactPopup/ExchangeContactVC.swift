@@ -86,7 +86,8 @@ class ExchangeContactVC: BaseVC {
         let param: [String: Any] = [APIParamKey.kFlag: APIFlagValue.kExchangeTokenReceived,
                                     APIParamKey.kUser_Id: UserLocalData.UserID,
                                     APIParamKey.kReceiver_Id: self.receiver_id,
-                                    APIParamKey.kBST: Int(self.randomBST) ?? 0]
+                                    APIParamKey.kBST: Int(self.randomBST) ?? 0,
+                                    APIParamKey.kCurrentTimestamp: self.getCurrentUTCTimestamp()]
 
         self.showCustomLoader()
         APIManager.postAPIRequest(postURL: url, parameters: param) { (isSuccess, msg, response) in

@@ -148,6 +148,27 @@ class BaseVC: UIViewController {
         return dateTimeLocal
     }
     
+    func getCurrentUTCTimestamp() -> String {
+        
+        // Get the current date and time
+        let currentDate = Date()
+        
+        // Create a DateFormatter instance
+        let dateFormatter = DateFormatter()
+        
+        // Set the date format
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        // Set the timezone to UTC
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        
+        // Convert the date to a string
+        let utcString = dateFormatter.string(from: currentDate)
+        
+        // Return the UTC string
+        return utcString
+    }
+    
     // callGetUserInfoAPI to get only required details of nearByUser to create bubble on Discover screen
     public func callGetUserInfoAPI(nearByUserID: String, completion: @escaping (_ isSuccess: Bool, _ response: UserDetail?) -> Void) {
         

@@ -142,7 +142,8 @@ class NearbyProofOfInteractionVC: BaseVC {
                                     APIParamKey.kStatus: status ? "SUCCESS" : "FAILURE",
                                     APIParamKey.kLat: lat,
                                     APIParamKey.kLng: lng,
-                                    APIParamKey.kBST: "\(randomInt)"]
+                                    APIParamKey.kBST: "\(randomInt)",
+                                    APIParamKey.kCurrentTimestamp: self.getCurrentUTCTimestamp()]
         
         self.showCustomLoader()
         APIManager.postAPIRequest(postURL: url, parameters: param) { (isSuccess, msg, response) in

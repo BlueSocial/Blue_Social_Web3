@@ -207,6 +207,8 @@ struct APIParamKey {
     static let kUser_referral_code                  = "user_referral_code"
     static let kIsIntialTransaction                 = "isIntialTransaction"
     static let kSubscription_date                   = "subscription_date"
+    static let kCurrentTimestamp                    = "current_timestamp"
+    
 }
 
 struct APIFlagValue {

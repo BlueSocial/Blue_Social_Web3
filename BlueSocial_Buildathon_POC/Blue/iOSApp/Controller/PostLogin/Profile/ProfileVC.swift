@@ -470,7 +470,8 @@ class ProfileVC: BaseVC {
                 APIParamKey.kSenderId: UserLocalData.UserID,
                 APIParamKey.kReceiver_Id: receiverId,
                 APIParamKey.kLat: LocationManager.shared.locationManager?.location?.coordinate.latitude ?? 0.0,
-                APIParamKey.kLng: LocationManager.shared.locationManager?.location?.coordinate.longitude ?? 0.0
+                APIParamKey.kLng: LocationManager.shared.locationManager?.location?.coordinate.longitude ?? 0.0,
+                APIParamKey.kCurrentTimestamp: self.getCurrentUTCTimestamp()
             ]
             
             self.callNotifyConnectUserAPI(param: param) { isSuccess, msg in
