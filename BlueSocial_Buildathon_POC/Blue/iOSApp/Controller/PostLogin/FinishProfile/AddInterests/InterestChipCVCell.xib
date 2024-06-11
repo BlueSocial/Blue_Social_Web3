@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RedHatDisplay-Medium.ttf">
+            <string>RedHatDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestChipCVCell" id="gTV-IL-0wX" customClass="InterestChipCVCell" customModule="Blue" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="67"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="67"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvt-fI-t7y" userLabel="ContentView">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="67"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dBF-IZ-VPL" userLabel="ChipView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="13.666666666666664" width="158" height="40"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uRW-rq-YzX">
+                                        <rect key="frame" x="16" y="8" width="126" height="24"/>
+                                        <subviews>
+                                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jbn-Rs-Jhb">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jbn-Rs-Jhb" secondAttribute="height" id="ACp-VR-V64"/>
+                                                    <constraint firstAttribute="height" constant="24" id="NMW-7n-hEr"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmQ-UT-lmY">
+                                                <rect key="frame" x="0.0" y="0.0" width="126" height="24"/>
+                                                <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
+                                                <color key="textColor" name="appBlack_#031227"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="appWhite_#FFFFFF"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="uRW-rq-YzX" secondAttribute="trailing" constant="16" id="Dyd-it-0ml"/>
+                                    <constraint firstItem="uRW-rq-YzX" firstAttribute="centerY" secondItem="dBF-IZ-VPL" secondAttribute="centerY" id="GK7-av-SHg"/>
+                                    <constraint firstItem="uRW-rq-YzX" firstAttribute="leading" secondItem="dBF-IZ-VPL" secondAttribute="leading" constant="16" id="sHz-sD-6t6"/>
+                                    <constraint firstAttribute="height" constant="40" id="uri-oD-RaF"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="appGray_#F2F3F4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dBF-IZ-VPL" secondAttribute="trailing" id="kv0-n4-fDO"/>
+                            <constraint firstItem="dBF-IZ-VPL" firstAttribute="centerY" secondItem="zvt-fI-t7y" secondAttribute="centerY" id="rrH-EK-l4u"/>
+                            <constraint firstItem="dBF-IZ-VPL" firstAttribute="leading" secondItem="zvt-fI-t7y" secondAttribute="leading" id="tIs-tz-w3f"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="zvt-fI-t7y" secondAttribute="trailing" id="5pg-fZ-8dP"/>
+                <constraint firstItem="zvt-fI-t7y" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="HQB-Fl-7NM"/>
+                <constraint firstItem="zvt-fI-t7y" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="S75-TE-pZC"/>
+                <constraint firstAttribute="bottom" secondItem="zvt-fI-t7y" secondAttribute="bottom" id="yNh-ro-rQB"/>
+            </constraints>
+            <size key="customSize" width="158" height="67"/>
+            <connections>
+                <outlet property="chipView" destination="dBF-IZ-VPL" id="3Aa-5y-j2F"/>
+                <outlet property="imgViewTopic" destination="jbn-Rs-Jhb" id="K5D-jX-SE9"/>
+                <outlet property="lblTopic" destination="xmQ-UT-lmY" id="dFi-OV-UH1"/>
+            </connections>
+            <point key="canvasLocation" x="-13.740458015267174" y="4.5774647887323949"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="appBlack_#031227">
+            <color red="0.012000000104308128" green="0.071000002324581146" blue="0.15299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="appGray_#F2F3F4">
+            <color red="0.94900000095367432" green="0.95300000905990601" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="appWhite_#FFFFFF">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
