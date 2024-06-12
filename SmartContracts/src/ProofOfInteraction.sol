@@ -253,18 +253,84 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
     /**
      *
+     * @param _interactionCount number of interactions between two users
+     * @return reward value based on the interaction count
+     * @dev Helper function to calculate the interaction-based reward
+     */
+    function interactionReward(
+        uint256 _interactionCount
+    ) internal pure returns (uint256) {
+        if (_interactionCount >= 50) {
+            return 3; // Minimum reward after 50 interactions
+        }
+        return 15 - (_interactionCount * 12) / 50; // Asymptotic decrease from 15 to 3
+    }
+
+    /**
+     *
+     * @param _daysSinceLastInteraction number of days since the last interaction
+     * @return reward value based on the time since the last interaction
+     * @dev Helper function to calculate the time-based reward
+     */
+    function timeReward(
+        uint256 _daysSinceLastInteraction
+    ) internal pure returns (uint256) {
+        if (_daysSinceLastInteraction >= 28) {
+            return 15; // Maximum reward after 28 days
+        }
+        return 3 + (_daysSinceLastInteraction * 12) / 28; // Linear increase from 3 to 15
+    }
+
+    /**
+     *
+     * @param _reward reward value to add randomization to
+     * @return randomized reward value
+     * @dev Helper function to add randomization to the reward
+     */
+    function addRandomization(uint256 _reward) internal view returns (uint256) {
+        uint256 randomFactor = uint256(
+            keccak256(abi.encodePacked(block.timestamp, block.prevrandao))
+        ) % 40; // 0 to 39
+        int256 randomAdjustment = int256(randomFactor) - 20; // -20 to +19
+        int256 randomizedReward = int256(_reward) +
+            (randomAdjustment * int256(_reward)) /
+            100; // +/- 20%
+        if (randomizedReward < 2) {
+            return 2;
+        }
+        if (randomizedReward > 18) {
+            return 18;
+        }
+        return uint256(randomizedReward);
+    }
+
+    /**
+     *
      * @param _hashedAddresses hashed addresses of the users in the interaction
-     * @return reward value for the users
+     * @return reward value for the interaction
+     * @dev Calculates the reward value for the interaction between two users
      */
     function calculateRewards(
         uint256 _hashedAddresses
     ) public view returns (uint256) {
-        uint256 interactionCount = userInteractions[_hashedAddresses]
-            .interactionCount;
-        if (interactionCount == 0) {
-            return baseRewardRate;
-        }
-        return baseRewardRate / (1 + interactionCount);
+        Interaction memory userInteraction = userInteractions[_hashedAddresses];
+        uint256 interactionCount = userInteraction.interactionCount;
+        uint256 daysSinceLastInteraction = (block.timestamp -
+            userInteraction.lastRewardTime) / 1 days;
+
+        uint256 interactionRewardValue = interactionReward(interactionCount);
+        uint256 timeRewardValue = timeReward(daysSinceLastInteraction);
+
+        // Combine the rewards with weights (35% interactions, 65% time)
+        uint256 combinedReward = (interactionRewardValue *
+            35 +
+            timeRewardValue *
+            65) / 100;
+
+        // Add randomization
+        uint256 finalReward = addRandomization(combinedReward);
+
+        return finalReward;
     }
 
     /**
