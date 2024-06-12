@@ -13,13 +13,11 @@ import {BlueSocialConsumer} from "./BlueSocialConsumer.sol";
  * @notice A contract that rewards users for Proof of Interaction
  */
 contract ProofOfInteraction is Ownable, ReentrancyGuard {
-
     /*                    */
     /*  ADDING LIBRARIES  */
     /*                    */
 
     using SafeERC20 for IERC20;
-
 
     /*                    */
     /*  TYPE DEFINITIONS  */
@@ -142,11 +140,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
             "Insufficient balance"
         );
 
-        i_blueToken.safeTransferFrom(
-            msg.sender,
-            s_treasury,
-            iceBreakerFee
-        );
+        i_blueToken.safeTransferFrom(msg.sender, s_treasury, iceBreakerFee);
 
         emit IceBreakerSent(msg.sender, _invitee);
     }
@@ -234,11 +228,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         address _userB,
         uint256 _rewardValue
     ) internal onlyAfterRewardInterval(_userA, _userB) {
-        i_blueToken.safeTransferFrom(
-            s_treasury,
-            _userA,
-            _rewardValue
-        );
+        i_blueToken.safeTransferFrom(s_treasury, _userA, _rewardValue);
         emit RewardUser(_userA, _rewardValue);
     }
 
@@ -277,9 +267,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @dev Increments the interaction count between two users
      */
 
-    //@note danger this should be internal, anyone can call it to abuse the people interacting 
-    //@note from public to internal 
-    function incrementInteractionCount(address _userA, address _userB) internal {
+    //@note danger this should be internal, anyone can call it to abuse the people interacting
+    //@note from public to internal
+    function incrementInteractionCount(
+        address _userA,
+        address _userB
+    ) internal {
         // sort the addresses to avoid duplicate counts
         // Ensure the addresses are sorted to avoid duplicates
         uint256 hashedAddresses = hashAddresses(_userA, _userB);
@@ -288,21 +281,87 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
     /**
      *
-     * @param _userA address of the first user
-     * @param _userB address of the second user
-     * @return reward value for the users
+     * @param _interactionCount number of interactions between two users
+     * @return reward value based on the interaction count
+     * @dev Helper function to calculate the interaction-based reward
+     */
+    function interactionReward(
+        uint256 _interactionCount
+    ) internal pure returns (uint256) {
+        if (_interactionCount >= 50) {
+            return 3; // Minimum reward after 50 interactions
+        }
+        return 15 - (_interactionCount * 12) / 50; // Asymptotic decrease from 15 to 3
+    }
+
+    /**
+     *
+     * @param _daysSinceLastInteraction number of days since the last interaction
+     * @return reward value based on the time since the last interaction
+     * @dev Helper function to calculate the time-based reward
+     */
+    function timeReward(
+        uint256 _daysSinceLastInteraction
+    ) internal pure returns (uint256) {
+        if (_daysSinceLastInteraction >= 28) {
+            return 15; // Maximum reward after 28 days
+        }
+        return 3 + (_daysSinceLastInteraction * 12) / 28; // Linear increase from 3 to 15
+    }
+
+    /**
+     *
+     * @param _reward reward value to add randomization to
+     * @return randomized reward value
+     * @dev Helper function to add randomization to the reward
+     */
+    function addRandomization(uint256 _reward) internal view returns (uint256) {
+        uint256 randomFactor = uint256(
+            keccak256(abi.encodePacked(block.timestamp, block.prevrandao))
+        ) % 40; // 0 to 39
+        int256 randomAdjustment = int256(randomFactor) - 20; // -20 to +19
+        int256 randomizedReward = int256(_reward) +
+            (randomAdjustment * int256(_reward)) /
+            100; // +/- 20%
+        if (randomizedReward < 2) {
+            return 2;
+        }
+        if (randomizedReward > 18) {
+            return 18;
+        }
+        return uint256(randomizedReward);
+    }
+
+    /**
+     *
+     * @param _userA user A in the interaction to be rewarded
+     * @param _userB user B in the interaction to be rewarded
+     * @return reward value for the interaction
+     * @dev Calculates the reward value for the interaction between two users
      */
     function calculateRewards(
         address _userA,
         address _userB
     ) public view returns (uint256) {
         uint256 hashedAddresses = hashAddresses(_userA, _userB);
-        uint256 interactionCount = userInteractions[hashedAddresses]
-            .interactionCount;
-        if (interactionCount == 0) {
-            return baseRewardRate;
-        }
-        return baseRewardRate / (1 + interactionCount);
+        Interaction memory userInteraction = userInteractions[hashedAddresses];
+        uint256 interactionCount = userInteraction.interactionCount;
+        uint256 daysSinceLastInteraction = (block.timestamp -
+            userInteraction.lastRewardTime) / 1 days;
+
+        uint256 interactionRewardValue = interactionReward(interactionCount);
+        uint256 timeRewardValue = timeReward(daysSinceLastInteraction);
+
+        // Combine the rewards with weights (35% interactions, 65% time)
+        uint256 combinedReward = (interactionRewardValue *
+            35 +
+            timeRewardValue *
+            65) / 100;
+
+        // Add randomization
+        uint256 finalReward = addRandomization(combinedReward);
+
+        return finalReward;
     }
 
     /**
