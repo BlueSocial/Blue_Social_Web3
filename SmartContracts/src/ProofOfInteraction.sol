@@ -13,13 +13,11 @@ import {BlueSocialConsumer} from "./BlueSocialConsumer.sol";
  * @notice A contract that rewards users for Proof of Interaction
  */
 contract ProofOfInteraction is Ownable, ReentrancyGuard {
-
     /*                    */
     /*  ADDING LIBRARIES  */
     /*                    */
 
     using SafeERC20 for IERC20;
-
 
     /*                    */
     /*  TYPE DEFINITIONS  */
@@ -142,11 +140,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
             "Insufficient balance"
         );
 
-        i_blueToken.safeTransferFrom(
-            msg.sender,
-            s_treasury,
-            iceBreakerFee
-        );
+        i_blueToken.safeTransferFrom(msg.sender, s_treasury, iceBreakerFee);
 
         emit IceBreakerSent(msg.sender, _invitee);
     }
@@ -162,7 +156,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         address _userA,
         address _userB,
         string[] calldata _callData
-    ) public {
+    ) public onlyAfterRewardInterval(_userA, _userB) {
         if (_userA == _userB) {
             revert InteractionError();
         }
@@ -194,51 +188,26 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         );
 
         userInteractions[hashedAddresses].lastRewardTime = block.timestamp;
-        uint256 rewardValue = calculateRewards(
-            interactionParticipants.userA,
-            interactionParticipants.userB
-        );
+        uint256 rewardValue = calculateRewards(hashedAddresses);
 
-        incrementInteractionCount(
-            interactionParticipants.userA,
-            interactionParticipants.userB
-        );
+        incrementInteractionCount(hashedAddresses);
 
-        rewardUser(
-            interactionParticipants.userA,
-            interactionParticipants.userB,
-            rewardValue
-        );
+        rewardUser(interactionParticipants.userA, rewardValue);
 
-        rewardUser(
-            interactionParticipants.userB,
-            interactionParticipants.userA,
-            rewardValue
-        );
+        rewardUser(interactionParticipants.userB, rewardValue);
     }
 
     /**
      *
      * @param _userA address of the user to reward
-     * @param _userB address of the other user in the interaction
      * @param _rewardValue reward value to send to the user
      * @dev Rewards a user with the reward rate
      *
      * @notice This function is only callable by the owner and after the reward interval has passed since the last reward
      */
 
-    //@note the onlyAfterRewardInterval modifier should not be called here, rather it should be called at callConsumer function
-    //@
-    function rewardUser(
-        address _userA,
-        address _userB,
-        uint256 _rewardValue
-    ) internal onlyAfterRewardInterval(_userA, _userB) {
-        i_blueToken.safeTransferFrom(
-            s_treasury,
-            _userA,
-            _rewardValue
-        );
+    function rewardUser(address _userA, uint256 _rewardValue) internal {
+        i_blueToken.safeTransferFrom(s_treasury, _userA, _rewardValue);
         emit RewardUser(_userA, _rewardValue);
     }
 
@@ -272,32 +241,25 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     }
 
     /**
-     * @param _userA address of the first user
-     * @param _userB address of the second user
+     * @param _hashedAddresses hashed addresses of the users in the interaction
      * @dev Increments the interaction count between two users
      */
 
-    //@note danger this should be internal, anyone can call it to abuse the people interacting 
-    //@note from public to internal 
-    function incrementInteractionCount(address _userA, address _userB) internal {
+    function incrementInteractionCount(uint256 _hashedAddresses) internal {
         // sort the addresses to avoid duplicate counts
         // Ensure the addresses are sorted to avoid duplicates
-        uint256 hashedAddresses = hashAddresses(_userA, _userB);
-        userInteractions[hashedAddresses].interactionCount++;
+        userInteractions[_hashedAddresses].interactionCount++;
     }
 
     /**
      *
-     * @param _userA address of the first user
-     * @param _userB address of the second user
+     * @param _hashedAddresses hashed addresses of the users in the interaction
      * @return reward value for the users
      */
     function calculateRewards(
-        address _userA,
-        address _userB
+        uint256 _hashedAddresses
     ) public view returns (uint256) {
-        uint256 hashedAddresses = hashAddresses(_userA, _userB);
-        uint256 interactionCount = userInteractions[hashedAddresses]
+        uint256 interactionCount = userInteractions[_hashedAddresses]
             .interactionCount;
         if (interactionCount == 0) {
             return baseRewardRate;
@@ -386,10 +348,8 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @dev Withdraws the contract balance to the owner
      */
     function withdraw() public nonReentrant onlyOwner {
-        //@note cache the values to save gas
         uint256 balance = address(this).balance;
         address receiver = owner();
-        //@note use call instead of transfer
         (bool success, ) = payable(receiver).call{value: balance}("0x");
         if (!success) revert WithdrawalError();
         emit BalanceWithdrawn(receiver, balance);
