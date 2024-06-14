@@ -75,7 +75,11 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     /*  MODIFIERS  */
     /*             */
     modifier onlyAfterRewardInterval(address _userA, address _userB) {
-        uint256 hashedAddresses = hashAddresses(_userA, _userB);
+        // sort the addresses to avoid duplicate counts
+        (address addr1, address addr2) = _userA < _userB
+            ? (_userA, _userB)
+            : (_userB, _userA);
+        uint256 hashedAddresses = hashAddresses(addr1, addr2);
         if (
             block.timestamp - userInteractions[hashedAddresses].lastRewardTime <
             minimumRewardInterval
@@ -133,15 +137,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @dev Sends an ice breaker fee to the treasury and emits an event
      */
     function sendIceBreaker(address _invitee) external nonReentrant {
-        //@note custom errors saves gas
-        //@note no need for this check because the transfer will revert
-        require(
-            i_blueToken.balanceOf(msg.sender) >= iceBreakerFee,
-            "Insufficient balance"
-        );
-
         i_blueToken.safeTransferFrom(msg.sender, s_treasury, iceBreakerFee);
-
         emit IceBreakerSent(msg.sender, _invitee);
     }
 
@@ -156,7 +152,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         address _userA,
         address _userB,
         string[] calldata _callData
-    ) public onlyAfterRewardInterval(_userA, _userB) {
+    ) public onlyAfterRewardInterval(_userA, _userB) returns (bytes32) {
         if (_userA == _userB) {
             revert InteractionError();
         }
@@ -171,6 +167,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
             );
 
         requests[requestId] = interactionParticipants;
+        return requestId;
     }
 
     /**
@@ -193,7 +190,6 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         incrementInteractionCount(hashedAddresses);
 
         rewardUser(interactionParticipants.userA, rewardValue);
-
         rewardUser(interactionParticipants.userB, rewardValue);
     }
 
@@ -318,8 +314,15 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         uint256 daysSinceLastInteraction = (block.timestamp -
             userInteraction.lastRewardTime) / 1 days;
 
-        uint256 interactionRewardValue = interactionReward(interactionCount);
-        uint256 timeRewardValue = timeReward(daysSinceLastInteraction);
+        uint256 interactionRewardValue;
+        uint256 timeRewardValue;
+        if (interactionCount == 0) {
+            timeRewardValue = 15;
+            interactionRewardValue = 15;
+        } else {
+            interactionCount = interactionReward(interactionCount);
+            timeRewardValue = timeReward(daysSinceLastInteraction);
+        }
 
         // Combine the rewards with weights (35% interactions, 65% time)
         uint256 combinedReward = (interactionRewardValue *
@@ -344,6 +347,13 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         address _userB
     ) public view returns (uint256) {
         return userInteractions[hashAddresses(_userA, _userB)].lastRewardTime;
+    }
+
+    function getInteractionCount(
+        address _userA,
+        address _userB
+    ) public view returns (uint256) {
+        return userInteractions[hashAddresses(_userA, _userB)].interactionCount;
     }
 
     /**

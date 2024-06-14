@@ -2,7 +2,7 @@
 pragma solidity ^0.8.25;
 
 import {Script} from "@forge-std/Script.sol";
-import {BlueSocialConsumer} from "../src/BlueSocialConsumer.sol";
+
 import {BlueToken} from "test/mocks/BlueToken.sol";
 
 contract HelperConfig is Script {
@@ -59,7 +59,6 @@ contract HelperConfig is Script {
         BlueToken blueToken = new BlueToken("Blue Token", "BLUE", 18);
         blueToken.mint(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266, 1000e18);
 
-        BlueSocialConsumer consumerContract = new BlueSocialConsumer();
         vm.stopBroadcast();
 
         anvilNetworkConfig = NetworkConfig({
@@ -69,7 +68,7 @@ contract HelperConfig is Script {
             _minimumRewardInterval: 1 minutes,
             _blueToken: address(blueToken),
             _treasury: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
-            _consumerContract: address(consumerContract),
+            _consumerContract: address(0),
             _chainlinkSubId: 64
         });
     }
