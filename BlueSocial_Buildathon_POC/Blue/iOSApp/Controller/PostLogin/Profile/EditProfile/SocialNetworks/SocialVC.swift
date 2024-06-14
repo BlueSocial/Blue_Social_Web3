@@ -36,6 +36,7 @@ class SocialVC: BaseVC {
     private var socialNameCount: [String: Int] = [:]
     
     weak var delegate: SocialVCDelegate?
+    private var isUserChangeSNOrder: Bool = false
     
     // ----------------------------------------------------------
     //                MARK: - View Life Cycle -
@@ -58,7 +59,9 @@ class SocialVC: BaseVC {
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
             
-            self.updateUI()
+            if self.isUserChangeSNOrder == false {
+                self.updateUI()
+            }
         }
     }
     
@@ -296,6 +299,8 @@ class SocialVC: BaseVC {
             }
             
             delegate?.getSocialNetworkOrder(arrSocialNetwork: self.socialDetail?.social_network ?? [Social_Network]())
+            self.isUserChangeSNOrder = true
+            loginUser?.social_network = self.socialDetail?.social_network
             
         } else if UserLocalData.userMode == "1" {
             

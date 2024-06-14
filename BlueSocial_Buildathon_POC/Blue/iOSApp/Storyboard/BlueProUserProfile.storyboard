@@ -38,7 +38,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnB-rO-fMT" userLabel="BottomView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="611" width="414" height="285"/>
+                                <rect key="frame" x="0.0" y="613.5" width="414" height="282.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgd-dq-Pkq" userLabel="TopRectangleView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                         <rect key="frame" x="179" y="8" width="56" height="6"/>
@@ -54,7 +54,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8J-XY-O3O">
-                                        <rect key="frame" x="16" y="38" width="93.5" height="26"/>
+                                        <rect key="frame" x="16" y="38" width="92.5" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="NDU-cJ-XKs"/>
                                         </constraints>
@@ -63,13 +63,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a caption:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jV-e4-XZn">
-                                        <rect key="frame" x="16" y="88" width="382" height="19"/>
+                                        <rect key="frame" x="16" y="88" width="382" height="16.5"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FqT-Qv-91i" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="113" width="382" height="42"/>
+                                        <rect key="frame" x="16" y="110.5" width="382" height="42"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4e5-y5-2Zp" customClass="CustomTextField" customModule="Blue" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
@@ -91,7 +91,7 @@
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4y-av-fRg">
-                                                <rect key="frame" x="349.5" y="19" width="24.5" height="19"/>
+                                                <rect key="frame" x="353.5" y="21.5" width="20.5" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                 <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h7b-87-aGY">
-                                        <rect key="frame" x="16" y="187" width="382" height="48"/>
+                                        <rect key="frame" x="16" y="184.5" width="382" height="48"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lg2-Z6-Um6" customClass="CustomButton" customModule="Blue" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
@@ -219,7 +219,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLq-DS-3mR" userLabel="BottomView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="648" width="414" height="248"/>
+                                <rect key="frame" x="0.0" y="655.5" width="414" height="240.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAO-ko-Sq2" userLabel="TopRectangleView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                         <rect key="frame" x="179" y="8" width="56" height="6"/>
@@ -235,7 +235,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-c1-gkX">
-                                        <rect key="frame" x="16" y="38" width="24" height="24"/>
+                                        <rect key="frame" x="16" y="36.5" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Oaa-c1-gkX" secondAttribute="height" multiplier="1:1" id="JbW-mO-5zM"/>
                                         </constraints>
@@ -246,19 +246,19 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete social network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7c-MB-45v">
-                                        <rect key="frame" x="119.5" y="38" width="175.5" height="24"/>
+                                        <rect key="frame" x="120.5" y="38" width="173" height="21"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                         <color key="textColor" name="appBlack_#031227"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete Instagram from your profile? This action can’t be undone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXa-Rr-Yqh">
-                                        <rect key="frame" x="16" y="78" width="382" height="37.5"/>
+                                        <rect key="frame" x="16" y="75" width="382" height="33"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="JyB-6f-B1b">
-                                        <rect key="frame" x="16" y="147.5" width="382" height="50.5"/>
+                                        <rect key="frame" x="16" y="140" width="382" height="50.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4R-X0-oNP" customClass="CustomButton" customModule="Blue" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="50.5"/>
@@ -370,7 +370,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqR-eH-i6Q">
-                                        <rect key="frame" x="172.5" y="84" width="69.5" height="19"/>
+                                        <rect key="frame" x="173.5" y="85" width="67" height="16.5"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -508,29 +508,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfn-Nc-KTS" userLabel="InnerView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="883"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="848"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EP-Jq-RJg">
-                                                <rect key="frame" x="16" y="8" width="106.5" height="24"/>
+                                                <rect key="frame" x="16" y="8" width="105" height="21"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="3DC-9z-km0">
-                                                <rect key="frame" x="16" y="48" width="382" height="303"/>
+                                                <rect key="frame" x="16" y="45" width="382" height="289.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xaj-Tz-9Wq" userLabel="First Name Stack View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="85"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlg-C2-Q0Z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="16.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbD-CN-bmf" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23" width="382" height="42"/>
+                                                                <rect key="frame" x="0.0" y="20.5" width="382" height="42"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWo-Wq-ewG">
                                                                         <rect key="frame" x="16" y="0.0" width="350" height="42"/>
@@ -560,7 +560,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter first name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yFz-QA-Fv6">
-                                                                <rect key="frame" x="0.0" y="69" width="382" height="16"/>
+                                                                <rect key="frame" x="0.0" y="66.5" width="382" height="14"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                 <color key="textColor" name="appRed_#E13C3C"/>
@@ -570,17 +570,17 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-wg-Hf4" userLabel="Last Name Stack View">
-                                                        <rect key="frame" x="0.0" y="109" width="382" height="85"/>
+                                                        <rect key="frame" x="0.0" y="104.5" width="382" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jwl-2T-Vr6">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="16.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQG-VY-zez" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23" width="382" height="42"/>
+                                                                <rect key="frame" x="0.0" y="20.5" width="382" height="42"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukH-zK-Zab">
                                                                         <rect key="frame" x="16" y="0.0" width="350" height="42"/>
@@ -609,7 +609,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter last name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3J-6k-5Je">
-                                                                <rect key="frame" x="0.0" y="69" width="382" height="16"/>
+                                                                <rect key="frame" x="0.0" y="66.5" width="382" height="14"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                 <color key="textColor" name="appRed_#E13C3C"/>
@@ -619,17 +619,17 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hYE-Ai-LTA" userLabel="Username Stack View">
-                                                        <rect key="frame" x="0.0" y="218" width="382" height="85"/>
+                                                        <rect key="frame" x="0.0" y="209" width="382" height="80.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIu-ne-ree">
-                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="16.5"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-CW-VdW" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="23" width="382" height="42"/>
+                                                                <rect key="frame" x="0.0" y="20.5" width="382" height="42"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-rA-UYZ">
                                                                         <rect key="frame" x="16" y="0.0" width="350" height="42"/>
@@ -658,7 +658,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This username is already taken." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNg-0k-qmb">
-                                                                <rect key="frame" x="0.0" y="69" width="382" height="16"/>
+                                                                <rect key="frame" x="0.0" y="66.5" width="382" height="14"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                 <color key="textColor" name="appRed_#E13C3C"/>
@@ -674,24 +674,24 @@
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elC-Aa-G4o">
-                                                <rect key="frame" x="16" y="381" width="85.5" height="19"/>
+                                                <rect key="frame" x="16" y="366" width="83" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bxf-jX-NH0">
-                                                <rect key="frame" x="349" y="375" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="358.5" width="51" height="31"/>
                                                 <color key="onTintColor" name="appBlue_#0066FF"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogu-gf-SSh">
-                                                <rect key="frame" x="16" y="408" width="310" height="56"/>
+                                                <rect key="frame" x="16" y="390.5" width="310" height="49"/>
                                                 <string key="text">Choose private mode to conceal your social information prior to meeting someone new. Your profile will not appear in Missed Opportunities.</string>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EFB-GM-ynM">
-                                                <rect key="frame" x="16" y="464" width="382" height="120"/>
+                                                <rect key="frame" x="16" y="439.5" width="382" height="120"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="m0o-kB-F3c"/>
@@ -705,18 +705,18 @@
                                                 <cells/>
                                             </collectionView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display profile in  “missed oppurtunities”" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIc-VU-TFm">
-                                                <rect key="frame" x="16" y="614" width="255" height="19"/>
+                                                <rect key="frame" x="16" y="590.5" width="254" height="16.5"/>
                                                 <color key="backgroundColor" red="0.88235294119999996" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Pb-Q8-ltX">
-                                                <rect key="frame" x="349" y="608" width="51" height="31"/>
+                                                <rect key="frame" x="349" y="583.5" width="51" height="31"/>
                                                 <color key="onTintColor" name="appBlue_#0066FF"/>
                                             </switch>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1T-m0-ULq">
-                                                <rect key="frame" x="16" y="645" width="318" height="93"/>
+                                                <rect key="frame" x="16" y="619" width="318" height="82"/>
                                                 <color key="backgroundColor" red="0.59607843140000005" green="0.63529411759999999" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <string key="text">Users who have passed you by and have 
 not sent an interaction request will be able
@@ -727,7 +727,7 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select sections that people can see on your profile, even if you haven't done the interaction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tu-at-Ge0">
-                                                <rect key="frame" x="16" y="738" width="318" height="38"/>
+                                                <rect key="frame" x="16" y="701" width="318" height="38"/>
                                                 <color key="backgroundColor" red="0.59607843140000005" green="0.63529411759999999" blue="0.69411764710000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="8FR-mg-C9p"/>
@@ -737,7 +737,7 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vg8-1J-yBc">
-                                                <rect key="frame" x="16" y="776" width="382" height="104"/>
+                                                <rect key="frame" x="16" y="739" width="382" height="104"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="104" id="rIs-Kn-urR"/>
@@ -751,23 +751,23 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                 <cells/>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-05-0yh">
-                                                <rect key="frame" x="16" y="600" width="81.5" height="24"/>
+                                                <rect key="frame" x="16" y="575.5" width="78.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gLL-K6-GkG" userLabel="University Name Stack View">
-                                                <rect key="frame" x="16" y="640" width="382" height="65"/>
+                                                <rect key="frame" x="16" y="612.5" width="382" height="62.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="University/company" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7d-Zw-Ohu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="16.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                         <color key="textColor" name="appGray_#98A2B1"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfc-bH-4eR" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="23" width="382" height="42"/>
+                                                        <rect key="frame" x="0.0" y="20.5" width="382" height="42"/>
                                                         <subviews>
                                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6m-tR-3y3">
                                                                 <rect key="frame" x="16" y="0.0" width="350" height="42"/>
@@ -795,7 +795,7 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter university name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYc-wZ-IYk">
-                                                        <rect key="frame" x="0.0" y="65" width="382" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="62.5" width="382" height="0.0"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                         <color key="textColor" name="appRed_#E13C3C"/>
@@ -805,13 +805,13 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIn-Cb-tYm">
-                                                <rect key="frame" x="16" y="721" width="382" height="19"/>
+                                                <rect key="frame" x="16" y="691" width="382" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPd-Np-exz" userLabel="Padding View Bio" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="744" width="382" height="108"/>
+                                                <rect key="frame" x="16" y="711.5" width="382" height="108"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N0U-ai-wVe">
                                                         <rect key="frame" x="8" y="0.0" width="366" height="108"/>
@@ -840,7 +840,7 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BE-QM-nSr">
-                                                <rect key="frame" x="16" y="856" width="382" height="19"/>
+                                                <rect key="frame" x="16" y="823.5" width="382" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                 <nil key="highlightedColor"/>
@@ -1718,7 +1718,7 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9o-fX-vAB">
-                                                                <rect key="frame" x="0.0" y="323.5" width="414" height="185.5"/>
+                                                                <rect key="frame" x="0.0" y="327" width="414" height="178"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_No_Social_Links" translatesAutoresizingMaskIntoConstraints="NO" id="SVy-Lx-0s9">
                                                                         <rect key="frame" x="175" y="8" width="64" height="64"/>
@@ -1728,13 +1728,13 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing to see here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M08-OE-8yB">
-                                                                        <rect key="frame" x="123.5" y="84" width="167.5" height="24"/>
+                                                                        <rect key="frame" x="128" y="84" width="158" height="21"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Bold" family="Red Hat Display" pointSize="18"/>
                                                                         <color key="textColor" name="appBlack_#031227"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you add social networks or affiliated links, you will see insights here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRf-FC-Ezr">
-                                                                        <rect key="frame" x="12" y="116" width="390" height="37.5"/>
+                                                                        <rect key="frame" x="12" y="113" width="390" height="33"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                         <color key="textColor" name="appGray_#98A2B1"/>
                                                                         <nil key="highlightedColor"/>
@@ -1843,23 +1843,23 @@ you within 24 hours in the Missed Opportunities tab</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="454"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J34-TG-0wQ" userLabel="View Week Month Year">
-                                                                <rect key="frame" x="16" y="2" width="83.5" height="38"/>
+                                                                <rect key="frame" x="16" y="2" width="82.5" height="38"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t27-BS-GnH">
-                                                                        <rect key="frame" x="12" y="8" width="35.5" height="22"/>
+                                                                        <rect key="frame" x="12" y="8" width="34.5" height="22"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                         <color key="textColor" name="appBlack_#031227"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_down0" translatesAutoresizingMaskIntoConstraints="NO" id="G8w-fa-uW1">
-                                                                        <rect key="frame" x="51.5" y="11" width="16" height="16"/>
+                                                                        <rect key="frame" x="50.5" y="11" width="16" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="16" id="SQ3-tQ-bdD"/>
                                                                             <constraint firstAttribute="width" constant="16" id="pXx-eQ-FKd"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqb-HS-CaF">
-                                                                        <rect key="frame" x="4" y="4" width="75.5" height="30"/>
+                                                                        <rect key="frame" x="4" y="4" width="74.5" height="30"/>
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <connections>
@@ -2624,7 +2624,7 @@ when they meet you</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrk-KR-yDg" userLabel="BottomView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="608" width="414" height="288"/>
+                                <rect key="frame" x="0.0" y="609.5" width="414" height="286.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-qh-zbu" userLabel="TopRectangleView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                         <rect key="frame" x="179" y="8" width="56" height="6"/>
@@ -2651,13 +2651,13 @@ when they meet you</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bxa-l5-YEP">
-                                        <rect key="frame" x="143.5" y="40" width="127" height="24"/>
+                                        <rect key="frame" x="143.5" y="41.5" width="127" height="21"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                         <color key="textColor" name="appBlack_#031227"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kex-P4-LOh" userLabel="TableView">
-                                        <rect key="frame" x="0.0" y="88" width="414" height="200"/>
+                                        <rect key="frame" x="0.0" y="86.5" width="414" height="200"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="EBo-zT-n11">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -2972,13 +2972,13 @@ when they meet you</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Link Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPg-G4-g7I">
-                                        <rect key="frame" x="153.5" y="41" width="107" height="29.5"/>
+                                        <rect key="frame" x="157.5" y="41" width="99.5" height="26"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Bold" family="Red Hat Display" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add links to profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV6-4h-lnw">
-                                        <rect key="frame" x="142" y="70.5" width="130" height="21.5"/>
+                                        <rect key="frame" x="140.5" y="67" width="133.5" height="19"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Regular" family="Red Hat Display" pointSize="16"/>
                                         <color key="textColor" name="appBlack_#031227"/>
                                         <nil key="highlightedColor"/>
@@ -3148,13 +3148,13 @@ when they meet you</string>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4F-cD-oNV">
-                                                <rect key="frame" x="16" y="224.5" width="350" height="32"/>
+                                                <rect key="frame" x="16" y="224.5" width="350" height="28"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Bold" family="Red Hat Display" pointSize="24"/>
                                                 <color key="textColor" name="appBlack_#031227"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try searching again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpW-c2-xS4">
-                                                <rect key="frame" x="16" y="261.5" width="350" height="19"/>
+                                                <rect key="frame" x="16" y="257.5" width="350" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                 <nil key="highlightedColor"/>
@@ -3256,7 +3256,7 @@ when they meet you</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdI-KE-oO0" userLabel="ContentView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="384" width="414" height="512"/>
+                                <rect key="frame" x="0.0" y="389" width="414" height="507"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BxH-kn-ZpO" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                         <rect key="frame" x="179" y="8" width="56" height="6"/>
@@ -3281,13 +3281,13 @@ when they meet you</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-mC-oAk">
-                                        <rect key="frame" x="16" y="78" width="382" height="19"/>
+                                        <rect key="frame" x="16" y="78" width="382" height="16.5"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vm-Ze-mfp" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="101" width="382" height="150"/>
+                                        <rect key="frame" x="16" y="98.5" width="382" height="150"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lib-I4-fU1">
                                                 <rect key="frame" x="16" y="10" width="350" height="118"/>
@@ -3312,19 +3312,19 @@ when they meet you</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlE-ac-ai9">
-                                        <rect key="frame" x="363.5" y="222" width="24.5" height="19"/>
+                                        <rect key="frame" x="367.5" y="222" width="20.5" height="16.5"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9D-dj-yxF">
-                                        <rect key="frame" x="16" y="267" width="382" height="19"/>
+                                        <rect key="frame" x="16" y="264.5" width="382" height="16.5"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jeR-gS-j65" userLabel="SV Labels">
-                                        <rect key="frame" x="16" y="290" width="382" height="100"/>
+                                        <rect key="frame" x="16" y="285" width="382" height="100"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BY6-hL-dl9" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
@@ -3447,7 +3447,7 @@ when they meet you</string>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-U7-Wyd" userLabel="ButtonView">
-                                        <rect key="frame" x="16" y="414" width="382" height="48"/>
+                                        <rect key="frame" x="16" y="409" width="382" height="48"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WkZ-0n-yFq">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
@@ -3691,7 +3691,7 @@ when they meet you</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0I-9O-g5W" userLabel="BottomView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="523" width="414" height="373"/>
+                                <rect key="frame" x="0.0" y="528.5" width="414" height="367.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NYG-JD-OLQ" userLabel="TopRectangleView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                         <rect key="frame" x="179" y="8" width="56" height="6"/>
@@ -3707,25 +3707,25 @@ when they meet you</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnX-th-oTk">
-                                        <rect key="frame" x="188.5" y="38" width="37" height="24"/>
+                                        <rect key="frame" x="190" y="38" width="34" height="21"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                         <color key="textColor" name="appBlack_#031227"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iyA-3B-bvR">
-                                        <rect key="frame" x="176" y="94" width="62" height="61.5"/>
+                                        <rect key="frame" x="176" y="91" width="62" height="61.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="iyA-3B-bvR" secondAttribute="height" multiplier="1:1" id="Fgf-cC-c2h"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nid-VP-Sr7">
-                                        <rect key="frame" x="16" y="187.5" width="382" height="19"/>
+                                        <rect key="frame" x="16" y="184.5" width="382" height="16.5"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ef-PG-Ofn" customClass="CustomTextField" customModule="Blue" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="212.5" width="382" height="46.5"/>
+                                        <rect key="frame" x="16" y="207" width="382" height="46.5"/>
                                         <color key="backgroundColor" name="appGray_#F2F3F4"/>
                                         <color key="tintColor" name="appBlack_#031227"/>
                                         <color key="textColor" name="appBlack_#031227"/>
@@ -3741,7 +3741,7 @@ when they meet you</string>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="K4j-Qh-L5y">
-                                        <rect key="frame" x="16" y="275" width="382" height="48"/>
+                                        <rect key="frame" x="16" y="269.5" width="382" height="48"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STl-Hg-FGR" customClass="CustomButton" customModule="Blue" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
@@ -3848,10 +3848,10 @@ when they meet you</string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="on9-3P-amH" userLabel="InnerView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1847"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1841.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIz-W3-axP" userLabel="TopView" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="425"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="419.5"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_torus4" translatesAutoresizingMaskIntoConstraints="NO" id="W7w-DT-gKO">
                                                                 <rect key="frame" x="-8" y="0.0" width="242" height="189.5"/>
@@ -3891,7 +3891,7 @@ when they meet you</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ama-Iw-zhY">
-                                                                <rect key="frame" x="248" y="125" width="31" height="25"/>
+                                                                <rect key="frame" x="248" y="125" width="29.5" height="25"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                 <nil key="highlightedColor"/>
@@ -3970,31 +3970,31 @@ when they meet you</string>
                                                                 <rect key="frame" x="112" y="225" width="190" height="37"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cheese_half" translatesAutoresizingMaskIntoConstraints="NO" id="iQ3-Ih-ts1">
-                                                                <rect key="frame" x="-8" y="224" width="108" height="147"/>
+                                                                <rect key="frame" x="-8" y="220" width="108" height="147"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="iQ3-Ih-ts1" secondAttribute="height" multiplier="301:410" id="mNd-if-aKi"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_round_cube_half" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-jF-8NJ">
-                                                                <rect key="frame" x="0.0" y="284.5" width="62" height="90.5"/>
+                                                                <rect key="frame" x="0.0" y="279" width="62" height="90.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="0Ka-jF-8NJ" secondAttribute="height" multiplier="177:258" id="hBC-xx-gsQ"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="YYR-Pw-kv1" userLabel="SV Views LinkClicks Interactions">
-                                                                <rect key="frame" x="16" y="286" width="382" height="47"/>
+                                                                <rect key="frame" x="16" y="286" width="382" height="41.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mKh-4d-pJM" userLabel="SV Views">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="47"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="94.5" height="41.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Uj-iG-WQi">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="24"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="views" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0b-Jx-3To">
-                                                                                <rect key="frame" x="0.0" y="28" width="94.5" height="19"/>
+                                                                                <rect key="frame" x="0.0" y="25" width="94.5" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                                 <nil key="highlightedColor"/>
@@ -4002,22 +4002,22 @@ when they meet you</string>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line2" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-Nn-bTO">
-                                                                        <rect key="frame" x="118.5" y="0.0" width="1" height="47"/>
+                                                                        <rect key="frame" x="118.5" y="0.0" width="1" height="41.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="1" id="5Sj-Cj-7ew"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kk7-Tr-Vn7" userLabel="SV LinkClicks">
-                                                                        <rect key="frame" x="143.5" y="0.0" width="95" height="47"/>
+                                                                        <rect key="frame" x="143.5" y="0.0" width="95" height="41.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb6-28-yxm">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="95" height="24"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="95" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="link clicks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egB-qG-aEq">
-                                                                                <rect key="frame" x="0.0" y="28" width="95" height="19"/>
+                                                                                <rect key="frame" x="0.0" y="25" width="95" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                                 <nil key="highlightedColor"/>
@@ -4025,22 +4025,22 @@ when they meet you</string>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_line2" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-Nd-Kwk">
-                                                                        <rect key="frame" x="262.5" y="0.0" width="1" height="47"/>
+                                                                        <rect key="frame" x="262.5" y="0.0" width="1" height="41.5"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="1" id="TtB-DH-A0o"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fpD-0W-2IE" userLabel="SV Interactions">
-                                                                        <rect key="frame" x="287.5" y="0.0" width="94.5" height="47"/>
+                                                                        <rect key="frame" x="287.5" y="0.0" width="94.5" height="41.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytf-hd-ZZb">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="24"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="interactions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0k-Ya-YU9">
-                                                                                <rect key="frame" x="0.0" y="28" width="94.5" height="19"/>
+                                                                                <rect key="frame" x="0.0" y="25" width="94.5" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                                 <color key="textColor" name="appWhite_#FFFFFF"/>
                                                                                 <nil key="highlightedColor"/>
@@ -4054,28 +4054,28 @@ when they meet you</string>
                                                                 </constraints>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWy-kI-3I2" userLabel="Btn views">
-                                                                <rect key="frame" x="16" y="286" width="94.5" height="47"/>
+                                                                <rect key="frame" x="16" y="286" width="94.5" height="41.5"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="onBtnViews:" destination="7h7-Lh-Qi1" eventType="touchUpInside" id="b7F-Nk-nuZ"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFc-aS-qqL" userLabel="Btn Link Clicks">
-                                                                <rect key="frame" x="159.5" y="286" width="95" height="47"/>
+                                                                <rect key="frame" x="159.5" y="286" width="95" height="41.5"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="onBtnLinkClicks:" destination="7h7-Lh-Qi1" eventType="touchUpInside" id="KN2-gW-A6G"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcC-Nr-feX" userLabel="Btn interactions">
-                                                                <rect key="frame" x="303.5" y="286" width="94.5" height="47"/>
+                                                                <rect key="frame" x="303.5" y="286" width="94.5" height="41.5"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
                                                                     <action selector="onBtnInteractions:" destination="7h7-Lh-Qi1" eventType="touchUpInside" id="qch-E6-oZV"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEa-rt-sAv" customClass="CustomButton" customModule="Blue" customModuleProvider="target">
-                                                                <rect key="frame" x="16" y="357" width="207" height="42"/>
+                                                                <rect key="frame" x="16" y="351.5" width="207" height="42"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -4090,7 +4090,7 @@ when they meet you</string>
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tokens_blue_new" translatesAutoresizingMaskIntoConstraints="NO" id="lUl-eu-p5p">
-                                                                <rect key="frame" x="239" y="365" width="25" height="25.5"/>
+                                                                <rect key="frame" x="239" y="359.5" width="25" height="25.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="lUl-eu-p5p" secondAttribute="height" id="SRO-Ag-fc6"/>
                                                                 </constraints>
@@ -4173,28 +4173,28 @@ when they meet you</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cone_blue" translatesAutoresizingMaskIntoConstraints="NO" id="abr-Vb-zFg">
-                                                        <rect key="frame" x="316.5" y="338.5" width="97.5" height="126.5"/>
+                                                        <rect key="frame" x="316.5" y="333" width="97.5" height="126.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="abr-Vb-zFg" secondAttribute="height" multiplier="243:314" id="S9z-Nu-sZP"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_rock1" translatesAutoresizingMaskIntoConstraints="NO" id="BVH-Kv-Z1n">
-                                                        <rect key="frame" x="333" y="345" width="81" height="120"/>
+                                                        <rect key="frame" x="333" y="339.5" width="81" height="120"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQC-fi-ykU">
-                                                        <rect key="frame" x="272" y="357" width="11" height="42"/>
+                                                        <rect key="frame" x="272" y="351.5" width="9" height="42"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
                                                         <color key="textColor" name="appWhite_#FFFFFF"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="token" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uS1-es-J1k">
-                                                        <rect key="frame" x="285" y="357" width="42" height="42"/>
+                                                        <rect key="frame" x="283" y="351.5" width="40.5" height="42"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
                                                         <color key="textColor" name="appWhite_#FFFFFF"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Sl-uK-T5a" userLabel="SV Edit Share Notes QRCode SendToken">
-                                                        <rect key="frame" x="28" y="457" width="358" height="64"/>
+                                                        <rect key="frame" x="28" y="451.5" width="358" height="64"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcK-AH-YIt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100.5" height="64"/>
@@ -4206,7 +4206,7 @@ when they meet you</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1x-8D-Eri">
-                                                                        <rect key="frame" x="20.5" y="47" width="59.5" height="17"/>
+                                                                        <rect key="frame" x="21.5" y="47" width="57.5" height="17"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -4242,7 +4242,7 @@ when they meet you</string>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share profile " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7C-XY-atC">
-                                                                        <rect key="frame" x="14.5" y="47" width="72" height="17"/>
+                                                                        <rect key="frame" x="15" y="47" width="71" height="17"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -4315,13 +4315,13 @@ when they meet you</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PjR-uF-deD" userLabel="SV Content">
-                                                        <rect key="frame" x="0.0" y="553" width="414" height="1294"/>
+                                                        <rect key="frame" x="0.0" y="547.5" width="414" height="1294"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yL0-yl-2p6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1294"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nfe-0A-teD">
-                                                                        <rect key="frame" x="16" y="0.0" width="382" height="153.5"/>
+                                                                        <rect key="frame" x="16" y="0.0" width="382" height="156.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDl-7F-shN">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="24"/>
@@ -4333,13 +4333,13 @@ when they meet you</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUG-SM-Lrk">
-                                                                                <rect key="frame" x="0.0" y="40" width="382" height="37.5"/>
+                                                                                <rect key="frame" x="0.0" y="40" width="382" height="40.5"/>
                                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                                                 <color key="textColor" name="appBlack_#031227"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K94-mS-LEd" userLabel="BlurView">
-                                                                                <rect key="frame" x="0.0" y="93.5" width="382" height="60"/>
+                                                                                <rect key="frame" x="0.0" y="96.5" width="382" height="60"/>
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_blur_view" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-1r-LIZ" customClass="CustomImage" customModule="Blue" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
@@ -4374,7 +4374,7 @@ when they meet you</string>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgI-gX-y42">
-                                                                        <rect key="frame" x="16" y="185.5" width="72" height="24"/>
+                                                                        <rect key="frame" x="16" y="188.5" width="69.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                                         <color key="textColor" name="appBlack_#031227"/>
                                                                         <nil key="highlightedColor"/>
@@ -4815,55 +4815,55 @@ when they meet you</string>
     </scenes>
     <designables>
         <designable name="2ef-PG-Ofn">
-            <size key="intrinsicContentSize" width="19" height="20.5"/>
+            <size key="intrinsicContentSize" width="20" height="18"/>
         </designable>
         <designable name="4e5-y5-2Zp">
-            <size key="intrinsicContentSize" width="19" height="20.5"/>
+            <size key="intrinsicContentSize" width="20" height="18"/>
         </designable>
         <designable name="GOo-Pi-1QR">
-            <size key="intrinsicContentSize" width="30" height="28"/>
+            <size key="intrinsicContentSize" width="30" height="26"/>
         </designable>
         <designable name="Ixz-It-zn2">
             <size key="intrinsicContentSize" width="179" height="48"/>
         </designable>
         <designable name="LLw-tK-bjf">
-            <size key="intrinsicContentSize" width="36" height="34"/>
+            <size key="intrinsicContentSize" width="36" height="31"/>
         </designable>
         <designable name="Ouy-BJ-o1B">
             <size key="intrinsicContentSize" width="44" height="44"/>
         </designable>
         <designable name="PIo-J4-ao3">
-            <size key="intrinsicContentSize" width="40" height="34"/>
+            <size key="intrinsicContentSize" width="38" height="31"/>
         </designable>
         <designable name="R4R-X0-oNP">
-            <size key="intrinsicContentSize" width="51" height="34"/>
+            <size key="intrinsicContentSize" width="50" height="31"/>
         </designable>
         <designable name="STl-Hg-FGR">
-            <size key="intrinsicContentSize" width="130" height="34"/>
+            <size key="intrinsicContentSize" width="129" height="31"/>
         </designable>
         <designable name="TqV-Nf-hUT">
-            <size key="intrinsicContentSize" width="36" height="34"/>
+            <size key="intrinsicContentSize" width="36" height="31"/>
         </designable>
         <designable name="eJN-1r-LIZ">
             <size key="intrinsicContentSize" width="179" height="48"/>
         </designable>
         <designable name="fEa-rt-sAv">
-            <size key="intrinsicContentSize" width="68" height="34"/>
+            <size key="intrinsicContentSize" width="68" height="31"/>
         </designable>
         <designable name="igO-S6-V8i">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="jx8-VP-Oat">
-            <size key="intrinsicContentSize" width="49" height="34"/>
+            <size key="intrinsicContentSize" width="46" height="31"/>
         </designable>
         <designable name="lg2-Z6-Um6">
-            <size key="intrinsicContentSize" width="50" height="34"/>
+            <size key="intrinsicContentSize" width="50" height="31"/>
         </designable>
         <designable name="oG4-Pt-Cnb">
-            <size key="intrinsicContentSize" width="95" height="34"/>
+            <size key="intrinsicContentSize" width="94" height="31"/>
         </designable>
         <designable name="yNI-Hb-fJE">
-            <size key="intrinsicContentSize" width="131" height="31"/>
+            <size key="intrinsicContentSize" width="128" height="29"/>
         </designable>
     </designables>
     <resources>

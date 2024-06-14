@@ -256,6 +256,7 @@ extension EditProfileVC: UICollectionViewDelegate {
                 if UserLocalData.userMode == "0" { // Load Social Profile
                     
                     self.generalInfoVC.socialDetail = self.socialDetail
+                    self.generalInfoVC.isUserChangeAnyData = self.isUserChangeAnyData
                     
                 } else if UserLocalData.userMode == "1" { // Load Business Profile
                     

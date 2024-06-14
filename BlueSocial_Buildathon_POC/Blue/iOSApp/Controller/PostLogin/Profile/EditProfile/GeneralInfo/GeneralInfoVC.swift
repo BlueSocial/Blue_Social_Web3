@@ -78,6 +78,8 @@ class GeneralInfoVC: BaseVC {
     private var isErrorFoundInLastName: Bool = false
     private var isErrorFoundInUserName: Bool = false
     
+    internal var isUserChangeAnyData: Bool = false
+    
     // ----------------------------------------------------------
     //                MARK: - View Life Cycle -
     // ----------------------------------------------------------
@@ -408,7 +410,7 @@ class GeneralInfoVC: BaseVC {
         let bio = self.txtBio.trimmingCharacters(in: .whitespacesAndNewlines)
         let switchPrivateMode = self.switchPrivateMode.isOn ? "1" : "0"
         
-        if firstName.isEmpty || lastName.isEmpty || userName.isEmpty || self.isErrorFoundInFirstName || self.isErrorFoundInLastName || self.isErrorFoundInUserName || (firstName == self.socialDetail?.firstname && lastName == self.socialDetail?.lastname && userName == self.socialDetail?.username && switchPrivateMode == self.socialDetail?.private_mode && self.txtCompanyOrUniversity == self.socialDetail?.company_name && bio == self.socialDetail?.bio) || (firstName == self.businessDetail?.business_firstName && lastName == self.businessDetail?.business_lastName && userName == self.businessDetail?.business_username && switchPrivateMode == self.businessDetail?.business_private_mode && self.txtCompanyOrUniversity == self.businessDetail?.business_company && bio == self.businessDetail?.business_bio) {
+        if firstName.isEmpty || lastName.isEmpty || userName.isEmpty || self.isErrorFoundInFirstName || self.isErrorFoundInLastName || self.isErrorFoundInUserName || (firstName == self.socialDetail?.firstname && lastName == self.socialDetail?.lastname && userName == self.socialDetail?.username && switchPrivateMode == self.socialDetail?.private_mode && self.txtCompanyOrUniversity == self.socialDetail?.company_name && bio == self.socialDetail?.bio && self.isUserChangeAnyData == false) || (firstName == self.businessDetail?.business_firstName && lastName == self.businessDetail?.business_lastName && userName == self.businessDetail?.business_username && switchPrivateMode == self.businessDetail?.business_private_mode && self.txtCompanyOrUniversity == self.businessDetail?.business_company && bio == self.businessDetail?.business_bio) {
             
             isValidData = false
         }
@@ -788,6 +790,7 @@ extension GeneralInfoVC: UITextFieldDelegate {
                 
             case self.txtUniversity:
                 self.txtCompanyOrUniversity = updatedString ?? ""
+                self.isUserChangeAnyData = true
                 self.updateSaveButtonState()
                 
             default:
@@ -881,9 +884,9 @@ extension GeneralInfoVC: UITextViewDelegate {
         }
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        self.updateCharacterCount()
-    }
+//    func textViewDidChange(_ textView: UITextView) {
+//        self.updateCharacterCount()
+//    }
 }
 
 // -------------------------------------------------------------

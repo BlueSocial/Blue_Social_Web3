@@ -1724,6 +1724,7 @@ extension ProfileVC {
             if socialDetail.profession_type == "1" { // Public
                 
                 if socialDetail.company_name != nil && socialDetail.company_name != "" {
+                    self.lblCompanyOrUniversityName.isHidden = false
                     self.lblCompanyOrUniversityName.text = socialDetail.company_name
                     
                 } else {
