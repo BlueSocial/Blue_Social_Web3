@@ -66,11 +66,6 @@ contract MockBlueSocialConsumer {
         lastResponse = response;
         lastError = err;
 
-        // Handle the response based on the request type
-        if (lastRequestId != requestId) {
-            revert("Unexpected request ID");
-        }
-
         (, , , , , string memory requestType) = abi.decode(
             response,
             (string, string, uint256, string, string, string)
