@@ -264,7 +264,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         if (_interactionCount >= 50) {
             return minReward; // Minimum reward after 50 interactions
         }
-        return baseRewardRate - (_interactionCount * 12) / 50; // Asymptotic decrease from baseRewardRate to minReward
+        return baseRewardRate - ((_interactionCount * 12) / 50) ** 18; // Asymptotic decrease from baseRewardRate to minReward
     }
 
     /**
@@ -279,7 +279,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         if (_daysSinceLastInteraction >= 28) {
             return baseRewardRate; // Maximum reward after 28 days
         }
-        return minReward + (_daysSinceLastInteraction * 12) / 28; // Linear increase from minReward to baseRewardRate
+        return minReward + ((_daysSinceLastInteraction * 12) / 28) ** 18; // Linear increase from minReward to baseRewardRate
     }
 
     /**
