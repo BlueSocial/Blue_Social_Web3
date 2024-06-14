@@ -65,7 +65,7 @@ contract HelperConfig is Script {
             initialOwner: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
             _rewardRate: 10e18,
             _iceBreakerFee: 1e18,
-            _minimumRewardInterval: 1 minutes,
+            _minimumRewardInterval: 1 days,
             _blueToken: address(blueToken),
             _treasury: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
             _consumerContract: address(0),
