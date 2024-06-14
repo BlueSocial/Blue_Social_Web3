@@ -82,7 +82,8 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         uint256 hashedAddresses = hashAddresses(addr1, addr2);
         if (
             block.timestamp - userInteractions[hashedAddresses].lastRewardTime <
-            minimumRewardInterval
+            minimumRewardInterval &&
+            userInteractions[hashedAddresses].interactionCount > 0
         ) {
             revert RewardIntervalError();
         }
