@@ -14,6 +14,7 @@ contract DeployPOIRewards is Script {
         (
             address initialOwner,
             uint256 _rewardRate,
+            uint256 _minReward,
             uint256 _iceBreakerFee,
             uint256 _minimumRewardInterval,
             address _blueToken,
@@ -26,6 +27,7 @@ contract DeployPOIRewards is Script {
         ProofOfInteraction proofOfInteraction = new ProofOfInteraction(
             initialOwner,
             _rewardRate,
+            _minReward,
             _iceBreakerFee,
             _minimumRewardInterval,
             _blueToken,

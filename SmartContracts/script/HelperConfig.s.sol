@@ -11,6 +11,7 @@ contract HelperConfig is Script {
     struct NetworkConfig {
         address initialOwner;
         uint256 _rewardRate;
+        uint256 _minReward;
         uint256 _iceBreakerFee;
         uint256 _minimumRewardInterval;
         address _blueToken;
@@ -35,6 +36,7 @@ contract HelperConfig is Script {
         sepoliaNetworkConfig = NetworkConfig({
             initialOwner: 0x0000000000000000000000000000000000000000,
             _rewardRate: 10e18,
+            _minReward: 3e18,
             _iceBreakerFee: 1e18,
             _minimumRewardInterval: 1 days,
             _blueToken: 0x0000000000000000000000000000000000000000,
@@ -64,6 +66,7 @@ contract HelperConfig is Script {
         anvilNetworkConfig = NetworkConfig({
             initialOwner: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
             _rewardRate: 10e18,
+            _minReward: 3e18,
             _iceBreakerFee: 1e18,
             _minimumRewardInterval: 1 days,
             _blueToken: address(blueToken),

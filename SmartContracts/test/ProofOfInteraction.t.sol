@@ -24,7 +24,8 @@ contract ProofOfInteractionTest is Test {
         // Deploy the ProofOfInteraction contract
         proofOfInteraction = new ProofOfInteraction(
             address(this), // Initial owner
-            10e18, // Reward rate
+            10e18, // Base reward rate
+            3e18, // Min reward rate
             1e18, // Ice breaker fee
             1 days, // Minimum reward interval
             address(blueToken), // Address of the mock ERC20 token
@@ -97,7 +98,7 @@ contract ProofOfInteractionTest is Test {
 
         // Check the treasury's balance
         uint256 inviteeBalance = blueToken.balanceOf(invitee);
-        console.log("Invitee balance after tip:", invitee);
+        console.log("Invitee balance after tip:", inviteeBalance);
         assertEq(
             inviteeBalance,
             10e18,
@@ -131,8 +132,6 @@ contract ProofOfInteractionTest is Test {
         );
         console.log("Expected reward value:", rewardValue);
 
-        uint256 initialUserBalance = blueToken.balanceOf(user);
-
         // Simulate fulfilling the request
         consumerContract.fulfillRequest(
             requestId,
@@ -146,52 +145,12 @@ contract ProofOfInteractionTest is Test {
             ),
             ""
         );
-
-        // // Check the invitee's balance
-        uint256 inviteeBalance = blueToken.balanceOf(invitee);
-        console.log("Invitee balance after reward:", inviteeBalance);
-        // assertEq(
-        //     inviteeBalance,
-        //     rewardValue,
-        //     "Invitee received wrong amount of tokens"
-        // );
-
-        // // Check the user's balance
-        uint256 userBalance = blueToken.balanceOf(user);
-        console.log("User balance after reward:", userBalance);
-        // assertEq(
-        //     userBalance,
-        //     initialUserBalance + rewardValue,
-        //     "User should have received correct amount of tokens"
-        // );
-
-        uint256 userLastRewardTime = proofOfInteraction.getLastRewardTime(
-            user,
-            invitee
-        );
-        uint256 inviteeLastRewardTime = proofOfInteraction.getLastRewardTime(
-            invitee,
-            user
-        );
-        console.log("Block timestamp:", block.timestamp);
-        console.log("User last reward time:", userLastRewardTime);
-        console.log("Invitee last reward time:", inviteeLastRewardTime);
-        console.log(
-            "interaction count:",
-            proofOfInteraction.getInteractionCount(user, invitee)
-        );
-        // assertEq(
-        //     userLastRewardTime,
-        //     block.timestamp,
-        //     "User's last reward time should be the current block timestamp"
-        // );
-        // assertEq(
-        //     inviteeLastRewardTime,
-        //     block.timestamp,
-        //     "Invitee's last reward time should be the current block timestamp"
-        // );
     }
 
+    /**
+     * @notice Test the reward interval and the reward calculation. The min reward interval is set to 1 day.
+     * The user and invitee will interact multiple times and the reward will be calculated based on the reward interval and interaction count.
+     */
     function testRewardInterval() public {
         console.log("Testing reward interval");
         console.log("First reward");
@@ -214,6 +173,16 @@ contract ProofOfInteractionTest is Test {
             "Invitee received wrong amount of tokens"
         );
 
+        uint256 lastRewardTime = proofOfInteraction.getLastRewardTime(
+            user,
+            invitee
+        );
+        assertEq(
+            lastRewardTime,
+            block.timestamp,
+            "Last reward time should be updated"
+        );
+
         // // Check the user's balance
         uint256 userBalance = blueToken.balanceOf(user);
         console.log("User balance after reward:", userBalance);
@@ -228,6 +197,13 @@ contract ProofOfInteractionTest is Test {
             uint256(keccak256(abi.encodePacked(user, invitee)))
         );
         testRewardUsers(true);
+
+        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        assertEq(
+            lastRewardTime,
+            block.timestamp,
+            "Last reward time should be updated"
+        );
 
         // Check the invitee's balance
         inviteeBalance = blueToken.balanceOf(invitee);
@@ -254,6 +230,13 @@ contract ProofOfInteractionTest is Test {
             uint256(keccak256(abi.encodePacked(user, invitee)))
         );
         testRewardUsers(true);
+
+        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        assertEq(
+            lastRewardTime,
+            block.timestamp,
+            "Last reward time should be updated"
+        );
 
         // Check the invitee's balance
         inviteeBalance = blueToken.balanceOf(invitee);
@@ -282,6 +265,13 @@ contract ProofOfInteractionTest is Test {
             uint256(keccak256(abi.encodePacked(user, invitee)))
         );
         testRewardUsers(false);
+
+        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        assertEq(
+            lastRewardTime,
+            block.timestamp,
+            "Last reward time should be updated"
+        );
 
         // Check the invitee's balance
         inviteeBalance = blueToken.balanceOf(invitee);
@@ -315,6 +305,13 @@ contract ProofOfInteractionTest is Test {
         );
         testRewardUsers(false);
 
+        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        assertEq(
+            lastRewardTime,
+            block.timestamp,
+            "Last reward time should be updated"
+        );
+
         // Check the invitee's balance
         inviteeBalance = blueToken.balanceOf(invitee);
         console.log("Invitee balance after reward:", inviteeBalance);
@@ -343,13 +340,63 @@ contract ProofOfInteractionTest is Test {
         );
     }
 
+    /**
+     * @notice Test the reward interval and the reward calculation. The min reward interval is set to 1 day. The first reward and second rewards should execute successfully. The third reward should fail because the reward interval is too short.
+     */
     function testIntervalTooShort() public {
+        uint256 userInitialBalance = blueToken.balanceOf(user);
+        uint256 inviteeInitialBalance = blueToken.balanceOf(invitee);
+        uint256 firstRewardValue = proofOfInteraction.calculateRewards(
+            uint256(keccak256(abi.encodePacked(user, invitee)))
+        );
         testRewardUsers(false);
+
+        assertEq(
+            blueToken.balanceOf(user),
+            userInitialBalance + firstRewardValue,
+            "User should have received correct amount of tokens"
+        );
+
+        assertEq(
+            blueToken.balanceOf(invitee),
+            inviteeInitialBalance + firstRewardValue,
+            "Invitee should have received correct amount of tokens"
+        );
+
         console.log("Testing reward interval too short");
         skip(1 days);
+        uint256 secondRewardValue = proofOfInteraction.calculateRewards(
+            uint256(keccak256(abi.encodePacked(user, invitee)))
+        );
         testRewardUsers(true);
+
+        assertEq(
+            blueToken.balanceOf(user),
+            userInitialBalance + firstRewardValue + secondRewardValue,
+            "User should have received correct amount of tokens"
+        );
+
+        assertEq(
+            blueToken.balanceOf(invitee),
+            inviteeInitialBalance + firstRewardValue + secondRewardValue,
+            "Invitee should have received correct amount of tokens"
+        );
+
         skip(300 minutes);
+
         vm.expectRevert();
         testRewardUsers(false);
+
+        assertEq(
+            blueToken.balanceOf(user),
+            userInitialBalance + firstRewardValue + secondRewardValue,
+            "User should have received correct amount of tokens"
+        );
+
+        assertEq(
+            blueToken.balanceOf(invitee),
+            inviteeInitialBalance + firstRewardValue + secondRewardValue,
+            "Invitee should have received correct amount of tokens"
+        );
     }
 }
