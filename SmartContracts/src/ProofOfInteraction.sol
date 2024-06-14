@@ -375,6 +375,10 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         return baseRewardRate;
     }
 
+    function getMinimumRewardInterval() public view returns (uint256) {
+        return minimumRewardInterval;
+    }
+
     /**
      *
      * @return ice breaker fee
