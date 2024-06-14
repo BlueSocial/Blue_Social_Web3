@@ -383,8 +383,7 @@ contract ProofOfInteractionTest is Test {
         );
 
         skip(300 minutes);
-
-        vm.expectRevert();
+        vm.expectRevert(0x90ce7105); // RewardIntervalError()
         testRewardUsers(false);
 
         assertEq(
@@ -397,6 +396,46 @@ contract ProofOfInteractionTest is Test {
             blueToken.balanceOf(invitee),
             inviteeInitialBalance + firstRewardValue + secondRewardValue,
             "Invitee should have received correct amount of tokens"
+        );
+    }
+
+    function testUnauthorizedRewardUsersCall() public {
+        vm.prank(user);
+        vm.expectRevert(0x4c341eef); // onlyConsumer();
+        proofOfInteraction.rewardUsers(bytes32(0));
+    }
+
+    function testUnauthorizedSetConsumerCall() public {
+        vm.prank(address(156)); // random user
+        vm.expectRevert();
+        proofOfInteraction.setConsumer(address(0));
+    }
+
+    function testSetConsumer() public {
+        address newConsumer = address(10); // new consumer address
+        vm.prank(address(this));
+        proofOfInteraction.setConsumer(newConsumer);
+        assertEq(
+            proofOfInteraction.getConsumerAddress(),
+            newConsumer,
+            "Consumer not set"
+        );
+    }
+
+    function testUnauthorizedSetRewardRateCall() public {
+        vm.prank(address(156)); // random user
+        vm.expectRevert();
+        proofOfInteraction.setBaseRewardRate(10e18);
+    }
+
+    function testSetRewardRate() public {
+        uint256 newRewardRate = 20e18;
+        vm.prank(address(this));
+        proofOfInteraction.setBaseRewardRate(newRewardRate);
+        assertEq(
+            proofOfInteraction.getBaseRewardRate(),
+            newRewardRate,
+            "Reward rate not set"
         );
     }
 }

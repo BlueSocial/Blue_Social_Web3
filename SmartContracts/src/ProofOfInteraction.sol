@@ -23,8 +23,8 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     /*  TYPE DEFINITIONS  */
     /*                    */
     struct Interaction {
-        uint256 interactionCount;
-        uint256 lastRewardTime;
+        uint128 interactionCount;
+        uint128 lastRewardTime;
     }
 
     struct InteractionParticipants {
@@ -191,7 +191,9 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
         uint256 rewardValue = calculateRewards(hashedAddresses);
 
-        userInteractions[hashedAddresses].lastRewardTime = block.timestamp;
+        userInteractions[hashedAddresses].lastRewardTime = uint128(
+            block.timestamp
+        );
         incrementInteractionCount(hashedAddresses);
 
         rewardUser(interactionParticipants.userA, rewardValue);
@@ -363,6 +365,14 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
     function getMinReward() public view returns (uint256) {
         return minReward;
+    }
+
+    function getConsumerAddress() public view returns (address) {
+        return s_blueSocialConsumer;
+    }
+
+    function getBaseRewardRate() public view returns (uint256) {
+        return baseRewardRate;
     }
 
     /**
