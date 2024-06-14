@@ -23,7 +23,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     /*  TYPE DEFINITIONS  */
     /*                    */
     struct Interaction {
-        uint128 interactionCount;
+        uint128 interactionCount; // uint128 to pack the struct into 32 bytes
         uint128 lastRewardTime;
     }
 
