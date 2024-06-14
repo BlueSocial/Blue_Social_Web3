@@ -187,9 +187,9 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
             interactionParticipants.userB
         );
 
-        userInteractions[hashedAddresses].lastRewardTime = block.timestamp;
         uint256 rewardValue = calculateRewards(hashedAddresses);
 
+        userInteractions[hashedAddresses].lastRewardTime = block.timestamp;
         incrementInteractionCount(hashedAddresses);
 
         rewardUser(interactionParticipants.userA, rewardValue);

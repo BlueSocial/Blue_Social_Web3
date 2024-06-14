@@ -103,10 +103,12 @@ contract ProofOfInteractionTest is Test {
 
     function testRewardUsers(string[] memory _callData) public {
         // Simulate the owner calling the rewardUsers function
+        uint256 hashedAddresses = uint256(
+            keccak256(abi.encodePacked(user, invitee))
+        );
         vm.prank(address(this));
         uint256 rewardValue = proofOfInteraction.calculateRewards(
-            user,
-            invitee
+            hashedAddresses
         );
         uint256 initialUserBalance = blueToken.balanceOf(user);
 
