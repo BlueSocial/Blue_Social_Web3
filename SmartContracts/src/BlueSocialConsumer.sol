@@ -92,7 +92,7 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         FunctionsRequest.Request memory req;
         string memory requestType = args[2];
         //requesttype is 3rd argument and should be POI or EXC
-        if (keccak256(abi.encodePacked(requestType)) == keccak256("POI")) {
+        if (keccak256(abi.encodePacked(requestType)) == keccak256(abi.encodePacked("POI"))) {
             req.initializeRequestForInlineJavaScript(poiProofSource); // Initialize the request with corresponding JS code
         } else {
             req.initializeRequestForInlineJavaScript(exchangeProofSource); // Initialize the request with corresponding JS code
@@ -120,7 +120,7 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         if (s_lastRequestId != requestId) {
             revert UnexpectedRequestID(requestId); // Check if request IDs match
         }
-        require(response.length >= 32, "Insufficient bytes for conversion");
+
         // Update the contract's state variables with the response and any errors
         s_lastResponse = response;
 
@@ -147,7 +147,7 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         //TODO: check for error
 
         // Handle the response based on the request type
-        if (keccak256(abi.encodePacked(requestType)) == keccak256("POI")) {
+        if (keccak256(abi.encodePacked(requestType)) == keccak256(abi.encodePacked("POI"))) {
             // Call function from ProofOfInteraction contract to reward users
             proofOfInteraction.rewardUsers(requestId);
         } else {
@@ -163,7 +163,7 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
      * @param _source The js snippet for chainlink functions
      */
     function setSource(string memory requestType, string memory _source) external onlyOwner {
-        if (keccak256(abi.encodePacked(requestType)) == keccak256("POI")) {
+        if (keccak256(abi.encodePacked(requestType)) == keccak256(abi.encodePacked("POI"))) {
             poiProofSource = _source;
         } else {
             exchangeProofSource = _source;
