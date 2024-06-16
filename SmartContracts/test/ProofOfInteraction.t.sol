@@ -43,7 +43,6 @@ contract ProofOfInteractionTest is Test {
         proofOfInteraction.setConsumer(address(consumerContract));
 
         // Allocate some tokens to the user and the treasury
-        blueToken.mint(user, 1000e18);
         blueToken.mint(treasury, 2000000e18);
 
         // Approve the ProofOfInteraction contract to spend tokens on behalf of the user
@@ -56,6 +55,7 @@ contract ProofOfInteractionTest is Test {
 
     function testSendIceBreaker() public {
         // Send an ice breaker request
+        blueToken.mint(user, 1000e18);
         uint256 initialUserBalance = blueToken.balanceOf(user);
         uint256 initialTreasuryBalance = blueToken.balanceOf(treasury);
         vm.prank(user);
@@ -80,8 +80,14 @@ contract ProofOfInteractionTest is Test {
         );
     }
 
+    function testInsufficientBalanceIceBreaker() public {
+        vm.prank(user);
+        vm.expectRevert(); // InsufficientBalance()
+        proofOfInteraction.sendIceBreaker(invitee);
+    }
+
     function testTipUser() public {
-        // Send a tip request
+        blueToken.mint(user, 1000e18);
         uint256 initialUserBalance = blueToken.balanceOf(user);
 
         vm.prank(user);
@@ -104,6 +110,12 @@ contract ProofOfInteractionTest is Test {
             10e18,
             "Invitee should have received 10 token"
         );
+    }
+
+    function testInsufficientBalanceTipUser() public {
+        vm.prank(user);
+        vm.expectRevert(); // InsufficientBalance()
+        proofOfInteraction.tipUser(invitee, 10e18);
     }
 
     function testRewardUsers(bool swap) public {
