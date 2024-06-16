@@ -4,6 +4,6 @@ out = "out"
 libs = ["lib"]
 remappings=["@forge-std/=lib/forge-std/src/","@openzeppelin/contracts=lib/openzeppelin-contracts/contracts","forge-std/=lib/forge-std/src/","@chainlink/contracts=lib/chainlink/contracts"]
 [etherscan]
-baseSepolia = { key = "DRJV1AP7CJRB2X2SHZMMUF23Z79QY9R1SM" }
+baseSepolia = { key = "" }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
