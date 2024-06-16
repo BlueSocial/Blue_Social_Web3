@@ -120,7 +120,7 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         if (s_lastRequestId != requestId) {
             revert UnexpectedRequestID(requestId); // Check if request IDs match
         }
-        require(response.length >= 32, "Insufficient bytes for conversion");
+
         // Update the contract's state variables with the response and any errors
         s_lastResponse = response;
 
