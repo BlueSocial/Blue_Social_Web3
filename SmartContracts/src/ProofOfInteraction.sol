@@ -23,8 +23,8 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     /*  TYPE DEFINITIONS  */
     /*                    */
     struct Interaction {
-        uint256 interactionCount;
-        uint256 lastRewardTime;
+        uint128 interactionCount; // uint128 to pack the struct into 32 bytes
+        uint128 lastRewardTime;
     }
 
     struct InteractionParticipants {
@@ -41,6 +41,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     uint64 private s_chainlinkSubscriptionId;
 
     uint256 public baseRewardRate;
+    uint256 public minReward;
     uint256 public iceBreakerFee;
     uint256 public minimumRewardInterval;
 
@@ -75,10 +76,15 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     /*  MODIFIERS  */
     /*             */
     modifier onlyAfterRewardInterval(address _userA, address _userB) {
-        uint256 hashedAddresses = hashAddresses(_userA, _userB);
+        // sort the addresses to avoid duplicate counts
+        (address addr1, address addr2) = _userA < _userB
+            ? (_userA, _userB)
+            : (_userB, _userA);
+        uint256 hashedAddresses = hashAddresses(addr1, addr2);
         if (
             block.timestamp - userInteractions[hashedAddresses].lastRewardTime <
-            minimumRewardInterval
+            minimumRewardInterval &&
+            userInteractions[hashedAddresses].interactionCount > 0
         ) {
             revert RewardIntervalError();
         }
@@ -100,6 +106,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      *
      * @param initialOwner address of the owner of the contract
      * @param _baseRewardRate reward rate for the users
+     * @param _minReward minimum reward value
      * @param _iceBreakerFee fee to send an ice breaker
      * @param _minimumRewardInterval minimum time interval between rewards
      * @param _blueToken address of the BLUE token
@@ -111,6 +118,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     constructor(
         address initialOwner,
         uint256 _baseRewardRate,
+        uint256 _minReward,
         uint256 _iceBreakerFee,
         uint256 _minimumRewardInterval,
         address _blueToken,
@@ -120,6 +128,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     ) Ownable(initialOwner) {
         iceBreakerFee = _iceBreakerFee;
         baseRewardRate = _baseRewardRate;
+        minReward = _minReward;
         minimumRewardInterval = _minimumRewardInterval;
         i_blueToken = IERC20(_blueToken);
         s_treasury = _treasury;
@@ -132,16 +141,8 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @param _invitee address of the user to send the ice breaker to
      * @dev Sends an ice breaker fee to the treasury and emits an event
      */
-    function sendIceBreaker(address _invitee) external nonReentrant {
-        //@note custom errors saves gas
-        //@note no need for this check because the transfer will revert
-        require(
-            i_blueToken.balanceOf(msg.sender) >= iceBreakerFee,
-            "Insufficient balance"
-        );
-
+    function sendIceBreaker(address _invitee) public nonReentrant {
         i_blueToken.safeTransferFrom(msg.sender, s_treasury, iceBreakerFee);
-
         emit IceBreakerSent(msg.sender, _invitee);
     }
 
@@ -156,7 +157,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         address _userA,
         address _userB,
         string[] calldata _callData
-    ) public onlyAfterRewardInterval(_userA, _userB) {
+    ) public onlyAfterRewardInterval(_userA, _userB) returns (bytes32) {
         if (_userA == _userB) {
             revert InteractionError();
         }
@@ -171,6 +172,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
             );
 
         requests[requestId] = interactionParticipants;
+        return requestId;
     }
 
     /**
@@ -189,11 +191,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
         uint256 rewardValue = calculateRewards(hashedAddresses);
 
-        userInteractions[hashedAddresses].lastRewardTime = block.timestamp;
+        userInteractions[hashedAddresses].lastRewardTime = uint128(
+            block.timestamp
+        );
         incrementInteractionCount(hashedAddresses);
 
         rewardUser(interactionParticipants.userA, rewardValue);
-
         rewardUser(interactionParticipants.userB, rewardValue);
     }
 
@@ -259,11 +262,11 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      */
     function interactionReward(
         uint256 _interactionCount
-    ) internal pure returns (uint256) {
+    ) internal view returns (uint256) {
         if (_interactionCount >= 50) {
-            return 3; // Minimum reward after 50 interactions
+            return minReward; // Minimum reward after 50 interactions
         }
-        return 15 - (_interactionCount * 12) / 50; // Asymptotic decrease from 15 to 3
+        return baseRewardRate - ((_interactionCount * 12) / 50) ** 18; // Asymptotic decrease from baseRewardRate to minReward
     }
 
     /**
@@ -274,11 +277,11 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      */
     function timeReward(
         uint256 _daysSinceLastInteraction
-    ) internal pure returns (uint256) {
+    ) internal view returns (uint256) {
         if (_daysSinceLastInteraction >= 28) {
-            return 15; // Maximum reward after 28 days
+            return baseRewardRate; // Maximum reward after 28 days
         }
-        return 3 + (_daysSinceLastInteraction * 12) / 28; // Linear increase from 3 to 15
+        return minReward + ((_daysSinceLastInteraction * 12) / 28) ** 18; // Linear increase from minReward to baseRewardRate
     }
 
     /**
@@ -295,11 +298,11 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         int256 randomizedReward = int256(_reward) +
             (randomAdjustment * int256(_reward)) /
             100; // +/- 20%
-        if (randomizedReward < 2) {
-            return 2;
+        if (randomizedReward < int(minReward) && minReward > 0) {
+            return minReward - 1e18;
         }
-        if (randomizedReward > 18) {
-            return 18;
+        if (randomizedReward > int(baseRewardRate)) {
+            return baseRewardRate + 3e18;
         }
         return uint256(randomizedReward);
     }
@@ -318,8 +321,15 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         uint256 daysSinceLastInteraction = (block.timestamp -
             userInteraction.lastRewardTime) / 1 days;
 
-        uint256 interactionRewardValue = interactionReward(interactionCount);
-        uint256 timeRewardValue = timeReward(daysSinceLastInteraction);
+        uint256 interactionRewardValue;
+        uint256 timeRewardValue;
+        if (interactionCount == 0) {
+            timeRewardValue = baseRewardRate;
+            interactionRewardValue = baseRewardRate;
+        } else {
+            interactionCount = interactionReward(interactionCount);
+            timeRewardValue = timeReward(daysSinceLastInteraction);
+        }
 
         // Combine the rewards with weights (35% interactions, 65% time)
         uint256 combinedReward = (interactionRewardValue *
@@ -344,6 +354,29 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         address _userB
     ) public view returns (uint256) {
         return userInteractions[hashAddresses(_userA, _userB)].lastRewardTime;
+    }
+
+    function getInteractionCount(
+        address _userA,
+        address _userB
+    ) public view returns (uint256) {
+        return userInteractions[hashAddresses(_userA, _userB)].interactionCount;
+    }
+
+    function getMinReward() public view returns (uint256) {
+        return minReward;
+    }
+
+    function getConsumerAddress() public view returns (address) {
+        return s_blueSocialConsumer;
+    }
+
+    function getBaseRewardRate() public view returns (uint256) {
+        return baseRewardRate;
+    }
+
+    function getMinimumRewardInterval() public view returns (uint256) {
+        return minimumRewardInterval;
     }
 
     /**
@@ -389,6 +422,15 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      */
     function setBaseRewardRate(uint256 _baseRewardRate) public onlyOwner {
         baseRewardRate = _baseRewardRate;
+    }
+
+    /**
+     *
+     * @param _minReward new minimum reward
+     * @dev Sets the minimum reward
+     */
+    function setMinReward(uint256 _minReward) public onlyOwner {
+        minReward = _minReward;
     }
 
     /**

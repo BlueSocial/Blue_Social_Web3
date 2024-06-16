@@ -39,7 +39,12 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
     error UnexpectedRequestID(bytes32 requestId);
 
     // Event to log responses
-    event Response(bytes32 indexed requestId, Message message, bytes response, bytes err);
+    event Response(
+        bytes32 indexed requestId,
+        Message message,
+        bytes response,
+        bytes err
+    );
 
     // Router address - Hardcoded for Sepolia
     // Check to get the router address for your supported network https://docs.chain.link/chainlink-functions/supported-networks
@@ -48,35 +53,62 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
     // JavaScript source code
     // Fetch character name from the Star Wars API.
     // Documentation: https://swapi.info/people
-    string poiProofSource = "const sender = args[0];" "const receiver = args[1];" "const requestType = args[2];"
+    string poiProofSource =
+        "const sender = args[0];"
+        "const receiver = args[1];"
+        "const requestType = args[2];"
         "const apiResponse = await Functions.makeHttpRequest({"
         "url:`https://www.profiles.blue/api/getProofOfInteractionData?SenderAddress=${sender}&ReceiverAddress=${receiver}`"
-        "});" "if(apiResponse.error){" "console.error(apiResponse.error);" "throw new Error(apiResponse.error);" "}"
-        "const { data } = apiResponse;" "const sender_id = data.sender_id;" "const receiver_id = data.receiver_id;"
-        "const timestamp = data.timestamp;" "const unixTimestamp = Math.floor(new Date(timestamp) / 1000);"
+        "});"
+        "if(apiResponse.error){"
+        "console.error(apiResponse.error);"
+        "throw new Error(apiResponse.error);"
+        "}"
+        "const { data } = apiResponse;"
+        "const sender_id = data.sender_id;"
+        "const receiver_id = data.receiver_id;"
+        "const timestamp = data.timestamp;"
+        "const unixTimestamp = Math.floor(new Date(timestamp) / 1000);"
         "const resultString = JSON.stringify({ sender_id, receiver_id, timestamp: unixTimestamp ,sender, receiver, requestType});"
-        "const encodedResult = Functions.encodeString(resultString);" "return encodedResult;";
+        "const encodedResult = Functions.encodeString(resultString);"
+        "return encodedResult;";
 
-    string exchangeProofSource = "const sender = args[0];" "const receiver = args[1];"
-        "const requestType = args[2];" "const apiResponse = await Functions.makeHttpRequest({"
+    string exchangeProofSource =
+        "const sender = args[0];"
+        "const receiver = args[1];"
+        "const requestType = args[2];"
+        "const apiResponse = await Functions.makeHttpRequest({"
         "url:`https://www.profiles.blue/api/getInteractionBstData?SenderAddress=${sender}&ReceiverAddress=${receiver}`"
-        "});" "if(apiResponse.error){" "console.error(apiResponse.error);" "throw new Error(apiResponse.error);" "}"
-        "const { data } = apiResponse;" "const sender_id = data.sender_id;" "const receiver_id = data.receiver_id;"
-        "const timestamp = data.timestamp;" "const unixTimestamp = Math.floor(new Date(timestamp) / 1000);"
+        "});"
+        "if(apiResponse.error){"
+        "console.error(apiResponse.error);"
+        "throw new Error(apiResponse.error);"
+        "}"
+        "const { data } = apiResponse;"
+        "const sender_id = data.sender_id;"
+        "const receiver_id = data.receiver_id;"
+        "const timestamp = data.timestamp;"
+        "const unixTimestamp = Math.floor(new Date(timestamp) / 1000);"
         "const resultString = JSON.stringify({ sender_id, receiver_id, timestamp: unixTimestamp ,sender, receiver,requestType});"
-        "const encodedResult = Functions.encodeString(resultString);" "return encodedResult;";
+        "const encodedResult = Functions.encodeString(resultString);"
+        "return encodedResult;";
 
     //Callback gas limit
     uint32 gasLimit = 300000;
 
     // donID - Hardcoded for Sepolia
     // Check to get the donID for your supported network https://docs.chain.link/chainlink-functions/supported-networks
-    bytes32 donID = 0x66756e2d626173652d7365706f6c69612d310000000000000000000000000000;
+    bytes32 donID =
+        0x66756e2d626173652d7365706f6c69612d310000000000000000000000000000;
 
     /**
      * @notice Initializes the contract with the Chainlink router address and sets the contract owner
      */
-    constructor() FunctionsClient(router) ConfirmedOwner(msg.sender) {}
+    constructor(
+        address _proofOfInteraction
+    ) FunctionsClient(router) ConfirmedOwner(_proofOfInteraction) {
+        proofOfInteraction = ProofOfInteraction(_proofOfInteraction);
+    }
 
     /**
      * @notice Sends an HTTP request for amount information
@@ -84,11 +116,10 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
      * @param args The arguments to pass to the HTTP request
      * @return requestId The ID of the request
      */
-    function sendRequest(uint64 subscriptionId, string[] calldata args)
-        external
-        onlyOwner
-        returns (bytes32 requestId)
-    {
+    function sendRequest(
+        uint64 subscriptionId,
+        string[] calldata args
+    ) external onlyOwner returns (bytes32 requestId) {
         FunctionsRequest.Request memory req;
         string memory requestType = args[2];
         //requesttype is 3rd argument and should be POI or EXC
@@ -103,7 +134,12 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         if (args.length > 0) req.setArgs(args); // Set the arguments for the request
 
         // Send the request and store the request ID
-        s_lastRequestId = _sendRequest(req.encodeCBOR(), subscriptionId, gasLimit, donID);
+        s_lastRequestId = _sendRequest(
+            req.encodeCBOR(),
+            subscriptionId,
+            gasLimit,
+            donID
+        );
 
         return s_lastRequestId;
         // use use mapping to store the requestid request[requestid] = user address
@@ -115,7 +151,11 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
      * @param response The HTTP response data
      * @param err Any errors from the Functions request
      */
-    function fulfillRequest(bytes32 requestId, bytes memory response, bytes memory err) internal override {
+    function fulfillRequest(
+        bytes32 requestId,
+        bytes memory response,
+        bytes memory err
+    ) internal override {
         //TODO: Verify the need for this logic
         if (s_lastRequestId != requestId) {
             revert UnexpectedRequestID(requestId); // Check if request IDs match
@@ -132,7 +172,10 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
             string memory sender,
             string memory receiver,
             string memory requestType
-        ) = abi.decode(response, (string, string, uint256, string, string, string));
+        ) = abi.decode(
+                response,
+                (string, string, uint256, string, string, string)
+            );
 
         Message memory message = Message({
             sender_id: sender_id,
