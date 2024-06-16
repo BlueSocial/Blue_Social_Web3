@@ -4,6 +4,8 @@ pragma solidity ^0.8.25;
 import {Script} from "forge-std/Script.sol";
 import {ProofOfInteraction} from "../src/ProofOfInteraction.sol";
 import {HelperConfig} from "./HelperConfig.s.sol";
+import {BlueToken} from "test/mocks/BlueToken.sol";
+import {BlueSocialConsumer} from "../src/BlueSocialConsumer.sol";
 
 // import {AddConsumer, CreateSubscription, FundSubscription} from "./Interactions.s.sol";
 
@@ -24,6 +26,9 @@ contract DeployPOIRewards is Script {
         ) = helperConfig.activeNetworkConfig();
 
         vm.startBroadcast();
+        // blueToken.mint(initialOwner, 1000000e18);
+        // blueToken.mint(_treasury, 25000000e18);
+
         ProofOfInteraction proofOfInteraction = new ProofOfInteraction(
             initialOwner,
             _rewardRate,
@@ -35,6 +40,14 @@ contract DeployPOIRewards is Script {
             _consumerContract,
             _chainlinkSubId
         );
+
+        // Deploy chainlink consumer contract
+
+        BlueSocialConsumer consumer = new BlueSocialConsumer(
+            address(proofOfInteraction)
+        );
+
+        proofOfInteraction.setConsumer(address(consumer));
         vm.stopBroadcast();
 
         // We already have a broadcast in here

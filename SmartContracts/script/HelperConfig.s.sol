@@ -21,7 +21,7 @@ contract HelperConfig is Script {
     }
 
     constructor() {
-        if (block.chainid == 11155111) {
+        if (block.chainid == 84532) {
             activeNetworkConfig = getSepoliaBaseConfig();
         } else {
             activeNetworkConfig = getOrCreateAnvilEthConfig();
@@ -34,14 +34,14 @@ contract HelperConfig is Script {
         returns (NetworkConfig memory sepoliaNetworkConfig)
     {
         sepoliaNetworkConfig = NetworkConfig({
-            initialOwner: 0x0000000000000000000000000000000000000000,
+            initialOwner: 0x7dcDB90152E4d3a100C431257D8671e747ed4Fb5,
             _rewardRate: 10e18,
             _minReward: 3e18,
             _iceBreakerFee: 1e18,
             _minimumRewardInterval: 1 days,
-            _blueToken: 0x0000000000000000000000000000000000000000,
-            _treasury: 0x0000000000000000000000000000000000000000,
-            _consumerContract: 0x0000000000000000000000000000000000000000,
+            _blueToken: address(0x7dbc1368A738091Da8E960818bDb9488efaB925A),
+            _treasury: 0x54eB82E4Ec25eb173E1668dd5aB0943904d87331,
+            _consumerContract: address(0),
             _chainlinkSubId: 0
         });
     }

@@ -141,7 +141,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
      * @param _invitee address of the user to send the ice breaker to
      * @dev Sends an ice breaker fee to the treasury and emits an event
      */
-    function sendIceBreaker(address _invitee) external nonReentrant {
+    function sendIceBreaker(address _invitee) public nonReentrant {
         i_blueToken.safeTransferFrom(msg.sender, s_treasury, iceBreakerFee);
         emit IceBreakerSent(msg.sender, _invitee);
     }
