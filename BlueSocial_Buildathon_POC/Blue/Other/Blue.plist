@@ -2,14 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
+	<key>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
 &lt;string&gt;To scan nearest iBeacons&lt;/string&gt;
 &lt;/plist&gt;
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
-&lt;plist version=&quot;1.0&quot;&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
 &lt;string&gt;To scan nearest iBeacons&lt;/string&gt;
 &lt;/plist&gt;
 NSLocationAlwaysUsageDescription - 2</key>
@@ -165,24 +165,25 @@ NSLocationAlwaysUsageDescription - 2</key>
 	<string>To share your profile to your contacts</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SF-Pro-Rounded-Regular.otf</string>
-		<string>SF-Pro-Rounded-Ultralight.otf</string>
-		<string>SF-Pro-Rounded-Thin.otf</string>
-		<string>SF-Pro-Rounded-Light.otf</string>
-		<string>SF-Pro-Rounded-Medium.otf</string>
-		<string>SF-Pro-Rounded-Semibold.otf</string>
-		<string>SF-Pro-Rounded-Bold.otf</string>
-		<string>SF-Pro-Rounded-Heavy.otf</string>
-		<string>SF-Pro-Rounded-Black.otf</string>
-		<string>SFProText-Medium.ttf</string>
-		<string>SFProText-Semibold.ttf</string>
-		<string>SFProText-Regular.ttf</string>
-		<string>SFProText-Bold.ttf</string>
 		<string>Comfortaa-Bold.ttf</string>
 		<string>Comfortaa-Light.ttf</string>
 		<string>Comfortaa-Regular.ttf</string>
 		<string>Comfortaa-Medium.ttf</string>
 		<string>Comfortaa-SemiBold.ttf</string>
+		<string>RedHatDisplay-BlackItalic.ttf</string>
+		<string>RedHatDisplay-Black.ttf</string>
+		<string>RedHatDisplay-ExtraBold.ttf</string>
+		<string>RedHatDisplay-MediumItalic.ttf</string>
+		<string>RedHatDisplay-SemiBoldItalic.ttf</string>
+		<string>RedHatDisplay-Italic.ttf</string>
+		<string>RedHatDisplay-Bold.ttf</string>
+		<string>RedHatDisplay-LightItalic.ttf</string>
+		<string>RedHatDisplay-ExtraBoldItalic.ttf</string>
+		<string>RedHatDisplay-Medium.ttf</string>
+		<string>RedHatDisplay-SemiBold.ttf</string>
+		<string>RedHatDisplay-BoldItalic.ttf</string>
+		<string>RedHatDisplay-Light.ttf</string>
+		<string>RedHatDisplay-Regular.ttf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

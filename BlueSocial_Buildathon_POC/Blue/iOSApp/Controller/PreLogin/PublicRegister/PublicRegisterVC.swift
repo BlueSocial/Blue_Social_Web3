@@ -39,7 +39,7 @@ class PublicRegisterVC: BaseVC {
     
     @IBOutlet weak var lblPrivacyPolicy: UILabel!
     @IBOutlet weak var lblLogin: UILabel!
-    @IBOutlet weak var btnRegister: UIButton!
+    @IBOutlet weak var btnRegister: UIButton! // btnCreateWallet
     
     // ----------------------------------------------------------
     //                       MARK: - Property -
@@ -156,8 +156,9 @@ class PublicRegisterVC: BaseVC {
         }
     }
     
+    // Now btnRegister referred as btnCreateWallet
     @IBAction func onBtnRegister(_ sender: UIButton) {
-        print("Button Register Tapped")
+        print("Button Create Wallet Tapped")
         
         // FirstName & LastName min 2 max 20 char
         // Invalid email
@@ -190,13 +191,6 @@ class PublicRegisterVC: BaseVC {
             self.viewPhoneNumber.BordeHeight = 1
             self.viewPhoneNumber.BordeColor = UIColor.appRed_E13C3C()
             self.issErrorFoundInPhoneNum = true
-            
-        } else if let email = self.txtEmail.text, email.hasSuffix(".edu") {
-            self.lblErrorEmail.isHidden = false
-            self.lblErrorEmail.text = alertSelectStudentNetwork
-            self.viewEmail.BordeHeight = 1
-            self.viewEmail.BordeColor = UIColor.appRed_E13C3C()
-            self.isErrorFoundInEmail = true
             
         } else {
             self.view.endEditing(true)
@@ -311,6 +305,7 @@ class PublicRegisterVC: BaseVC {
                         
                     } else if response?.status == "Success" && msg == "" {
                         
+                        // Here can implement react code which gives us Wallet Address
                         self.navigateToPhoneOTPVerificationVC()
                     }
                 }
@@ -392,6 +387,28 @@ class PublicRegisterVC: BaseVC {
         }
     }
     
+    private func callUpdateWalletAddressAPI() {
+        
+        let url = BaseURL + APIName.kUpdateWalletAddress
+        
+        let param: [String: Any] = [APIParamKey.kUser_Id: UserLocalData.UserID,
+                                    APIParamKey.kWalletAddress: ""]
+        
+        self.showCustomLoader()
+        APIManager.postAPIRequest(postURL: url, parameters: param) { (isSucess, msg, response) in
+            self.hideCustomLoader()
+            
+            if isSucess {
+                
+                
+                
+            } else {
+                
+                self.showAlertWithOKButton(message: msg)
+            }
+        }
+    }
+    
     // ----------------------------------------------------------
     //                       MARK: - Function -
     // ----------------------------------------------------------
@@ -421,11 +438,19 @@ class PublicRegisterVC: BaseVC {
             self.btnRegister.setTitleColor(UIColor.appWhite_FFFFFF(), for: .normal)
             self.btnRegister.isUserInteractionEnabled = true
             
+//            if let image = UIImage(systemName: "ic_create_wallet") {
+//                self.btnRegister.setImage(image, for: .normal)
+//            }
+            
         } else {
             
             self.btnRegister.backgroundColor = UIColor.appGray_F2F3F4()
             self.btnRegister.setTitleColor(UIColor.appGray_98A2B1(), for: .normal)
             self.btnRegister.isUserInteractionEnabled = false
+            
+//            if let image = UIImage(systemName: "ic_create_wallet") {
+//                self.btnRegister.setImage(image, for: .normal)
+//            }
         }
     }
     

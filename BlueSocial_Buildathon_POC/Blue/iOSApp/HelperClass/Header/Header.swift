@@ -118,6 +118,8 @@ struct APIName {
     
     // NearbyDistanceVC | NearbyDirectionVC
     static var kNotifyInRangeUser = "notifyInRangeUser"
+    
+    static var kUpdateWalletAddress = "updateWalletAddress"
 }
 
 struct APIParamKey {
@@ -208,7 +210,7 @@ struct APIParamKey {
     static let kIsIntialTransaction                 = "isIntialTransaction"
     static let kSubscription_date                   = "subscription_date"
     static let kCurrentTimestamp                    = "current_timestamp"
-    
+    static let kWalletAddress                       = "wallet_address"
 }
 
 struct APIFlagValue {

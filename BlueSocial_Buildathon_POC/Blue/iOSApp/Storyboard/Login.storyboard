@@ -341,7 +341,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfk-YO-msE">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="131" height="50"/>
                                                                                 <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="16"/>
                                                                                 <state key="normal" title="Forgot Password?">
                                                                                     <color key="titleColor" name="appGray_#98A2B1"/>
@@ -1201,8 +1201,8 @@ and Terms of Use</string>
                                                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDV-6j-4EL" customClass="CustomButton" customModule="Blue" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
                                                                                 <color key="backgroundColor" name="appGray_#F2F3F4"/>
-                                                                                <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
-                                                                                <state key="normal" title="Register">
+                                                                                <fontDescription key="fontDescription" name="RedHatDisplay-Bold" family="Red Hat Display" pointSize="16"/>
+                                                                                <state key="normal" title="   Create Wallet" image="ic_create_wallet">
                                                                                     <color key="titleColor" name="appGray_#98A2B1"/>
                                                                                 </state>
                                                                                 <userDefinedRuntimeAttributes>
@@ -4235,7 +4235,7 @@ when they meet you</string>
             <size key="intrinsicContentSize" width="67" height="34"/>
         </designable>
         <designable name="VDV-6j-4EL">
-            <size key="intrinsicContentSize" width="61" height="34"/>
+            <size key="intrinsicContentSize" width="136.5" height="24"/>
         </designable>
         <designable name="VlB-lG-PqV">
             <size key="intrinsicContentSize" width="30" height="34"/>
@@ -4275,6 +4275,7 @@ when they meet you</string>
         <image name="ic_close" width="16" height="16"/>
         <image name="ic_coins" width="92.5" height="118"/>
         <image name="ic_cone" width="176" height="227"/>
+        <image name="ic_create_wallet" width="24.5" height="24"/>
         <image name="ic_email_signup" width="272" height="272"/>
         <image name="ic_eye_open" width="24" height="24"/>
         <image name="ic_logo_square" width="160" height="160"/>

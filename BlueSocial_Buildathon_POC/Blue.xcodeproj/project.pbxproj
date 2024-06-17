@@ -148,7 +148,6 @@
 		19230E532636D5960008800C /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 043DE73424DD061200315361 /* CoreNFC.framework */; };
 		19230E562636D5960008800C /* ms-icon-70x70.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61E24DD033800315361 /* ms-icon-70x70.png */; };
 		19230E572636D5960008800C /* social-network-tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63524DD033800315361 /* social-network-tumblr.png */; };
-		19230E592636D5960008800C /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD04F2632BEBB007A4935 /* SF-Pro-Rounded-Ultralight.otf */; };
 		19230E5A2636D5960008800C /* placeholder.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE64124DD033800315361 /* placeholder.js */; };
 		19230E5C2636D5960008800C /* checkbox.css in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B424DD033800315361 /* checkbox.css */; };
 		19230E5D2636D5960008800C /* blue-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5FE24DD033800315361 /* blue-logo.png */; };
@@ -158,19 +157,14 @@
 		19230E612636D5960008800C /* Download_on_the_App_Store.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60124DD033800315361 /* Download_on_the_App_Store.png */; };
 		19230E622636D5960008800C /* apple-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61424DD033800315361 /* apple-icon.png */; };
 		19230E632636D5960008800C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043DE52824DD017C00315361 /* LaunchScreen.storyboard */; };
-		19230E642636D5960008800C /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0642632BF11007A4935 /* SF-Pro-Rounded-Black.otf */; };
-		19230E652636D5960008800C /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0612632BF07007A4935 /* SF-Pro-Rounded-Heavy.otf */; };
 		19230E6A2636D5960008800C /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5BA24DD033800315361 /* fa-brands-400.ttf */; };
-		19230E6B2636D5960008800C /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD05E2632BEF9007A4935 /* SF-Pro-Rounded-Bold.otf */; };
 		19230E6D2636D5960008800C /* fa-regular-400.eot in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C224DD033800315361 /* fa-regular-400.eot */; };
-		19230E6F2636D5960008800C /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196724ED063B000B4B1B /* SFProText-Medium.ttf */; };
 		19230E702636D5960008800C /* ActivateBlueSmartDeviceDark.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3E53ED0925C2A48B00A6181F /* ActivateBlueSmartDeviceDark.mp4 */; };
 		19230E712636D5960008800C /* favicon-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61624DD033800315361 /* favicon-16x16.png */; };
 		19230E752636D5960008800C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 047FEA5B2580B6E800BEEEF5 /* LICENSE */; };
 		19230E772636D5960008800C /* share-safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62B24DD033800315361 /* share-safari.png */; };
 		19230E792636D5960008800C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED35AC225A432E200B0A719 /* Login.storyboard */; };
 		19230E7A2636D5960008800C /* effect.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63D24DD033800315361 /* effect.js */; };
-		19230E7B2636D5960008800C /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD05B2632BEED007A4935 /* SF-Pro-Rounded-Semibold.otf */; };
 		19230E7D2636D5960008800C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 042428EE2546B20300D46394 /* README.md */; };
 		19230E7F2636D5960008800C /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61A24DD033800315361 /* manifest.json */; };
 		19230E822636D5960008800C /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61924DD033800315361 /* favicon.ico */; };
@@ -186,7 +180,6 @@
 		19230E902636D5960008800C /* fa-solid-900.eot in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C724DD033800315361 /* fa-solid-900.eot */; };
 		19230E912636D5960008800C /* blue-team.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5FF24DD033800315361 /* blue-team.png */; };
 		19230E922636D5960008800C /* social-network-pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63124DD033800315361 /* social-network-pinterest.png */; };
-		19230E942636D5960008800C /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196A24ED063B000B4B1B /* SFProText-Bold.ttf */; };
 		19230E962636D5960008800C /* BlueApp.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 041DF6C725556F8900BB7818 /* BlueApp.sqlite */; };
 		19230E972636D5960008800C /* fa-light-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5BF24DD033800315361 /* fa-light-300.ttf */; };
 		19230E982636D5960008800C /* apple-icon-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61024DD033800315361 /* apple-icon-60x60.png */; };
@@ -213,13 +206,11 @@
 		19230EB72636D5960008800C /* social-network-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62D24DD033800315361 /* social-network-facebook.png */; };
 		19230EB82636D5960008800C /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5F924DD033800315361 /* help.html */; };
 		19230EB92636D5960008800C /* share-googleplus.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62824DD033800315361 /* share-googleplus.png */; };
-		19230EBD2636D5960008800C /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0582632BEE3007A4935 /* SF-Pro-Rounded-Medium.otf */; };
 		19230EBE2636D5960008800C /* kloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61F24DD033800315361 /* kloader.gif */; };
 		19230EBF2636D5960008800C /* social-network-skype.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63224DD033800315361 /* social-network-skype.png */; };
 		19230EC02636D5960008800C /* apple-icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60D24DD033800315361 /* apple-icon-152x152.png */; };
 		19230EC22636D5960008800C /* blue-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5FD24DD033800315361 /* blue-1.png */; };
 		19230EC32636D5960008800C /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C924DD033800315361 /* fa-solid-900.ttf */; };
-		19230EC42636D5960008800C /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0522632BEC9007A4935 /* SF-Pro-Rounded-Thin.otf */; };
 		19230EC52636D5960008800C /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B224DD033800315361 /* bootstrap.css */; };
 		19230EC62636D5960008800C /* ms-icon-310x310.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61D24DD033800315361 /* ms-icon-310x310.png */; };
 		19230EC72636D5960008800C /* fa-brands-400.eot in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B824DD033800315361 /* fa-brands-400.eot */; };
@@ -239,9 +230,7 @@
 		19230EDF2636D5960008800C /* set.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62524DD033800315361 /* set.png */; };
 		19230EE02636D5960008800C /* jquery.ui.mouse.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63F24DD033800315361 /* jquery.ui.mouse.js */; };
 		19230EE12636D5960008800C /* share-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62C24DD033800315361 /* share-twitter.png */; };
-		19230EE22636D5960008800C /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0552632BED8007A4935 /* SF-Pro-Rounded-Light.otf */; };
 		19230EE52636D5960008800C /* android-icon-96x96.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60924DD033800315361 /* android-icon-96x96.png */; };
-		19230EE62636D5960008800C /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196824ED063B000B4B1B /* SFProText-Semibold.ttf */; };
 		19230EE82636D5960008800C /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63C24DD033800315361 /* bootstrap.min.js */; };
 		19230EE92636D5960008800C /* android-icon-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60724DD033800315361 /* android-icon-48x48.png */; };
 		19230EEA2636D5960008800C /* img_TutorialScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043DE64824DD033800315361 /* img_TutorialScreen1.gif */; };
@@ -252,14 +241,12 @@
 		19230EF02636D5960008800C /* logout.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62224DD033800315361 /* logout.svg */; };
 		19230EF12636D5960008800C /* tip.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63924DD033800315361 /* tip.png */; };
 		19230EF22636D5960008800C /* social-network-linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63024DD033800315361 /* social-network-linkedin.png */; };
-		19230EF32636D5960008800C /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD04C2632BEAC007A4935 /* SF-Pro-Rounded-Regular.otf */; };
 		19230EF42636D5960008800C /* fa-solid-900.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C824DD033800315361 /* fa-solid-900.svg */; };
 		19230EF52636D5960008800C /* apple-icon-precomposed.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61324DD033800315361 /* apple-icon-precomposed.png */; };
 		19230EF62636D5960008800C /* share-email.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62624DD033800315361 /* share-email.png */; };
 		19230EF72636D5960008800C /* share-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62724DD033800315361 /* share-facebook.png */; };
 		19230EF82636D5960008800C /* fa-brands-400.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B924DD033800315361 /* fa-brands-400.svg */; };
 		19230EF92636D5960008800C /* careAnimation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 043DE64724DD033800315361 /* careAnimation.mp4 */; };
-		19230EFD2636D5960008800C /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196924ED063B000B4B1B /* SFProText-Regular.ttf */; };
 		19230EFF2636D5960008800C /* apple-icon-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60C24DD033800315361 /* apple-icon-144x144.png */; };
 		19230F012636D5960008800C /* terms.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63824DD033800315361 /* terms.svg */; };
 		192D55EC265B75EA008F2DB3 /* TourPageMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192D55EA265B75EA008F2DB3 /* TourPageMasterViewController.swift */; };
@@ -359,7 +346,6 @@
 		19CEFC7626B1961600DA431A /* ms-icon-70x70.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61E24DD033800315361 /* ms-icon-70x70.png */; };
 		19CEFC7726B1961600DA431A /* social-network-tumblr.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63524DD033800315361 /* social-network-tumblr.png */; };
 		19CEFC7826B1961600DA431A /* BlueProUserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1931B243263AB8A7006BAF23 /* BlueProUserProfile.storyboard */; };
-		19CEFC7A26B1961600DA431A /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD04F2632BEBB007A4935 /* SF-Pro-Rounded-Ultralight.otf */; };
 		19CEFC7B26B1961600DA431A /* placeholder.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE64124DD033800315361 /* placeholder.js */; };
 		19CEFC7D26B1961600DA431A /* checkbox.css in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B424DD033800315361 /* checkbox.css */; };
 		19CEFC7E26B1961600DA431A /* blue-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5FE24DD033800315361 /* blue-logo.png */; };
@@ -369,20 +355,15 @@
 		19CEFC8226B1961600DA431A /* Download_on_the_App_Store.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60124DD033800315361 /* Download_on_the_App_Store.png */; };
 		19CEFC8326B1961600DA431A /* apple-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61424DD033800315361 /* apple-icon.png */; };
 		19CEFC8426B1961600DA431A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 043DE52824DD017C00315361 /* LaunchScreen.storyboard */; };
-		19CEFC8526B1961600DA431A /* SF-Pro-Rounded-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0642632BF11007A4935 /* SF-Pro-Rounded-Black.otf */; };
 		19CEFC8626B1961600DA431A /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19CA7EC8264A54060058A4FB /* Discover.storyboard */; };
-		19CEFC8726B1961600DA431A /* SF-Pro-Rounded-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0612632BF07007A4935 /* SF-Pro-Rounded-Heavy.otf */; };
 		19CEFC8C26B1961600DA431A /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5BA24DD033800315361 /* fa-brands-400.ttf */; };
-		19CEFC8D26B1961600DA431A /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD05E2632BEF9007A4935 /* SF-Pro-Rounded-Bold.otf */; };
 		19CEFC9026B1961600DA431A /* fa-regular-400.eot in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C224DD033800315361 /* fa-regular-400.eot */; };
-		19CEFC9226B1961600DA431A /* SFProText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196724ED063B000B4B1B /* SFProText-Medium.ttf */; };
 		19CEFC9326B1961600DA431A /* ActivateBlueSmartDeviceDark.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3E53ED0925C2A48B00A6181F /* ActivateBlueSmartDeviceDark.mp4 */; };
 		19CEFC9426B1961600DA431A /* favicon-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61624DD033800315361 /* favicon-16x16.png */; };
 		19CEFC9826B1961600DA431A /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 047FEA5B2580B6E800BEEEF5 /* LICENSE */; };
 		19CEFC9A26B1961600DA431A /* share-safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62B24DD033800315361 /* share-safari.png */; };
 		19CEFC9C26B1961600DA431A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3ED35AC225A432E200B0A719 /* Login.storyboard */; };
 		19CEFC9D26B1961600DA431A /* effect.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63D24DD033800315361 /* effect.js */; };
-		19CEFC9E26B1961600DA431A /* SF-Pro-Rounded-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD05B2632BEED007A4935 /* SF-Pro-Rounded-Semibold.otf */; };
 		19CEFCA026B1961600DA431A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 042428EE2546B20300D46394 /* README.md */; };
 		19CEFCA226B1961600DA431A /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61A24DD033800315361 /* manifest.json */; };
 		19CEFCA626B1961600DA431A /* TourScreenPanel5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 19E03D9F265CB4560066B4A7 /* TourScreenPanel5.mp4 */; };
@@ -399,7 +380,6 @@
 		19CEFCB526B1961600DA431A /* fa-solid-900.eot in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C724DD033800315361 /* fa-solid-900.eot */; };
 		19CEFCB626B1961600DA431A /* blue-team.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5FF24DD033800315361 /* blue-team.png */; };
 		19CEFCB726B1961600DA431A /* social-network-pinterest.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63124DD033800315361 /* social-network-pinterest.png */; };
-		19CEFCB926B1961600DA431A /* SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196A24ED063B000B4B1B /* SFProText-Bold.ttf */; };
 		19CEFCBB26B1961600DA431A /* BlueApp.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 041DF6C725556F8900BB7818 /* BlueApp.sqlite */; };
 		19CEFCBC26B1961600DA431A /* fa-light-300.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5BF24DD033800315361 /* fa-light-300.ttf */; };
 		19CEFCBD26B1961600DA431A /* apple-icon-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61024DD033800315361 /* apple-icon-60x60.png */; };
@@ -430,13 +410,11 @@
 		19CEFCE026B1961600DA431A /* social-network-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62D24DD033800315361 /* social-network-facebook.png */; };
 		19CEFCE126B1961600DA431A /* help.html in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5F924DD033800315361 /* help.html */; };
 		19CEFCE226B1961600DA431A /* share-googleplus.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62824DD033800315361 /* share-googleplus.png */; };
-		19CEFCE626B1961600DA431A /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0582632BEE3007A4935 /* SF-Pro-Rounded-Medium.otf */; };
 		19CEFCE726B1961600DA431A /* kloader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61F24DD033800315361 /* kloader.gif */; };
 		19CEFCE926B1961600DA431A /* social-network-skype.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63224DD033800315361 /* social-network-skype.png */; };
 		19CEFCEA26B1961600DA431A /* apple-icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60D24DD033800315361 /* apple-icon-152x152.png */; };
 		19CEFCEC26B1961600DA431A /* blue-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5FD24DD033800315361 /* blue-1.png */; };
 		19CEFCED26B1961600DA431A /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C924DD033800315361 /* fa-solid-900.ttf */; };
-		19CEFCEE26B1961600DA431A /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0522632BEC9007A4935 /* SF-Pro-Rounded-Thin.otf */; };
 		19CEFCEF26B1961600DA431A /* bootstrap.css in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B224DD033800315361 /* bootstrap.css */; };
 		19CEFCF026B1961600DA431A /* ms-icon-310x310.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61D24DD033800315361 /* ms-icon-310x310.png */; };
 		19CEFCF126B1961600DA431A /* fa-brands-400.eot in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B824DD033800315361 /* fa-brands-400.eot */; };
@@ -457,9 +435,7 @@
 		19CEFD0A26B1961600DA431A /* set.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62524DD033800315361 /* set.png */; };
 		19CEFD0B26B1961600DA431A /* jquery.ui.mouse.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63F24DD033800315361 /* jquery.ui.mouse.js */; };
 		19CEFD0C26B1961600DA431A /* share-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62C24DD033800315361 /* share-twitter.png */; };
-		19CEFD0D26B1961600DA431A /* SF-Pro-Rounded-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD0552632BED8007A4935 /* SF-Pro-Rounded-Light.otf */; };
 		19CEFD1026B1961600DA431A /* android-icon-96x96.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60924DD033800315361 /* android-icon-96x96.png */; };
-		19CEFD1126B1961600DA431A /* SFProText-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196824ED063B000B4B1B /* SFProText-Semibold.ttf */; };
 		19CEFD1326B1961600DA431A /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63C24DD033800315361 /* bootstrap.min.js */; };
 		19CEFD1426B1961600DA431A /* android-icon-48x48.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60724DD033800315361 /* android-icon-48x48.png */; };
 		19CEFD1526B1961600DA431A /* img_TutorialScreen1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 043DE64824DD033800315361 /* img_TutorialScreen1.gif */; };
@@ -470,14 +446,12 @@
 		19CEFD1B26B1961600DA431A /* logout.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62224DD033800315361 /* logout.svg */; };
 		19CEFD1C26B1961600DA431A /* tip.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63924DD033800315361 /* tip.png */; };
 		19CEFD1D26B1961600DA431A /* social-network-linkedin.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63024DD033800315361 /* social-network-linkedin.png */; };
-		19CEFD1E26B1961600DA431A /* SF-Pro-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 197AD04C2632BEAC007A4935 /* SF-Pro-Rounded-Regular.otf */; };
 		19CEFD1F26B1961600DA431A /* fa-solid-900.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5C824DD033800315361 /* fa-solid-900.svg */; };
 		19CEFD2126B1961600DA431A /* apple-icon-precomposed.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE61324DD033800315361 /* apple-icon-precomposed.png */; };
 		19CEFD2226B1961600DA431A /* share-email.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62624DD033800315361 /* share-email.png */; };
 		19CEFD2326B1961600DA431A /* share-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE62724DD033800315361 /* share-facebook.png */; };
 		19CEFD2426B1961600DA431A /* fa-brands-400.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE5B924DD033800315361 /* fa-brands-400.svg */; };
 		19CEFD2526B1961600DA431A /* careAnimation.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 043DE64724DD033800315361 /* careAnimation.mp4 */; };
-		19CEFD2926B1961600DA431A /* SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 347D196924ED063B000B4B1B /* SFProText-Regular.ttf */; };
 		19CEFD2B26B1961600DA431A /* apple-icon-144x144.png in Resources */ = {isa = PBXBuildFile; fileRef = 043DE60C24DD033800315361 /* apple-icon-144x144.png */; };
 		19CEFD2D26B1961600DA431A /* terms.svg in Resources */ = {isa = PBXBuildFile; fileRef = 043DE63824DD033800315361 /* terms.svg */; };
 		19E03DA1265CB4560066B4A7 /* TourScreenPanel1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 19E03D9B265CB4550066B4A7 /* TourScreenPanel1.mp4 */; };
@@ -1010,15 +984,6 @@
 		1956E6EC265B65F6005CA15B /* Tour.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tour.storyboard; sourceTree = "<group>"; };
 		196E032226B04FAB0036F1A2 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		1975ED99262FEF510015D4A4 /* CardConnectConsumerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CardConnectConsumerSDK.framework; sourceTree = "<group>"; };
-		197AD04C2632BEAC007A4935 /* SF-Pro-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Regular.otf"; sourceTree = "<group>"; };
-		197AD04F2632BEBB007A4935 /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
-		197AD0522632BEC9007A4935 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
-		197AD0552632BED8007A4935 /* SF-Pro-Rounded-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Light.otf"; sourceTree = "<group>"; };
-		197AD0582632BEE3007A4935 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
-		197AD05B2632BEED007A4935 /* SF-Pro-Rounded-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Semibold.otf"; sourceTree = "<group>"; };
-		197AD05E2632BEF9007A4935 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
-		197AD0612632BF07007A4935 /* SF-Pro-Rounded-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Heavy.otf"; sourceTree = "<group>"; };
-		197AD0642632BF11007A4935 /* SF-Pro-Rounded-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Black.otf"; sourceTree = "<group>"; };
 		197BF9C8264522BC00F09985 /* ActivateNFC.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ActivateNFC.gif; sourceTree = "<group>"; };
 		19CA7EC8264A54060058A4FB /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		19CEFD3626B1961600DA431A /* Blue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1038,10 +1003,6 @@
 		3477D34D2B0CE30A008CD5CD /* ViewMoreUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewMoreUserVC.swift; sourceTree = "<group>"; };
 		3477D3502B0CE366008CD5CD /* InteractionCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionCVCell.swift; sourceTree = "<group>"; };
 		3477D3512B0CE366008CD5CD /* InteractionCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionCVCell.xib; sourceTree = "<group>"; };
-		347D196724ED063B000B4B1B /* SFProText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Medium.ttf"; sourceTree = "<group>"; };
-		347D196824ED063B000B4B1B /* SFProText-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Semibold.ttf"; sourceTree = "<group>"; };
-		347D196924ED063B000B4B1B /* SFProText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Regular.ttf"; sourceTree = "<group>"; };
-		347D196A24ED063B000B4B1B /* SFProText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProText-Bold.ttf"; sourceTree = "<group>"; };
 		3482B72C2502287E004BFE36 /* DevicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesModel.swift; sourceTree = "<group>"; };
 		3495607D253B1C8E00CB15CD /* AppPurchaseFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppPurchaseFeature.swift; sourceTree = "<group>"; };
 		349B31C1253EC32F00E9262D /* SocialListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialListModel.swift; sourceTree = "<group>"; };
@@ -1295,7 +1256,6 @@
 				043DE53624DD033800315361 /* HelperClass */,
 				043DE54824DD033800315361 /* Controller */,
 				043DE5A524DD033800315361 /* Model */,
-				043DE58224DD033800315361 /* Fonts */,
 				043DE59524DD033800315361 /* Library */,
 				043DE5AF24DD033800315361 /* Resources */,
 			);
@@ -1466,15 +1426,6 @@
 				043DE57D24DD033800315361 /* SplashVC.swift */,
 			);
 			path = Splash;
-			sourceTree = "<group>";
-		};
-		043DE58224DD033800315361 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				19F44F8F26283A5000E8706C /* SFProRounded */,
-				347D196624ED063B000B4B1B /* SFFont */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		043DE59524DD033800315361 /* Library */ = {
@@ -2063,22 +2014,6 @@
 			path = PageMaster;
 			sourceTree = "<group>";
 		};
-		19F44F8F26283A5000E8706C /* SFProRounded */ = {
-			isa = PBXGroup;
-			children = (
-				197AD04C2632BEAC007A4935 /* SF-Pro-Rounded-Regular.otf */,
-				197AD04F2632BEBB007A4935 /* SF-Pro-Rounded-Ultralight.otf */,
-				197AD0522632BEC9007A4935 /* SF-Pro-Rounded-Thin.otf */,
-				197AD0552632BED8007A4935 /* SF-Pro-Rounded-Light.otf */,
-				197AD0582632BEE3007A4935 /* SF-Pro-Rounded-Medium.otf */,
-				197AD05B2632BEED007A4935 /* SF-Pro-Rounded-Semibold.otf */,
-				197AD05E2632BEF9007A4935 /* SF-Pro-Rounded-Bold.otf */,
-				197AD0612632BF07007A4935 /* SF-Pro-Rounded-Heavy.otf */,
-				197AD0642632BF11007A4935 /* SF-Pro-Rounded-Black.otf */,
-			);
-			path = SFProRounded;
-			sourceTree = "<group>";
-		};
 		34040FC224FE2BE00018374C /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -2087,17 +2022,6 @@
 				18FE2F9B2861F0CF00735655 /* UserLocalData.swift */,
 			);
 			path = BaseClass;
-			sourceTree = "<group>";
-		};
-		347D196624ED063B000B4B1B /* SFFont */ = {
-			isa = PBXGroup;
-			children = (
-				347D196724ED063B000B4B1B /* SFProText-Medium.ttf */,
-				347D196824ED063B000B4B1B /* SFProText-Semibold.ttf */,
-				347D196924ED063B000B4B1B /* SFProText-Regular.ttf */,
-				347D196A24ED063B000B4B1B /* SFProText-Bold.ttf */,
-			);
-			path = SFFont;
 			sourceTree = "<group>";
 		};
 		4B931FC087FBE883BBB7DF7B /* Pods */ = {
@@ -2709,7 +2633,6 @@
 				19230E562636D5960008800C /* ms-icon-70x70.png in Resources */,
 				19230E572636D5960008800C /* social-network-tumblr.png in Resources */,
 				191A7C24263C1CE300B5D63A /* BlueProUserProfile.storyboard in Resources */,
-				19230E592636D5960008800C /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				84C0C0CB2BA1CA2B00D10658 /* Referral.storyboard in Resources */,
 				19230E5A2636D5960008800C /* placeholder.js in Resources */,
 				19230E5C2636D5960008800C /* checkbox.css in Resources */,
@@ -2721,14 +2644,10 @@
 				19230E612636D5960008800C /* Download_on_the_App_Store.png in Resources */,
 				19230E622636D5960008800C /* apple-icon.png in Resources */,
 				19230E632636D5960008800C /* LaunchScreen.storyboard in Resources */,
-				19230E642636D5960008800C /* SF-Pro-Rounded-Black.otf in Resources */,
 				19CA7ECA264A54060058A4FB /* Discover.storyboard in Resources */,
-				19230E652636D5960008800C /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				19230E6A2636D5960008800C /* fa-brands-400.ttf in Resources */,
-				19230E6B2636D5960008800C /* SF-Pro-Rounded-Bold.otf in Resources */,
 				84E736622B304FA9000EBCD7 /* Blue.plist in Resources */,
 				19230E6D2636D5960008800C /* fa-regular-400.eot in Resources */,
-				19230E6F2636D5960008800C /* SFProText-Medium.ttf in Resources */,
 				19230E702636D5960008800C /* ActivateBlueSmartDeviceDark.mp4 in Resources */,
 				19230E712636D5960008800C /* favicon-16x16.png in Resources */,
 				19230E752636D5960008800C /* LICENSE in Resources */,
@@ -2736,7 +2655,6 @@
 				84BA1ADA2ACC5CB9001917DC /* InsightProfileClvCell.xib in Resources */,
 				19230E792636D5960008800C /* Login.storyboard in Resources */,
 				19230E7A2636D5960008800C /* effect.js in Resources */,
-				19230E7B2636D5960008800C /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				19230E7D2636D5960008800C /* README.md in Resources */,
 				19230E7F2636D5960008800C /* manifest.json in Resources */,
 				19E03DA9265CB4560066B4A7 /* TourScreenPanel5.mp4 in Resources */,
@@ -2755,7 +2673,6 @@
 				19230E902636D5960008800C /* fa-solid-900.eot in Resources */,
 				19230E912636D5960008800C /* blue-team.png in Resources */,
 				19230E922636D5960008800C /* social-network-pinterest.png in Resources */,
-				19230E942636D5960008800C /* SFProText-Bold.ttf in Resources */,
 				19230E962636D5960008800C /* BlueApp.sqlite in Resources */,
 				19230E972636D5960008800C /* fa-light-300.ttf in Resources */,
 				19230E982636D5960008800C /* apple-icon-60x60.png in Resources */,
@@ -2794,7 +2711,6 @@
 				19230EB72636D5960008800C /* social-network-facebook.png in Resources */,
 				19230EB82636D5960008800C /* help.html in Resources */,
 				19230EB92636D5960008800C /* share-googleplus.png in Resources */,
-				19230EBD2636D5960008800C /* SF-Pro-Rounded-Medium.otf in Resources */,
 				19230EBE2636D5960008800C /* kloader.gif in Resources */,
 				19230EBF2636D5960008800C /* social-network-skype.png in Resources */,
 				19230EC02636D5960008800C /* apple-icon-152x152.png in Resources */,
@@ -2803,7 +2719,6 @@
 				19230EC32636D5960008800C /* fa-solid-900.ttf in Resources */,
 				84BA1ADC2ACC5CB9001917DC /* CalenderTblCell.xib in Resources */,
 				842AA7A42B5F81360095E805 /* Blue-Society-Logo.gif in Resources */,
-				19230EC42636D5960008800C /* SF-Pro-Rounded-Thin.otf in Resources */,
 				19230EC52636D5960008800C /* bootstrap.css in Resources */,
 				19230EC62636D5960008800C /* ms-icon-310x310.png in Resources */,
 				19230EC72636D5960008800C /* fa-brands-400.eot in Resources */,
@@ -2829,9 +2744,7 @@
 				19230EE02636D5960008800C /* jquery.ui.mouse.js in Resources */,
 				19230EE12636D5960008800C /* share-twitter.png in Resources */,
 				842AA7A22B5F81360095E805 /* Blue-Society-Logo-2.gif in Resources */,
-				19230EE22636D5960008800C /* SF-Pro-Rounded-Light.otf in Resources */,
 				19230EE52636D5960008800C /* android-icon-96x96.png in Resources */,
-				19230EE62636D5960008800C /* SFProText-Semibold.ttf in Resources */,
 				8419116C2AC6ED570088A807 /* GeneralInfoCVCell.xib in Resources */,
 				19230EE82636D5960008800C /* bootstrap.min.js in Resources */,
 				19230EE92636D5960008800C /* android-icon-48x48.png in Resources */,
@@ -2845,7 +2758,6 @@
 				846533FE2B304EE100AFD93B /* GoogleService-Info.plist in Resources */,
 				19230EF12636D5960008800C /* tip.png in Resources */,
 				19230EF22636D5960008800C /* social-network-linkedin.png in Resources */,
-				19230EF32636D5960008800C /* SF-Pro-Rounded-Regular.otf in Resources */,
 				19230EF42636D5960008800C /* fa-solid-900.svg in Resources */,
 				19230EF52636D5960008800C /* apple-icon-precomposed.png in Resources */,
 				19230EF62636D5960008800C /* share-email.png in Resources */,
@@ -2853,7 +2765,6 @@
 				19230EF82636D5960008800C /* fa-brands-400.svg in Resources */,
 				19230EF92636D5960008800C /* careAnimation.mp4 in Resources */,
 				847390CE2B85BEBC00359329 /* style.json in Resources */,
-				19230EFD2636D5960008800C /* SFProText-Regular.ttf in Resources */,
 				19230EFF2636D5960008800C /* apple-icon-144x144.png in Resources */,
 				19230F012636D5960008800C /* terms.svg in Resources */,
 				84DA50DB2ABACBB500CE9FEC /* SettingTblCell.xib in Resources */,
@@ -2869,7 +2780,6 @@
 				19CEFC7726B1961600DA431A /* social-network-tumblr.png in Resources */,
 				847390CD2B85BEBC00359329 /* style.json in Resources */,
 				19CEFC7826B1961600DA431A /* BlueProUserProfile.storyboard in Resources */,
-				19CEFC7A26B1961600DA431A /* SF-Pro-Rounded-Ultralight.otf in Resources */,
 				84BA1AD92ACC5CB9001917DC /* InsightProfileClvCell.xib in Resources */,
 				84C0C0CA2BA1CA2B00D10658 /* Referral.storyboard in Resources */,
 				18D8EF762A712DD10067223B /* RedHatDisplay-Italic.ttf in Resources */,
@@ -2886,14 +2796,10 @@
 				849704C62BAC630500BEB90A /* InterestTopicCVCell.xib in Resources */,
 				19CEFC8426B1961600DA431A /* LaunchScreen.storyboard in Resources */,
 				84DA50DA2ABACBB500CE9FEC /* SettingTblCell.xib in Resources */,
-				19CEFC8526B1961600DA431A /* SF-Pro-Rounded-Black.otf in Resources */,
 				19CEFC8626B1961600DA431A /* Discover.storyboard in Resources */,
-				19CEFC8726B1961600DA431A /* SF-Pro-Rounded-Heavy.otf in Resources */,
 				19CEFC8C26B1961600DA431A /* fa-brands-400.ttf in Resources */,
 				18B8E21028D9E0810049B9BB /* ic_ShareProfile.jpg in Resources */,
-				19CEFC8D26B1961600DA431A /* SF-Pro-Rounded-Bold.otf in Resources */,
 				19CEFC9026B1961600DA431A /* fa-regular-400.eot in Resources */,
-				19CEFC9226B1961600DA431A /* SFProText-Medium.ttf in Resources */,
 				3477D3542B0CE366008CD5CD /* InteractionCVCell.xib in Resources */,
 				19CEFC9326B1961600DA431A /* ActivateBlueSmartDeviceDark.mp4 in Resources */,
 				18D8EF772A712DD10067223B /* RedHatDisplay-Bold.ttf in Resources */,
@@ -2905,7 +2811,6 @@
 				19CEFC9A26B1961600DA431A /* share-safari.png in Resources */,
 				19CEFC9C26B1961600DA431A /* Login.storyboard in Resources */,
 				19CEFC9D26B1961600DA431A /* effect.js in Resources */,
-				19CEFC9E26B1961600DA431A /* SF-Pro-Rounded-Semibold.otf in Resources */,
 				19CEFCA026B1961600DA431A /* README.md in Resources */,
 				19CEFCA226B1961600DA431A /* manifest.json in Resources */,
 				19CEFCA626B1961600DA431A /* TourScreenPanel5.mp4 in Resources */,
@@ -2924,7 +2829,6 @@
 				19CEFCB526B1961600DA431A /* fa-solid-900.eot in Resources */,
 				19CEFCB626B1961600DA431A /* blue-team.png in Resources */,
 				19CEFCB726B1961600DA431A /* social-network-pinterest.png in Resources */,
-				19CEFCB926B1961600DA431A /* SFProText-Bold.ttf in Resources */,
 				18D8EF7D2A712DD10067223B /* RedHatDisplay-Light.ttf in Resources */,
 				18114CD02A7152B2005C966C /* InterestChipCVCell.xib in Resources */,
 				19CEFCBB26B1961600DA431A /* BlueApp.sqlite in Resources */,
@@ -2964,13 +2868,11 @@
 				19CEFCE226B1961600DA431A /* share-googleplus.png in Resources */,
 				18D8EF7E2A712DD10067223B /* RedHatDisplay-Regular.ttf in Resources */,
 				34CB3CBC2B0F5D11002A99E1 /* SocialLinkCountFooterTableViewCell.xib in Resources */,
-				19CEFCE626B1961600DA431A /* SF-Pro-Rounded-Medium.otf in Resources */,
 				19CEFCE726B1961600DA431A /* kloader.gif in Resources */,
 				19CEFCE926B1961600DA431A /* social-network-skype.png in Resources */,
 				19CEFCEA26B1961600DA431A /* apple-icon-152x152.png in Resources */,
 				19CEFCEC26B1961600DA431A /* blue-1.png in Resources */,
 				19CEFCED26B1961600DA431A /* fa-solid-900.ttf in Resources */,
-				19CEFCEE26B1961600DA431A /* SF-Pro-Rounded-Thin.otf in Resources */,
 				19CEFCEF26B1961600DA431A /* bootstrap.css in Resources */,
 				19CEFCF026B1961600DA431A /* ms-icon-310x310.png in Resources */,
 				19CEFCF126B1961600DA431A /* fa-brands-400.eot in Resources */,
@@ -3004,9 +2906,7 @@
 				19CEFD0A26B1961600DA431A /* set.png in Resources */,
 				19CEFD0B26B1961600DA431A /* jquery.ui.mouse.js in Resources */,
 				19CEFD0C26B1961600DA431A /* share-twitter.png in Resources */,
-				19CEFD0D26B1961600DA431A /* SF-Pro-Rounded-Light.otf in Resources */,
 				19CEFD1026B1961600DA431A /* android-icon-96x96.png in Resources */,
-				19CEFD1126B1961600DA431A /* SFProText-Semibold.ttf in Resources */,
 				842AA7A32B5F81360095E805 /* Blue-Society-Logo.gif in Resources */,
 				19CEFD1326B1961600DA431A /* bootstrap.min.js in Resources */,
 				19CEFD1426B1961600DA431A /* android-icon-48x48.png in Resources */,
@@ -3020,7 +2920,6 @@
 				19CEFD1B26B1961600DA431A /* logout.svg in Resources */,
 				19CEFD1C26B1961600DA431A /* tip.png in Resources */,
 				19CEFD1D26B1961600DA431A /* social-network-linkedin.png in Resources */,
-				19CEFD1E26B1961600DA431A /* SF-Pro-Rounded-Regular.otf in Resources */,
 				19CEFD1F26B1961600DA431A /* fa-solid-900.svg in Resources */,
 				19CEFD2126B1961600DA431A /* apple-icon-precomposed.png in Resources */,
 				19CEFD2226B1961600DA431A /* share-email.png in Resources */,
@@ -3031,7 +2930,6 @@
 				18D8EF752A712DD10067223B /* RedHatDisplay-SemiBoldItalic.ttf in Resources */,
 				046105492B346C1700249AF7 /* Comfortaa-Bold.ttf in Resources */,
 				843C936B2AB4877500490F7D /* InteractionTblCell.xib in Resources */,
-				19CEFD2926B1961600DA431A /* SFProText-Regular.ttf in Resources */,
 				19CEFD2B26B1961600DA431A /* apple-icon-144x144.png in Resources */,
 				19CEFD2D26B1961600DA431A /* terms.svg in Resources */,
 				18D8EF712A712DD10067223B /* RedHatDisplay-BlackItalic.ttf in Resources */,
