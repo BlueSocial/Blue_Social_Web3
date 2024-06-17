@@ -1,0 +1,6 @@
+framework module CardConnectConsumerSDK {
+  umbrella header "CardConnectConsumerSDK.h"
+
+  export *
+  module * { export * }
+}

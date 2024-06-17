@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Rounded-Semibold.otf">
+            <string>SFProRounded-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SocialLinkCountFooterTableViewCell" id="KGk-i7-Jjw" customClass="SocialLinkCountFooterTableViewCell" customModule="Blue" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X19-Lw-scq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="102"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDQ-m0-Veu">
+                                <rect key="frame" x="24" y="26" width="272" height="50"/>
+                                <color key="backgroundColor" name="DashboardColor_(0,125,250,0.1)"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H8f-dB-OQS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProRounded-Semibold" family="SF Pro Rounded" pointSize="17"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="View all">
+                                    <color key="titleColor" name="DashboardUpdatedTextColor_(0,130,253)"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="viewCornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onViewAllButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cvm-gq-udd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baN-6c-PlU">
+                                <rect key="frame" x="24" y="98" width="272" height="1"/>
+                                <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="7nO-2r-zC7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="baN-6c-PlU" firstAttribute="leading" secondItem="gDQ-m0-Veu" secondAttribute="leading" id="3FA-8U-onF"/>
+                            <constraint firstAttribute="height" constant="102" id="9zR-tB-Z14"/>
+                            <constraint firstAttribute="trailing" secondItem="gDQ-m0-Veu" secondAttribute="trailing" constant="24" id="HgZ-ah-WIf"/>
+                            <constraint firstItem="gDQ-m0-Veu" firstAttribute="top" secondItem="X19-Lw-scq" secondAttribute="top" constant="26" id="RVX-cs-YUX"/>
+                            <constraint firstItem="gDQ-m0-Veu" firstAttribute="leading" secondItem="X19-Lw-scq" secondAttribute="leading" constant="24" id="bgA-ge-1Wl"/>
+                            <constraint firstItem="baN-6c-PlU" firstAttribute="trailing" secondItem="gDQ-m0-Veu" secondAttribute="trailing" id="gZ0-gv-c4Y"/>
+                            <constraint firstItem="baN-6c-PlU" firstAttribute="top" secondItem="gDQ-m0-Veu" secondAttribute="bottom" constant="22" id="hxE-Rb-fSz"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="baN-6c-PlU" secondAttribute="bottom" id="xT2-AK-Qeu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="X19-Lw-scq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="YSo-Ex-FKP"/>
+                    <constraint firstAttribute="trailing" secondItem="X19-Lw-scq" secondAttribute="trailing" id="lxE-j0-ljV"/>
+                    <constraint firstAttribute="bottom" secondItem="X19-Lw-scq" secondAttribute="bottom" id="qig-Uz-VhP"/>
+                    <constraint firstItem="X19-Lw-scq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zBI-Cm-gXd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="viewAllButton" destination="gDQ-m0-Veu" id="Jyd-Lc-XqM"/>
+            </connections>
+            <point key="canvasLocation" x="-29" y="57"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="DashboardColor_(0,125,250,0.1)">
+            <color red="0.0" green="0.49019607843137253" blue="0.98039215686274506" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DashboardUpdatedTextColor_(0,130,253)">
+            <color red="0.0" green="0.50980392156862742" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
