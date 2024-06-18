@@ -8,6 +8,7 @@ import UIKit
 import SKCountryPicker
 import MobileCoreServices
 import FirebaseAuth
+import React
 
 class PublicRegisterVC: BaseVC {
     
@@ -63,7 +64,6 @@ class PublicRegisterVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupReactNativeButton() // @ethan
         
         self.hideAllErrorLabels()
         self.setupUIForBtnRegister()
@@ -79,6 +79,8 @@ class PublicRegisterVC: BaseVC {
         
         self.txtFirstName.keyboardType = .alphabet
         self.txtLastName.keyboardType = .alphabet
+        
+        setupReactNativeButton() // @ethan
     }
     
     deinit {
@@ -160,16 +162,22 @@ class PublicRegisterVC: BaseVC {
 
     // @ethan
     func setupReactNativeButton() {
-      let jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension: nil)!
-      let rootView = RCTRootView(
-        bundleURL: jsCodeLocation,
-        moduleName: "MyReactNativeApp",
-        initialProperties: nil,
-        launchOptions: nil
-      )
-      rootView.frame = CGRect(x: 20, y: 100, width: 200, height: 50) // Adjust the frame as needed
-      self.view.addSubview(rootView)
-    }
+            let jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension: nil)!
+            let rootView = RCTRootView(
+                bundleURL: jsCodeLocation,
+                moduleName: "ConnectWalletButton",
+                initialProperties: nil,
+                launchOptions: nil
+            )
+            
+            let buttonWidth: CGFloat = self.view.frame.width - 40
+            let buttonHeight: CGFloat = 50
+            let buttonX = CGFloat(20)
+            let buttonY = self.view.frame.height - buttonHeight - 100 // Adjust Y position as needed
+            
+            rootView.frame = CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight)
+            self.view.addSubview(rootView)
+        }
 
     
     @IBAction func onBtnRegister(_ sender: UIButton) {
@@ -413,9 +421,9 @@ class PublicRegisterVC: BaseVC {
     // ----------------------------------------------------------
     private func setupUIForBtnRegister() {
         
-        self.btnRegister.backgroundColor = UIColor.appGray_F2F3F4()
-        self.btnRegister.setTitleColor(UIColor.appGray_98A2B1(), for: .normal)
-        self.btnRegister.isUserInteractionEnabled = false
+        //self.btnRegister.backgroundColor = UIColor.appGray_F2F3F4()
+        //self.btnRegister.setTitleColor(UIColor.appGray_98A2B1(), for: .normal)
+        //self.btnRegister.isUserInteractionEnabled = false
     }
     
     private func updateRegisterButtonState() {

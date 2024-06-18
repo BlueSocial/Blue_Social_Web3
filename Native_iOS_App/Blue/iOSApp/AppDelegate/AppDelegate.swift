@@ -26,30 +26,17 @@ import Instabug
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var bridge: RCTBridge?
     var notificationDelegate: PushNotificationDelegate?
     var notificationReceivedDelegate: ReceivedPushNotificationDelegate?
-    
-    // @ethan
-    func setupReactNative() {
-      let jsCodeLocation: URL
-      jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension: nil)!
-
-      let bridge = RCTBridge(bundleURL: jsCodeLocation, moduleProvider: nil, launchOptions: nil)
-      let rootView = RCTRootView(bridge: bridge!, moduleName: "MyReactNativeApp", initialProperties: nil)
-
-      self.window = UIWindow(frame: UIScreen.main.bounds)
-      let rootViewController = UIViewController()
-      rootViewController.view = rootView
-      self.window?.rootViewController = rootViewController
-      self.window?.makeKeyAndVisible()
-    }
     
     // ----------------------------------------------------------
     //                       MARK: - Application Life Cycle -
     // ----------------------------------------------------------
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        setupReactNative()
+        let jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension: nil)
+        bridge = RCTBridge(bundleURL: jsCodeLocation, moduleProvider: nil, launchOptions: launchOptions)
         
         BaseVC.sharedInstance.setQRCodeURLForWidget()
         UserLocalData.isbtnBLEOn = true

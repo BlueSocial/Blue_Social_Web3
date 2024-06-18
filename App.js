@@ -1,14 +1,12 @@
+// file: App.tsx
+
+// this needs to be imported before anything else
+import "@thirdweb-dev/react-native-adapter";
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
-import CustomButton from './CustomButton';
+import ConnectWalletButton from './ConnectWalletButton';
 
 const App = () => {
-  return (
-    <SafeAreaView>
-      <Text>This is connected with react native :)</Text>
-      <CustomButton />
-    </SafeAreaView>
-  );
+  return <ConnectWalletButton />;
 };
 
 export default App;

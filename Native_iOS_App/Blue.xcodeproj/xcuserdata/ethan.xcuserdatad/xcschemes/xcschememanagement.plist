@@ -12,7 +12,7 @@
 		<key>Blue-WidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>117</integer>
+			<integer>118</integer>
 		</dict>
 		<key>Blue.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,12 +22,12 @@
 		<key>BlueNotificationExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>119</integer>
+			<integer>117</integer>
 		</dict>
 		<key>BlueNotificationService.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>118</integer>
+			<integer>119</integer>
 		</dict>
 		<key>OneSignalNotificationServiceExtension.xcscheme_^#shared#^_</key>
 		<dict>
