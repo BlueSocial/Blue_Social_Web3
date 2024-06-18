@@ -531,6 +531,9 @@ class ProfileVC: BaseVC {
                         DispatchQueue.main.async {
                             self.waitingForNearByApprove()
                         }
+                        
+                    } else {
+                        self.view.makeToast(msg)
                     }
                 }
                 
@@ -539,7 +542,7 @@ class ProfileVC: BaseVC {
                 let breakTheIcePopupVC = BreakTheIcePopupVC.instantiate(fromAppStoryboard: .NearbyInteraction)
                 breakTheIcePopupVC.nearbyUserID = self.nearByUserId
                 
-                breakTheIcePopupVC.breakTheICEButtonTapped { isUserBreak in
+                breakTheIcePopupVC.breakTheICEButtonTapped { isUserBreak, msg in
                     
                     if isUserBreak {
                         
@@ -547,6 +550,9 @@ class ProfileVC: BaseVC {
                         DispatchQueue.main.async {
                             self.waitingForNearByApprove()
                         }
+                        
+                    } else {
+                        self.view.makeToast(msg)
                     }
                 }
                 breakTheIcePopupVC.view.backgroundColor = UIColor.clear

@@ -162,7 +162,6 @@ class PublicRegisterVC: BaseVC {
         
         // FirstName & LastName min 2 max 20 char
         // Invalid email
-        // Please select a student network to register with this email if isValidEmail + .edu i.e. email@stanford.edu
         
         if self.txtFirstName.text?.trime().count ?? 0 < 2 {
             self.lblErrorFirstName.isHidden = false
@@ -306,6 +305,7 @@ class PublicRegisterVC: BaseVC {
                     } else if response?.status == "Success" && msg == "" {
                         
                         // Here can implement react code which gives us Wallet Address
+                        
                         self.navigateToPhoneOTPVerificationVC()
                     }
                 }

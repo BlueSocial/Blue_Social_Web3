@@ -22,7 +22,7 @@ class BreakTheIcePopupVC: BaseVC {
     private var player: AVPlayer?
     var nearbyUserID: String?
     
-    typealias BreakTheICEButtonCallBack = ((Bool) -> Void)
+    typealias BreakTheICEButtonCallBack = ((Bool, String) -> Void)
     fileprivate var breakTheICEButtonCompletion: BreakTheICEButtonCallBack?
     var uwbToken = ""
     
@@ -49,7 +49,7 @@ class BreakTheIcePopupVC: BaseVC {
         NotificationCenter.default.removeObserver(self)
         
         if self.breakTheICEButtonCompletion != nil {
-            self.breakTheICEButtonCompletion!(false)
+            self.breakTheICEButtonCompletion!(false, "")
         }
     }
     
@@ -111,7 +111,13 @@ class BreakTheIcePopupVC: BaseVC {
             if isSuccess {
                 
                 if self.breakTheICEButtonCompletion != nil {
-                    self.breakTheICEButtonCompletion!(true)
+                    self.breakTheICEButtonCompletion!(true, msg ?? "")
+                }
+                
+            } else {
+                
+                if self.breakTheICEButtonCompletion != nil {
+                    self.breakTheICEButtonCompletion!(false, msg ?? "")
                 }
             }
             
