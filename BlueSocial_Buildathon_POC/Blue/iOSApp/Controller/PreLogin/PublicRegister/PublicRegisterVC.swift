@@ -372,11 +372,10 @@ class PublicRegisterVC: BaseVC {
                     
                     self.hideCustomLoader()
                     
-                    // Here can implement ReactNative code of Create Wallet screen, which gives us Wallet Address. Then we can navigate to TourPageMasterViewController using below 3 lines of code.
+                    // To get and access registered userID you can use: UserLocalData.UserID
+                    // To get and access registered email you can use: loginUser?.email
                     
-                    let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
-                    tourPageMasterVC.isFromRegister = true
-                    self.navigationController?.pushViewController(tourPageMasterVC, animated: true)
+                    // From here you need to implement the code to navigate to create wallet screen of RN. Once you verify the email OTP in RN screen then you need to call the callUpdateWalletAddressAPI() function which will call the api to update the wallet address into web2 database. You will find that function code below.
                 }
                 
             } else {
@@ -400,7 +399,9 @@ class PublicRegisterVC: BaseVC {
             
             if isSucess {
                 
-                
+                let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
+                tourPageMasterVC.isFromRegister = true
+                self.navigationController?.pushViewController(tourPageMasterVC, animated: true)
                 
             } else {
                 
