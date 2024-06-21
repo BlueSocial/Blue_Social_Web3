@@ -7,6 +7,14 @@ import dotenv from "dotenv";
 import path from "path";
 import POIABI from "../abi/poi.json";
 
+interface RequestBody {
+  senderAddress: string;
+  senderId: string;
+  receiverAddress: string;
+  receiverId: string;
+  timestamp: Date | string;
+}
+
 // Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
@@ -26,7 +34,7 @@ console.log("🚀 ~ PORT:", PORT);
 app.use(helmet());
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["https://www.profiles.blue", "*"],
   })
 );
 app.use(express.json({ limit: "10kb" }));
@@ -38,17 +46,33 @@ const apiLimiter = rateLimit({
   message: "Too many requests from this IP, please try again after 15 minutes",
 });
 
-app.use("/api/v1/", apiLimiter);
+app.use("/", apiLimiter);
 
 // Routes
-app.get("/", (req: Request, res: Response) => {
+app.get("/api/v1/", (req: Request, res: Response) => {
   res.json({ message: "you have reached the blue social engine master" });
 });
 
-app.post("/master", async (req: Request, res: Response) => {
-  //const unixTimestamp = Math.floor(new Date(timestamp) / 1000);
-  const { sender, receiver, timestamp } = req.body;
+app.post("api/v1/poi", async (req: Request, res: Response) => {
+  const {
+    senderAddress,
+    senderId,
+    receiverAddress,
+    receiverId,
+    timestamp,
+  }: RequestBody = req.body as RequestBody;
+
+  // Parse the timestamp to a Date object if it's a string
+  const date = new Date(timestamp);
+
+  if (isNaN(date.getTime())) {
+    throw new Error("Invalid timestamp");
+  }
+
+  const unixTimestamp = Math.floor(date.getTime() / 1000);
+
   try {
+    //verify required parameters
     if (!TW_ACCESS_TOKEN || !TW_BACKEND_WALLET || !TW_ENGINE_URL)
       throw new Error("Missing required parameters");
 
@@ -63,8 +87,14 @@ app.post("/master", async (req: Request, res: Response) => {
           "x-backend-wallet-address": TW_BACKEND_WALLET,
         },
         body: JSON.stringify({
-          functionName: "",
-          args: [sender, receiver, timestamp],
+          functionName: "rewardUsers",
+          args: [
+            senderAddress,
+            Number(senderId),
+            receiverAddress,
+            Number(receiverId),
+            unixTimestamp,
+          ],
           txOverrides: {
             gas: "530000",
             maxFeePerGas: "1000000000",
