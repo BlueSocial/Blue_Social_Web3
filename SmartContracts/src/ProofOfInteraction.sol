@@ -47,7 +47,6 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
     mapping(uint256 hashedUserIds => Interaction interaction)
         public userInteractions;
-    mapping(bytes32 => InteractionParticipants) private requests;
 
     /*        */
     /* EVENTS */
