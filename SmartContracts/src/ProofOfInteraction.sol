@@ -12,27 +12,29 @@ import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
  * @notice A contract that rewards users for Proof of Interaction
  */
 contract ProofOfInteraction is Ownable, ReentrancyGuard {
+    ///////////////////////////////////////////////////////////
     /*                    */
     /*  ADDING LIBRARIES  */
     /*                    */
+    ///////////////////////////////////////////////////////////
 
     using SafeERC20 for IERC20;
 
+    ///////////////////////////////////////////////////////////
     /*                    */
     /*  TYPE DEFINITIONS  */
     /*                    */
+    ///////////////////////////////////////////////////////////
     struct Interaction {
         uint128 interactionCount; // uint128 to pack the struct into 32 bytes
         uint128 lastRewardTime;
     }
 
-    struct InteractionParticipants {
-        address userA;
-        address userB;
-    }
+    ///////////////////////////////////////////////////////////
     /*                   */
     /*  STATE VARIABLES  */
     /*                   */
+    ///////////////////////////////////////////////////////////
 
     IERC20 immutable i_blueToken;
     address private s_treasury;
@@ -45,12 +47,13 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     uint256 public iceBreakerFee;
     uint256 public minimumRewardInterval;
 
-    mapping(uint256 hashedUserIds => Interaction interaction)
-        public userInteractions;
-
+    mapping(uint256 hashedUserIds => Interaction) public userInteractions;
+    ///////////////////////////////////////////////////////////
     /*        */
     /* EVENTS */
     /*        */
+    ///////////////////////////////////////////////////////////
+
     event TipSent(
         address indexed sender,
         address indexed receiver,
@@ -60,9 +63,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     event BalanceWithdrawn(address indexed owner, uint256 amount);
     event IceBreakerSent(address indexed user, address indexed invitee);
 
+    ///////////////////////////////////////////////////////////
     /*          */
     /*  ERRORS  */
     /*          */
+    ///////////////////////////////////////////////////////////
+
     error RewardTransferFailedError();
     error RewardIntervalError();
     error IceBreakerFeeError();
@@ -71,9 +77,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     error TipUserError();
     error WithdrawalError();
 
+    ///////////////////////////////////////////////////////////
     /*             */
     /*  MODIFIERS  */
     /*             */
+    ///////////////////////////////////////////////////////////
+
     modifier onlyAfterRewardInterval(uint256 _userA, uint256 _userB) {
         uint256 hashedUserIds = hashUserIds(_userA, _userB);
         if (
@@ -93,9 +102,11 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         _;
     }
 
+    ///////////////////////////////////////////////////////////
     /*             */
     /*  FUNCTIONS  */
     /*             */
+    ///////////////////////////////////////////////////////////
 
     /**
      *
@@ -284,7 +295,7 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
     /**
      *
-     * @param _hashedUserIds hashed addresses of the users in the interaction
+     * @param _hashedUserIds hashed user IDs of the users in the interaction
      * @return reward value for the interaction
      * @dev Calculates the reward value for the interaction between two users
      */
@@ -320,8 +331,8 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
 
     /**
      *
-     * @param _userA address of the user to get the last reward time for
-     * @param _userB address of the other user in the interaction
+     * @param _userA user ID of the user to get the last reward time for
+     * @param _userB user ID of the other user in the interaction
      * @return last reward time for the user
      */
     function getLastRewardTime(
@@ -331,6 +342,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         return userInteractions[hashUserIds(_userA, _userB)].lastRewardTime;
     }
 
+    /**
+     *
+     * @param _userA user ID of the first user
+     * @param _userB user ID of the second user
+     * @return interaction count between the two users
+     */
     function getInteractionCount(
         uint256 _userA,
         uint256 _userB
@@ -338,18 +355,30 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         return userInteractions[hashUserIds(_userA, _userB)].interactionCount;
     }
 
+    /**
+     * @return the minimum reward
+     */
     function getMinReward() public view returns (uint256) {
         return minReward;
     }
 
+    /**
+     * @return the admin address
+     */
     function getAdminAddress() public view returns (address) {
         return s_blueSocialAdmin;
     }
 
+    /**
+     * @return the base reward rate
+     */
     function getBaseRewardRate() public view returns (uint256) {
         return baseRewardRate;
     }
 
+    /**
+     * @return the minimum reward interval
+     */
     function getMinimumRewardInterval() public view returns (uint256) {
         return minimumRewardInterval;
     }
