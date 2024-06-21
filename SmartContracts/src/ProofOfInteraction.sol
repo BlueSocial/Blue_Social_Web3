@@ -252,7 +252,14 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         if (_interactionCount >= 50) {
             return minReward; // Minimum reward after 50 interactions
         }
-        return baseRewardRate - ((_interactionCount * 12) / 50) ** 18; // Asymptotic decrease from baseRewardRate to minReward
+        uint256 reward = baseRewardRate -
+            ((_interactionCount * (baseRewardRate - minimumRewardInterval)) /
+                50); // Asymptotic decrease from baseRewardRate to minReward
+
+        if (reward < minReward) {
+            return minReward;
+        }
+        return reward;
     }
 
     /**
@@ -267,7 +274,9 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         if (_daysSinceLastInteraction >= 28) {
             return baseRewardRate; // Maximum reward after 28 days
         }
-        return minReward + ((_daysSinceLastInteraction * 12) / 28) ** 18; // Linear increase from minReward to baseRewardRate
+        return
+            minReward +
+            ((_daysSinceLastInteraction * (baseRewardRate - minReward)) / 28); // Linear increase from minReward to baseRewardRate
     }
 
     /**
@@ -313,15 +322,13 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
             timeRewardValue = baseRewardRate;
             interactionRewardValue = baseRewardRate;
         } else {
-            interactionCount = interactionReward(interactionCount);
+            interactionRewardValue = interactionReward(interactionCount);
             timeRewardValue = timeReward(daysSinceLastInteraction);
         }
 
         // Combine the rewards with weights (35% interactions, 65% time)
-        uint256 combinedReward = (interactionRewardValue *
-            s_interactionCountWeight +
-            timeRewardValue *
-            s_timeWeight) / 100;
+        uint256 combinedReward = ((interactionRewardValue *
+            s_interactionCountWeight) + (timeRewardValue * s_timeWeight)) / 100;
 
         // Add randomization
         uint256 finalReward = addRandomization(combinedReward);

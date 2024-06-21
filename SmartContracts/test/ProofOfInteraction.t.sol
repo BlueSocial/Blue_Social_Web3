@@ -25,7 +25,7 @@ contract ProofOfInteractionTest is Test {
         // Deploy the ProofOfInteraction contract
         proofOfInteraction = new ProofOfInteraction(
             address(this), // Initial owner
-            10e18, // Base reward rate
+            15e18, // Base reward rate
             3e18, // Min reward rate
             1e18, // Ice breaker fee
             1 days, // Minimum reward interval
@@ -127,14 +127,24 @@ contract ProofOfInteractionTest is Test {
 
     function testRewardUsers(bool swap) public {
         vm.prank(admin);
-
-        proofOfInteraction.rewardUsers(
-            user,
-            userId,
-            invitee,
-            inviteeId,
-            block.timestamp
-        );
+        // swap test reversing the inputs of user and invitee
+        if (swap) {
+            proofOfInteraction.rewardUsers(
+                invitee,
+                inviteeId,
+                user,
+                userId,
+                block.timestamp
+            );
+        } else {
+            proofOfInteraction.rewardUsers(
+                user,
+                userId,
+                invitee,
+                inviteeId,
+                block.timestamp
+            );
+        }
     }
 
     /**
@@ -321,8 +331,12 @@ contract ProofOfInteractionTest is Test {
                 fourthRewardValue,
             "User should have received correct amount of tokens"
         );
-
-        skip(28 days);
+        interactionCount = proofOfInteraction.getInteractionCount(
+            userId,
+            inviteeId
+        );
+        skip(100 days);
+        console.log("INTERACTION COUNT: ", interactionCount);
         console.log("Fifth reward - after 28 days");
         uint256 fifthRewardValue = proofOfInteraction.calculateRewards(
             hashUserIds(userId, inviteeId)
@@ -370,6 +384,45 @@ contract ProofOfInteractionTest is Test {
                 fifthRewardValue,
             "User should have received correct amount of tokens"
         );
+    }
+
+    function testRewardLoop() public {
+        // test 55 rewards given 1 day apart in a for loop
+        uint256 initialUserBalance = blueToken.balanceOf(user);
+        uint256 initialInviteeBalance = blueToken.balanceOf(invitee);
+        uint256 runningRewardValue = 0;
+        for (uint256 i = 0; i < 55; i++) {
+            uint256 rewardValue = proofOfInteraction.calculateRewards(
+                hashUserIds(userId, inviteeId)
+            );
+            console.log(
+                "~ testRewardLoop ~ rewardValue:",
+                rewardValue / 1e18,
+                " tokens"
+            );
+            testRewardUsers(false);
+            runningRewardValue += rewardValue;
+            assertEq(
+                blueToken.balanceOf(user),
+                initialUserBalance + runningRewardValue,
+                "User should have received correct amount of tokens"
+            );
+            assertEq(
+                blueToken.balanceOf(invitee),
+                initialInviteeBalance + runningRewardValue,
+                "Invitee should have received correct amount of tokens"
+            );
+            skip(1 days);
+            console.log("Reward ", i + 1, " given");
+            console.log(
+                "User balance after reward:",
+                blueToken.balanceOf(user)
+            );
+            console.log(
+                "Invitee balance after reward:",
+                blueToken.balanceOf(invitee)
+            );
+        }
     }
 
     /**
