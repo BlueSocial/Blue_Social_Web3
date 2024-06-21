@@ -12,35 +12,29 @@ contract ProofOfInteractionTest is Test {
     MockBlueSocialConsumer public consumerContract;
     BlueToken public blueToken;
     address public user = address(1);
+    uint256 public userId = 1;
     address public invitee = address(2);
+    uint256 public inviteeId = 2;
     address public treasury = address(3);
-    uint64 public chainlinkSubId;
+    address public admin = address(4);
 
     function setUp() public {
         // Deploy the mock ERC20 token
         blueToken = new BlueToken("Blue Token", "BLUE", 18);
-        chainlinkSubId = 64;
 
         // Deploy the ProofOfInteraction contract
         proofOfInteraction = new ProofOfInteraction(
             address(this), // Initial owner
-            10e18, // Base reward rate
+            15e18, // Base reward rate
             3e18, // Min reward rate
             1e18, // Ice breaker fee
             1 days, // Minimum reward interval
             address(blueToken), // Address of the mock ERC20 token
             treasury, // Treasury address
-            address(0), // Placeholder for consumer contract address
-            chainlinkSubId // Chainlink subscription ID
+            admin, // Admin address
+            65, // Time weight
+            35 // Interaction count weight
         );
-
-        // Deploy the mock consumer contract
-        consumerContract = new MockBlueSocialConsumer(
-            address(proofOfInteraction)
-        );
-
-        // Set the consumer address in the ProofOfInteraction contract
-        proofOfInteraction.setConsumer(address(consumerContract));
 
         // Allocate some tokens to the user and the treasury
         blueToken.mint(treasury, 2000000e18);
@@ -51,6 +45,19 @@ contract ProofOfInteractionTest is Test {
         vm.prank(treasury);
         // Approve the ProofOfInteraction contract to spend tokens on behalf of the treasury
         blueToken.approve(address(proofOfInteraction), 200000e18);
+    }
+
+    function hashUserIds(
+        uint256 _userA,
+        uint256 _userB
+    ) public pure returns (uint256) {
+        (uint256 userId1, uint256 userId2) = _userA < _userB
+            ? (_userA, _userB)
+            : (_userB, _userA);
+        uint256 hashedUserIds = uint256(
+            keccak256(abi.encodePacked(userId1, userId2))
+        );
+        return hashedUserIds;
     }
 
     function testSendIceBreaker() public {
@@ -119,44 +126,25 @@ contract ProofOfInteractionTest is Test {
     }
 
     function testRewardUsers(bool swap) public {
-        vm.prank(user);
-        // Define call data
-        string[] memory callData = new string[](3);
-        callData[0] = "arg1"; // Placeholder values
-        callData[1] = "arg2"; // Placeholder values
-        callData[2] = "POI"; // Indicating it's a Proof of Interaction request
-
-        bytes32 requestId = proofOfInteraction.callConsumer(
-            swap ? invitee : user,
-            swap ? user : invitee,
-            callData
-        );
-
-        // Fetch the hashed addresses
-        uint256 hashedAddresses = uint256(
-            keccak256(abi.encodePacked(user, invitee))
-        );
-        console.log("Hashed addresses:", hashedAddresses);
-
-        // Calculate the expected reward
-        uint256 rewardValue = proofOfInteraction.calculateRewards(
-            hashedAddresses
-        );
-        console.log("Expected reward value:", rewardValue);
-
-        // Simulate fulfilling the request
-        consumerContract.fulfillRequest(
-            requestId,
-            abi.encode(
-                "sender_id",
-                "receiver_id",
-                block.timestamp,
-                "sender",
-                "receiver",
-                "POI"
-            ),
-            ""
-        );
+        vm.prank(admin);
+        // swap test reversing the inputs of user and invitee
+        if (swap) {
+            proofOfInteraction.rewardUsers(
+                invitee,
+                inviteeId,
+                user,
+                userId,
+                block.timestamp
+            );
+        } else {
+            proofOfInteraction.rewardUsers(
+                user,
+                userId,
+                invitee,
+                inviteeId,
+                block.timestamp
+            );
+        }
     }
 
     /**
@@ -167,13 +155,18 @@ contract ProofOfInteractionTest is Test {
         console.log("Testing reward interval");
         console.log("First reward");
         uint256 interactionCount = proofOfInteraction.getInteractionCount(
-            user,
-            invitee
+            userId,
+            inviteeId
         );
         console.log("testRewardInterval ~ interactionCount:", interactionCount);
         uint256 initialUserBalance = blueToken.balanceOf(user);
         uint256 firstRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
+        );
+        console.log(
+            "~ testRewardInterval ~ firstRewardValue:",
+            firstRewardValue / 1e18,
+            " tokens"
         );
         testRewardUsers(false);
         // // Check the invitee's balance
@@ -186,8 +179,8 @@ contract ProofOfInteractionTest is Test {
         );
 
         uint256 lastRewardTime = proofOfInteraction.getLastRewardTime(
-            user,
-            invitee
+            userId,
+            inviteeId
         );
         assertEq(
             lastRewardTime,
@@ -204,13 +197,26 @@ contract ProofOfInteractionTest is Test {
             "User should have received correct amount of tokens"
         );
         skip(28 days);
+        interactionCount = proofOfInteraction.getInteractionCount(
+            userId,
+            inviteeId
+        );
         console.log("Second reward - after 28 days");
+
         uint256 secondRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
+        );
+        console.log(
+            "~ testRewardInterval ~ secondRewardValue:",
+            secondRewardValue / 1e18,
+            " tokens"
         );
         testRewardUsers(true);
 
-        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        lastRewardTime = proofOfInteraction.getLastRewardTime(
+            userId,
+            inviteeId
+        );
         assertEq(
             lastRewardTime,
             block.timestamp,
@@ -239,11 +245,19 @@ contract ProofOfInteractionTest is Test {
         console.log("Third reward - after 1 day");
 
         uint256 thirdRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
+        );
+        console.log(
+            "~ testRewardInterval ~ thirdRewardValue:",
+            thirdRewardValue / 1e18,
+            " tokens"
         );
         testRewardUsers(true);
 
-        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        lastRewardTime = proofOfInteraction.getLastRewardTime(
+            userId,
+            inviteeId
+        );
         assertEq(
             lastRewardTime,
             block.timestamp,
@@ -274,11 +288,19 @@ contract ProofOfInteractionTest is Test {
         skip(14 days);
         console.log("Fourth reward - after 14 days");
         uint256 fourthRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
+        );
+        console.log(
+            "~ testRewardInterval ~ fourthRewardValue:",
+            fourthRewardValue / 1e18,
+            " tokens"
         );
         testRewardUsers(false);
 
-        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        lastRewardTime = proofOfInteraction.getLastRewardTime(
+            userId,
+            inviteeId
+        );
         assertEq(
             lastRewardTime,
             block.timestamp,
@@ -309,15 +331,27 @@ contract ProofOfInteractionTest is Test {
                 fourthRewardValue,
             "User should have received correct amount of tokens"
         );
-
-        skip(28 days);
+        interactionCount = proofOfInteraction.getInteractionCount(
+            userId,
+            inviteeId
+        );
+        skip(100 days);
+        console.log("INTERACTION COUNT: ", interactionCount);
         console.log("Fifth reward - after 28 days");
         uint256 fifthRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
+        );
+        console.log(
+            "~ testRewardInterval ~ fifthRewardValue:",
+            fifthRewardValue / 1e18,
+            "tokens"
         );
         testRewardUsers(false);
 
-        lastRewardTime = proofOfInteraction.getLastRewardTime(user, invitee);
+        lastRewardTime = proofOfInteraction.getLastRewardTime(
+            userId,
+            inviteeId
+        );
         assertEq(
             lastRewardTime,
             block.timestamp,
@@ -352,6 +386,45 @@ contract ProofOfInteractionTest is Test {
         );
     }
 
+    function testRewardLoop() public {
+        // test 55 rewards given 1 day apart in a for loop
+        uint256 initialUserBalance = blueToken.balanceOf(user);
+        uint256 initialInviteeBalance = blueToken.balanceOf(invitee);
+        uint256 runningRewardValue = 0;
+        for (uint256 i = 0; i < 55; i++) {
+            uint256 rewardValue = proofOfInteraction.calculateRewards(
+                hashUserIds(userId, inviteeId)
+            );
+            console.log(
+                "~ testRewardLoop ~ rewardValue:",
+                rewardValue / 1e18,
+                " tokens"
+            );
+            testRewardUsers(false);
+            runningRewardValue += rewardValue;
+            assertEq(
+                blueToken.balanceOf(user),
+                initialUserBalance + runningRewardValue,
+                "User should have received correct amount of tokens"
+            );
+            assertEq(
+                blueToken.balanceOf(invitee),
+                initialInviteeBalance + runningRewardValue,
+                "Invitee should have received correct amount of tokens"
+            );
+            skip(1 days);
+            console.log("Reward ", i + 1, " given");
+            console.log(
+                "User balance after reward:",
+                blueToken.balanceOf(user)
+            );
+            console.log(
+                "Invitee balance after reward:",
+                blueToken.balanceOf(invitee)
+            );
+        }
+    }
+
     /**
      * @notice Test the reward interval and the reward calculation. The min reward interval is set to 1 day. The first reward and second rewards should execute successfully. The third reward should fail because the reward interval is too short.
      */
@@ -359,7 +432,7 @@ contract ProofOfInteractionTest is Test {
         uint256 userInitialBalance = blueToken.balanceOf(user);
         uint256 inviteeInitialBalance = blueToken.balanceOf(invitee);
         uint256 firstRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
         );
         testRewardUsers(false);
 
@@ -378,7 +451,7 @@ contract ProofOfInteractionTest is Test {
         console.log("Testing reward interval too short");
         skip(1 days);
         uint256 secondRewardValue = proofOfInteraction.calculateRewards(
-            uint256(keccak256(abi.encodePacked(user, invitee)))
+            hashUserIds(userId, inviteeId)
         );
         testRewardUsers(true);
 
@@ -413,23 +486,29 @@ contract ProofOfInteractionTest is Test {
 
     function testUnauthorizedRewardUsersCall() public {
         vm.prank(user);
-        vm.expectRevert(0x4c341eef); // onlyConsumer();
-        proofOfInteraction.rewardUsers(bytes32(0));
+        vm.expectRevert(0x310dd4fa); // onlyAdmin();
+        proofOfInteraction.rewardUsers(
+            user,
+            userId,
+            invitee,
+            inviteeId,
+            block.timestamp
+        );
     }
 
-    function testUnauthorizedSetConsumerCall() public {
+    function testUnauthorizedSetAdminCall() public {
         vm.prank(address(156)); // random user
         vm.expectRevert();
-        proofOfInteraction.setConsumer(address(0));
+        proofOfInteraction.setAdmin(address(0));
     }
 
-    function testSetConsumer() public {
-        address newConsumer = address(10); // new consumer address
+    function testSetAdmin() public {
+        address newAdmin = address(10); // new consumer address
         vm.prank(address(this));
-        proofOfInteraction.setConsumer(newConsumer);
+        proofOfInteraction.setAdmin(newAdmin);
         assertEq(
-            proofOfInteraction.getConsumerAddress(),
-            newConsumer,
+            proofOfInteraction.getAdminAddress(),
+            newAdmin,
             "Consumer not set"
         );
     }

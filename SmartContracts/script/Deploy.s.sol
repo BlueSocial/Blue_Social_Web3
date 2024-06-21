@@ -21,8 +21,9 @@ contract DeployPOIRewards is Script {
             uint256 _minimumRewardInterval,
             address _blueToken,
             address _treasury,
-            address _consumerContract,
-            uint64 _chainlinkSubId
+            address _admin,
+            uint256 _timeWeight,
+            uint256 _interactionCountWeight
         ) = helperConfig.activeNetworkConfig();
 
         vm.startBroadcast();
@@ -37,17 +38,11 @@ contract DeployPOIRewards is Script {
             _minimumRewardInterval,
             _blueToken,
             _treasury,
-            _consumerContract,
-            _chainlinkSubId
+            _admin,
+            _timeWeight,
+            _interactionCountWeight
         );
 
-        // Deploy chainlink consumer contract
-
-        BlueSocialConsumer consumer = new BlueSocialConsumer(
-            address(proofOfInteraction)
-        );
-
-        proofOfInteraction.setConsumer(address(consumer));
         vm.stopBroadcast();
 
         // We already have a broadcast in here

@@ -123,7 +123,10 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         FunctionsRequest.Request memory req;
         string memory requestType = args[2];
         //requesttype is 3rd argument and should be POI or EXC
-        if (keccak256(abi.encodePacked(requestType)) == keccak256(abi.encodePacked("POI"))) {
+        if (
+            keccak256(abi.encodePacked(requestType)) ==
+            keccak256(abi.encodePacked("POI"))
+        ) {
             req.initializeRequestForInlineJavaScript(poiProofSource); // Initialize the request with corresponding JS code
         } else {
             req.initializeRequestForInlineJavaScript(exchangeProofSource); // Initialize the request with corresponding JS code
@@ -190,9 +193,12 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
         //TODO: check for error
 
         // Handle the response based on the request type
-        if (keccak256(abi.encodePacked(requestType)) == keccak256(abi.encodePacked("POI"))) {
+        if (
+            keccak256(abi.encodePacked(requestType)) ==
+            keccak256(abi.encodePacked("POI"))
+        ) {
             // Call function from ProofOfInteraction contract to reward users
-            proofOfInteraction.rewardUsers(requestId);
+            // proofOfInteraction.rewardUsers(requestId);
         } else {
             // Call function from Exchange contract (Assumed functionality)
         }
@@ -205,8 +211,14 @@ contract BlueSocialConsumer is FunctionsClient, ConfirmedOwner {
      * @notice Changes js code snippet
      * @param _source The js snippet for chainlink functions
      */
-    function setSource(string memory requestType, string memory _source) external onlyOwner {
-        if (keccak256(abi.encodePacked(requestType)) == keccak256(abi.encodePacked("POI"))) {
+    function setSource(
+        string memory requestType,
+        string memory _source
+    ) external onlyOwner {
+        if (
+            keccak256(abi.encodePacked(requestType)) ==
+            keccak256(abi.encodePacked("POI"))
+        ) {
             poiProofSource = _source;
         } else {
             exchangeProofSource = _source;

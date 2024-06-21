@@ -73,7 +73,7 @@ contract MockBlueSocialConsumer {
 
         if (keccak256(abi.encodePacked(requestType)) == keccak256("POI")) {
             // Call function from ProofOfInteraction contract to reward users
-            proofOfInteraction.rewardUsers(requestId);
+            // proofOfInteraction.rewardUsers(requestId);
         } else {
             // Handle other types of requests
             revert("Unsupported request type");

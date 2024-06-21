@@ -16,8 +16,9 @@ contract HelperConfig is Script {
         uint256 _minimumRewardInterval;
         address _blueToken;
         address _treasury;
-        address _consumerContract;
-        uint64 _chainlinkSubId;
+        address _admin;
+        uint256 _timeWeight;
+        uint256 _interactionCountWeight;
     }
 
     constructor() {
@@ -41,8 +42,9 @@ contract HelperConfig is Script {
             _minimumRewardInterval: 1 days,
             _blueToken: address(0x7dbc1368A738091Da8E960818bDb9488efaB925A),
             _treasury: 0x54eB82E4Ec25eb173E1668dd5aB0943904d87331,
-            _consumerContract: address(0),
-            _chainlinkSubId: 0
+            _admin: 0x7dcDB90152E4d3a100C431257D8671e747ed4Fb5,
+            _timeWeight: 65,
+            _interactionCountWeight: 35
         });
     }
 
@@ -71,8 +73,9 @@ contract HelperConfig is Script {
             _minimumRewardInterval: 1 days,
             _blueToken: address(blueToken),
             _treasury: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
-            _consumerContract: address(0),
-            _chainlinkSubId: 64
+            _admin: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
+            _timeWeight: 65,
+            _interactionCountWeight: 35
         });
     }
 }
