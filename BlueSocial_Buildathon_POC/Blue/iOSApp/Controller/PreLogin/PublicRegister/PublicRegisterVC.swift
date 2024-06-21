@@ -304,9 +304,8 @@ class PublicRegisterVC: BaseVC {
                         
                     } else if response?.status == "Success" && msg == "" {
                         
-                        // Here can implement react code which gives us Wallet Address
-                        
-                        self.navigateToPhoneOTPVerificationVC()
+                        self.callRegisterAPI()
+                        //self.navigateToPhoneOTPVerificationVC()
                     }
                 }
                 
@@ -331,7 +330,7 @@ class PublicRegisterVC: BaseVC {
                                     APIParamKey.kMobile: "\(self.phoneCountryNameCode)_\(self.lblCountryCode.text ?? "")_\(self.txtPhoneNumber.text?.trime() ?? "")",
                                     APIParamKey.kPushToken: pushNotificationToken,
                                     APIParamKey.kDeviceType: APIFlagValue.kiPhone,
-                                    APIParamKey.kIsAuth: self.isAuth, // isEmailOTPVerified
+                                    APIParamKey.kIsAuth: self.isAuth, // isPhoneOTPVerified
                                     APIParamKey.kProfessionType: "1", // Public: "1", Student: "2"
                                     APIParamKey.kUser_referral_code: user_referral_code]
         
@@ -347,7 +346,6 @@ class PublicRegisterVC: BaseVC {
                     UserLocalData.UserID = userdata.id ?? ""
                     
                     var registerUser = UserDetail()
-                    registerUser.subscriptionStatus = "1"
                     registerUser.firstname = userdata.firstname?.trime() ?? ""
                     registerUser.lastname  = userdata.lastname?.trime() ?? ""
                     registerUser.mobile    = userdata.mobile ?? ""
@@ -373,6 +371,8 @@ class PublicRegisterVC: BaseVC {
                     }
                     
                     self.hideCustomLoader()
+                    
+                    // Here can implement ReactNative code of Create Wallet screen, which gives us Wallet Address. Then we can navigate to TourPageMasterViewController using below 3 lines of code.
                     
                     let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
                     tourPageMasterVC.isFromRegister = true
@@ -532,21 +532,21 @@ class PublicRegisterVC: BaseVC {
         self.lblErrorPassword.isHidden = true
     }
     
-    private func navigateToPhoneOTPVerificationVC() {
-        
-        let phoneOTPVerificationVC = PhoneOTPVerificationVC.instantiate(fromAppStoryboard: .Login)
-        phoneOTPVerificationVC.mobileNo = "(\(self.lblCountryCode.text ?? "")) \(self.txtPhoneNumber.text ?? "")"
-        
-        phoneOTPVerificationVC.otpVerificationStatusCallBack { isOTPVerified in
-            
-            if isOTPVerified {
-                
-                self.callRegisterAPI()
-            }
-        }
-        
-        self.navigationController?.pushViewController(phoneOTPVerificationVC, animated: true)
-    }
+    //    private func navigateToPhoneOTPVerificationVC() {
+    //        
+    //        let phoneOTPVerificationVC = PhoneOTPVerificationVC.instantiate(fromAppStoryboard: .Login)
+    //        phoneOTPVerificationVC.mobileNo = "(\(self.lblCountryCode.text ?? "")) \(self.txtPhoneNumber.text ?? "")"
+    //        
+    //        phoneOTPVerificationVC.otpVerificationStatusCallBack { isOTPVerified in
+    //            
+    //            if isOTPVerified {
+    //                
+    //                self.callRegisterAPI()
+    //            }
+    //        }
+    //        
+    //        self.navigationController?.pushViewController(phoneOTPVerificationVC, animated: true)
+    //    }
 }
 
 // ----------------------------------------------------------

@@ -233,7 +233,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             } else if components.count >= 2 {
                 
-                if components[0].contains("+"){
+                if components[0].contains("+") {
                     phoneNumber = components[0] + components[1]
                 } else {
                     phoneNumber = ("+" + components[0]) + components[1]
