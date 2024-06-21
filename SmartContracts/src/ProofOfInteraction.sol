@@ -329,6 +329,11 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
         return finalReward;
     }
 
+    ///////////////////////////////////////////////////////////
+    /*           */
+    /*  GETTERS  */
+    /*           */
+    ///////////////////////////////////////////////////////////
     /**
      *
      * @param _userA user ID of the user to get the last reward time for
@@ -390,6 +395,12 @@ contract ProofOfInteraction is Ownable, ReentrancyGuard {
     function getIceBreakerFee() public view returns (uint256) {
         return iceBreakerFee;
     }
+
+    ///////////////////////////////////////////////////////////
+    /*           */
+    /*  SETTERS  */
+    /*           */
+    ///////////////////////////////////////////////////////////
 
     /**
      * @param _admin address of the Admin contract
