@@ -6,6 +6,8 @@ import type { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { abi as poiabi } from "../abi/poi.json";
+// import fetch from "node-fetch";
+import axios from "axios";
 
 interface RequestBody {
   senderAddress: string;
@@ -28,7 +30,7 @@ const {
   POICONTRACT_ADDRESS,
   CHAIN,
 } = process.env;
-console.log("🚀 ~ PORT:", PORT);
+
 console.log(CHAIN);
 // Middleware
 app.use(helmet());
@@ -76,73 +78,42 @@ app.post("/api/v1/poi", async (req: Request, res: Response) => {
     if (!TW_ACCESS_TOKEN || !TW_BACKEND_WALLET || !TW_ENGINE_URL)
       throw new Error("Missing required parameters");
 
-    //commnicate with the engine
-    const response = await fetch(
-      `${TW_ENGINE_URL}/contract/${CHAIN}/${POICONTRACT_ADDRESS}/write`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${TW_ACCESS_TOKEN}`,
-          "x-backend-wallet-address": TW_BACKEND_WALLET,
-        },
-        body: JSON.stringify({
-          functionName: "rewardUsers",
-          args: [
-            senderAddress,
-            Number(senderId),
-            receiverAddress,
-            Number(receiverId),
-            unixTimestamp,
-          ],
-          txOverrides: {
-            gas: "530000",
-            maxFeePerGas: "1000000000",
-            maxPriorityFeePerGas: "1000000000",
-          },
-          abi: [
-            {
-              inputs: [
-                {
-                  internalType: "address",
-                  name: "_senderAddress",
-                  type: "address",
-                },
-                {
-                  internalType: "uint256",
-                  name: "_senderId",
-                  type: "uint256",
-                },
-                {
-                  internalType: "address",
-                  name: "_receiverAddress",
-                  type: "address",
-                },
-                {
-                  internalType: "uint256",
-                  name: "_receiverId",
-                  type: "uint256",
-                },
-                {
-                  internalType: "uint256",
-                  name: "_timestamp",
-                  type: "uint256",
-                },
-              ],
-              stateMutability: "nonpayable",
-              type: "function",
-              name: "rewardUsers",
-            },
-          ],
-        }),
-      }
-    );
+    const postData = {
+      functionName: "rewardUsers",
+      args: [
+        senderAddress,
+        Number(senderId),
+        receiverAddress,
+        Number(receiverId),
+        unixTimestamp,
+      ],
+      txOverrides: {
+        gas: "530000",
+        maxFeePerGas: "1000000000",
+        maxPriorityFeePerGas: "1000000000",
+      },
+      abi: poiabi,
+    };
+    const headers = {
+      accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${TW_ACCESS_TOKEN}`,
+      "x-backend-wallet-address": TW_BACKEND_WALLET,
+      "ngrok-skip-browser-warning": "true",
+    };
 
-    if (!response.ok) {
-      throw new Error(
-        `Failed to communicate with the engine: ${response.statusText}`
-      );
-    }
+    const apiUrl = `${TW_ENGINE_URL}/contract/${CHAIN}/${POICONTRACT_ADDRESS}/write`;
+    axios
+      .post(apiUrl, postData, { headers })
+      .then((response) => {
+        // Handle successful response
+        console.log("Response:", response.data);
+        // Here you can process the data, such as updating state or UI
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error posting data:", error);
+      });
 
     res.status(200).json({ message: "Request successfully sent." });
   } catch (error: unknown) {
