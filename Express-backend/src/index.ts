@@ -5,33 +5,15 @@ import rateLimit from "express-rate-limit";
 import type { Request, Response, NextFunction } from "express";
 import dotenv from "dotenv";
 import path from "path";
-import { abi as poiabi } from "../abi/poi.json";
-// import fetch from "node-fetch";
-import axios from "axios";
-
-interface RequestBody {
-  senderAddress: string;
-  senderId: string;
-  receiverAddress: string;
-  receiverId: string;
-  timestamp: Date;
-}
+import { sendPoiReward } from "./controllers/PoiController";
+import { sendContactExcReward } from "./controllers/ExcContactController";
 
 // Load environment variables from .env file
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const app = express();
-const {
-  PORT,
-  TW_ENGINE_URL,
-  TW_BACKEND_WALLET,
-  TW_ACCESS_TOKEN,
-  CLIENT_ID,
-  POICONTRACT_ADDRESS,
-  CHAIN,
-} = process.env;
+const { PORT } = process.env;
 
-console.log(CHAIN);
 // Middleware
 app.use(helmet());
 app.use(
@@ -54,80 +36,11 @@ app.use("/", apiLimiter);
 app.get("/api/v1/", (req: Request, res: Response) => {
   res.json({ message: "you have reached the blue social engine master" });
 });
-
-app.post("/api/v1/poi", async (req: Request, res: Response) => {
-  const {
-    senderAddress,
-    senderId,
-    receiverAddress,
-    receiverId,
-    timestamp,
-  }: RequestBody = req.body as RequestBody;
-
-  // Parse the timestamp to a Date object if it's a string
-  const date = new Date(timestamp);
-
-  if (isNaN(date.getTime())) {
-    throw new Error("Invalid timestamp");
-  }
-
-  const unixTimestamp = Math.floor(date.getTime() / 1000);
-
-  try {
-    //verify required parameters
-    if (!TW_ACCESS_TOKEN || !TW_BACKEND_WALLET || !TW_ENGINE_URL)
-      throw new Error("Missing required parameters");
-
-    const postData = {
-      functionName: "rewardUsers",
-      args: [
-        senderAddress,
-        Number(senderId),
-        receiverAddress,
-        Number(receiverId),
-        unixTimestamp,
-      ],
-      txOverrides: {
-        gas: "530000",
-        maxFeePerGas: "1000000000",
-        maxPriorityFeePerGas: "1000000000",
-      },
-      abi: poiabi,
-    };
-    const headers = {
-      accept: "application/json",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${TW_ACCESS_TOKEN}`,
-      "x-backend-wallet-address": TW_BACKEND_WALLET,
-      "ngrok-skip-browser-warning": "true",
-    };
-
-    const apiUrl = `${TW_ENGINE_URL}/contract/${CHAIN}/${POICONTRACT_ADDRESS}/write`;
-    axios
-      .post(apiUrl, postData, { headers })
-      .then((response) => {
-        // Handle successful response
-        console.log("Response:", response.data);
-        // Here you can process the data, such as updating state or UI
-      })
-      .catch((error) => {
-        // Handle error
-        console.error("Error posting data:", error);
-      });
-
-    res.status(200).json({ message: "Request successfully sent." });
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      res.status(500).json({ message: error.message });
-    } else {
-      res.status(500).json({ message: "An unknown error occurred." });
-    }
-  }
-});
+app.post("/api/v1/poi", sendPoiReward);
+app.post("/api/v1/exc", sendContactExcReward);
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  console.error(err.stack);
   res.status(500).send("Something broke!");
 });
 
