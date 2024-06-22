@@ -4,30 +4,18 @@ import { abi as poiabi } from "../abi/poi.json";
 import axios from "axios";
 
 interface RequestBody {
-  senderAddress: string;
-  senderId: string;
-  receiverAddress: string;
-  receiverId: string;
-  timestamp: Date;
+  userAddress: string;
+  userId: string;
+  contactAddress: string;
+  contactId: string;
 }
 
 export const sendContactExcReward = async (req: Request, res: Response) => {
-  const {
-    senderAddress,
-    senderId,
-    receiverAddress,
-    receiverId,
-    timestamp,
-  }: RequestBody = req.body as RequestBody;
+  let { userAddress, userId, contactAddress, contactId }: RequestBody =
+    req.body as RequestBody;
 
-  // Parse the timestamp to a Date object if it's a string
-  const date = new Date(timestamp);
-
-  if (isNaN(date.getTime())) {
-    throw new Error("Invalid timestamp");
-  }
-
-  const unixTimestamp = Math.floor(date.getTime() / 1000);
+  if (!userAddress) userAddress = process.env.TREASURY;
+  if (!contactAddress) contactAddress = process.env.TREASURY;
 
   try {
     //verify required parameters
@@ -39,20 +27,35 @@ export const sendContactExcReward = async (req: Request, res: Response) => {
       throw new Error("Missing required parameters");
 
     const postData = {
-      functionName: "rewardUsers",
-      args: [
-        senderAddress,
-        Number(senderId),
-        receiverAddress,
-        Number(receiverId),
-        unixTimestamp,
-      ],
+      functionName: "exchangeContact",
+      args: [userAddress, Number(userId), contactAddress, Number(contactId)],
       txOverrides: {
         gas: "530000",
         maxFeePerGas: "1000000000",
         maxPriorityFeePerGas: "1000000000",
       },
-      abi: poiabi,
+      abi: [
+        {
+          type: "function",
+          name: "exchangeContact",
+          inputs: [
+            {
+              name: "_userAddress",
+              type: "address",
+              internalType: "address",
+            },
+            { name: "_userId", type: "uint256", internalType: "uint256" },
+            {
+              name: "_contactAddress",
+              type: "address",
+              internalType: "address",
+            },
+            { name: "_contactId", type: "uint256", internalType: "uint256" },
+          ],
+          outputs: [],
+          stateMutability: "nonpayable",
+        },
+      ],
     };
     const headers = {
       accept: "application/json",
@@ -62,12 +65,30 @@ export const sendContactExcReward = async (req: Request, res: Response) => {
       "ngrok-skip-browser-warning": "true",
     };
 
-    const apiUrl = `${process.env.TW_ENGINE_URL}/contract/${process.env.CHAIN}/${process.env.POICONTRACT_ADDRESS}/write`;
-    axios.post(apiUrl, postData, { headers }).catch((error) => {
-      throw new Error(`Error posting data: ${error}`);
-    });
-
-    res.status(200).json({ message: "Request successfully sent." });
+    const apiUrl = `${process.env.TW_ENGINE_URL}/contract/${process.env.CHAIN}/${process.env.EXC_CONTRACT_ADDRESS}/write`;
+    axios
+      .post(apiUrl, postData, { headers })
+      .then((response) => {
+        res.status(200).json({ message: "Request successfully sent." });
+      })
+      .catch((error) => {
+        if (error.response) {
+          // Server responded with a status code outside the 2xx range
+          res.status(error.response.status).json({
+            message: `Error posting data: ${error.response.data.error.message}`,
+          });
+        } else if (error.request) {
+          // The request was made but no response was received
+          res
+            .status(500)
+            .json({ message: "No response received from the server." });
+        } else {
+          // Something happened in setting up the request that triggered an error
+          res.status(500).json({
+            message: `Error setting up the request: ${error.message}`,
+          });
+        }
+      });
   } catch (error: unknown) {
     if (error instanceof Error) {
       res.status(500).json({ message: error.message });

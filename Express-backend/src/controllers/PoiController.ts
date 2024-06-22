@@ -52,7 +52,40 @@ export const sendPoiReward = async (req: Request, res: Response) => {
         maxFeePerGas: "1000000000",
         maxPriorityFeePerGas: "1000000000",
       },
-      abi: poiabi,
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_senderAddress",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "_senderId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "_receiverAddress",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "_receiverId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "_timestamp",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+          name: "rewardUsers",
+        },
+      ],
     };
     const headers = {
       accept: "application/json",
@@ -63,11 +96,31 @@ export const sendPoiReward = async (req: Request, res: Response) => {
     };
 
     const apiUrl = `${process.env.TW_ENGINE_URL}/contract/${process.env.CHAIN}/${process.env.POICONTRACT_ADDRESS}/write`;
-    axios.post(apiUrl, postData, { headers }).catch((error) => {
-      throw new Error(`Error posting data: ${error}`);
-    });
 
-    res.status(200).json({ message: "Request successfully sent." });
+    axios
+      .post(apiUrl, postData, { headers })
+      .then((response) => {
+        res.status(200).json({ message: "Request successfully sent." });
+      })
+      .catch((error) => {
+        if (error.response) {
+          // Server responded with a status code outside the 2xx range
+
+          res.status(error.response.status).json({
+            message: `Error posting data: ${error.response.data.error.message}`,
+          });
+        } else if (error.request) {
+          // The request was made but no response was received
+          res
+            .status(500)
+            .json({ message: "No response received from the server." });
+        } else {
+          // Something happened in setting up the request that triggered an error
+          res.status(500).json({
+            message: `Error setting up the request: ${error.message}`,
+          });
+        }
+      });
   } catch (error: unknown) {
     if (error instanceof Error) {
       res.status(500).json({ message: error.message });
