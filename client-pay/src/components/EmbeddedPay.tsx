@@ -1,5 +1,5 @@
 import { ThirdwebProvider, PayEmbed } from "thirdweb/react";
-import { base } from "thirdweb/chains";
+import { baseSepolia } from "thirdweb/chains";
 import { client } from "../client";
 
 export default function EmbeddePay() {
@@ -11,11 +11,11 @@ export default function EmbeddePay() {
           prefillBuy: {
             token: {
               address: import.meta.env.VITE_TOKEN_TO_BUY,
-              name: "Base ETH",
-              symbol: "ETH",
+              name: "Blue Token",
+              symbol: "Blue",
               icon: "...", // optional
             },
-            chain: base,
+            chain: import.meta.env.MODE === "development" ? baseSepolia : baseSepolia,
             allowEdits: {
               amount: true, // allow editing buy amount
               token: false, // disable selecting buy token
