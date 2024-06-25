@@ -52,40 +52,7 @@ export const sendPoiReward = async (req: Request, res: Response) => {
         maxFeePerGas: "1000000000",
         maxPriorityFeePerGas: "1000000000",
       },
-      abi: [
-        {
-          inputs: [
-            {
-              internalType: "address",
-              name: "_senderAddress",
-              type: "address",
-            },
-            {
-              internalType: "uint256",
-              name: "_senderId",
-              type: "uint256",
-            },
-            {
-              internalType: "address",
-              name: "_receiverAddress",
-              type: "address",
-            },
-            {
-              internalType: "uint256",
-              name: "_receiverId",
-              type: "uint256",
-            },
-            {
-              internalType: "uint256",
-              name: "_timestamp",
-              type: "uint256",
-            },
-          ],
-          stateMutability: "nonpayable",
-          type: "function",
-          name: "rewardUsers",
-        },
-      ],
+      abi: poiabi,
     };
     const headers = {
       accept: "application/json",

@@ -1,5 +1,5 @@
 import type { Request, Response, NextFunction } from "express";
-import { abi as poiabi } from "../abi/poi.json";
+import { abi as excabi } from "../abi/exc.json";
 
 import axios from "axios";
 
@@ -34,28 +34,7 @@ export const sendContactExcReward = async (req: Request, res: Response) => {
         maxFeePerGas: "1000000000",
         maxPriorityFeePerGas: "1000000000",
       },
-      abi: [
-        {
-          type: "function",
-          name: "exchangeContact",
-          inputs: [
-            {
-              name: "_userAddress",
-              type: "address",
-              internalType: "address",
-            },
-            { name: "_userId", type: "uint256", internalType: "uint256" },
-            {
-              name: "_contactAddress",
-              type: "address",
-              internalType: "address",
-            },
-            { name: "_contactId", type: "uint256", internalType: "uint256" },
-          ],
-          outputs: [],
-          stateMutability: "nonpayable",
-        },
-      ],
+      abi: excabi,
     };
     const headers = {
       accept: "application/json",
