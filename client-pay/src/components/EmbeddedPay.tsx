@@ -13,7 +13,7 @@ export default function EmbeddePay() {
               address: import.meta.env.VITE_TOKEN_TO_BUY,
               name: "Blue Token",
               symbol: "Blue",
-              icon: "...", // optional
+              icon: "blue-token.png", // optional
             },
             chain: import.meta.env.MODE === "development" ? baseSepolia : baseSepolia,
             allowEdits: {
