@@ -69,6 +69,8 @@ class PhoneOTPVerificationVC: BaseVC {
 // ----------------------------------------------------------
 //                       MARK: - Action -
 // ----------------------------------------------------------
+
+
 extension PhoneOTPVerificationVC {
     
     @IBAction func onBtnBack(_ sender: UIButton) {
@@ -134,6 +136,13 @@ extension PhoneOTPVerificationVC {
 // ----------------------------------------------------------
 extension PhoneOTPVerificationVC {
     
+    private func navigateToReactNativeScreen() { //@ethan
+        if let navController = self.navigationController {
+            let reactNativeVC = ReactNativeViewController()
+            navController.pushViewController(reactNativeVC, animated: true)
+        }
+    }
+    
     fileprivate func sendMobileOTP() {
         
         let phoneNumber = self.mobileNo
@@ -180,13 +189,17 @@ extension PhoneOTPVerificationVC {
                     self.showAlertWithOKButton(message: ALERT_Invalid_OTP)
                     
                 } else {
-                    self.navigationController?.popViewController(animated: true)
-                    if self.otpVerificationStatusCompletion != nil {
-                        self.otpVerificationStatusCompletion!(true)
-                    }
                     self.stopTimer()
                     self.lblCodeExpireCounter.isHidden = true
                     self.btnResendCode.isHidden = true
+                    
+                    // Call the completion handler if available
+                    if let completion = self.otpVerificationStatusCompletion {
+                        completion(true)
+                    }
+                    
+                    // Transition to React Native screen @ethan
+                    //self.navigateToReactNativeScreen()
                 }
             }
             

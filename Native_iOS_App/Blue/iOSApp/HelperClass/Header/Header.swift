@@ -90,7 +90,7 @@ struct APIName {
     static var kGetWalletDetails = "getWalletdetails"
     
     // NearbyProofOfInteractionVC
-    static var kProofOfInteraction = "proofOfInteraction"
+    static var kProofOfInteraction = "proofOfInteractionPOC" //@ethan
     
     // EmailOTPVerificationVC
     static var kVerifyOtpEmail = "verifyOtpEmail"
@@ -108,16 +108,16 @@ struct APIName {
     static var kAddNotes = "addNotes"
     
     // To Send | Accept | Reject BreakTheIceRequest - BaseVC | ProfileVC | NearbyRequestVC | NearbyWaitingApprovalVC | NearbyDistanceVC | NearbyDirectionVC | NearbyProofOfInteractionVC | BreakTheIcePopupVC
-    static var kBreakTheIceRequest = "breakTheIceRequest"
+    static var kBreakTheIceRequest = "breakTheIceRequestPOC" //@ethan
     
     // Exchange Contact - BaseVC | ProfileVC
-    static var kNotifyConnectUser = "notifyconnectUser"
+    static var kNotifyConnectUser = "notifyconnectUserPOC" //@ethan
     
     // BluetoothStatusVC
     static var kSaveBleCaption = "saveBleCaption"
     
     // NearbyDistanceVC | NearbyDirectionVC
-    static var kNotifyInRangeUser = "notifyInRangeUser"
+    static var kNotifyInRangeUser = "notifyInRangeUserPOC" // @ethan
 }
 
 struct APIParamKey {

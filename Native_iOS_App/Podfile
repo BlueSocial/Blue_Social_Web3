@@ -1,4 +1,6 @@
 # Resolve react_native_pods.rb with node to allow for hoisting
+require_relative '../node_modules/expo/scripts/autolinking'
+
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
     "react-native/scripts/react_native_pods.rb",
@@ -7,6 +9,7 @@ require Pod::Executable.execute_command('node', ['-p',
 
 # Uncomment the next line to define a global platform for your project
 platform :ios, '14.0'
+
 prepare_react_native_project!
 install! 'cocoapods', :disable_input_output_paths => true
 
@@ -17,7 +20,6 @@ if linkage != nil
 end
 
 def shared_pods
-  
   pod 'Alamofire'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'AlamofireImage'
@@ -42,11 +44,11 @@ def shared_pods
   # pod "MBCircularProgressBar"
   # pod 'MBProgressHUD'
   pod 'DynamicBlurView'
-  
 end
 
 target 'Blue' do
   # Comment the next line if you don't want to use dynamic frameworks
+  use_expo_modules! # Add this line to use Expo modules
   config = use_native_modules!
   use_frameworks!
   use_react_native!(
@@ -54,9 +56,14 @@ target 'Blue' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  # Ensure these lines are present
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-async-storage/async-storage'
+  pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   shared_pods
   # Pods for Blue
-  
 end
 
 target 'BlueNotificationService' do
@@ -82,7 +89,7 @@ post_install do |installer|
       # :ccache_enabled => true
     )
   xcode_base_version = `xcodebuild -version | grep 'Xcode' | awk '{print $2}' | cut -d . -f 1`
-  
+
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
       # For xcode 15+ only

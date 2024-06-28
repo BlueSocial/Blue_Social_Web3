@@ -21,6 +21,7 @@ import FirebaseCore
 import FirebaseDynamicLinks
 import FirebaseAuth
 import Instabug
+import React
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,14 +34,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // ----------------------------------------------------------
     //                       MARK: - Application Life Cycle -
     // ----------------------------------------------------------
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension: nil)
+        let jsCodeLocation: URL
+        
+        #if DEBUG
+        jsCodeLocation = URL(string: "http://192.168.0.156:8081/index.bundle?platform=ios")!
+        #else
+        jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackResource: nil)
+        #endif
+        
         bridge = RCTBridge(bundleURL: jsCodeLocation, moduleProvider: nil, launchOptions: launchOptions)
+        
+        if let emitterModule = bridge?.module(for: RNEventEmitter.self) as? RNEventEmitter {
+            RNEventEmitter.emitter = emitterModule
+        } else {
+            print("Failed to initialize RNEventEmitter")
+        }
         
         BaseVC.sharedInstance.setQRCodeURLForWidget()
         UserLocalData.isbtnBLEOn = true
-        
+         
         // MARK: - Internet Rechability -
         self.setInternetRechability()
         

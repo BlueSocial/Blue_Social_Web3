@@ -1,0 +1,21 @@
+{
+  "name": "react-native-aes-gcm-crypto",
+  "version": "0.2.2",
+  "summary": "AES-GCM encryption/decryption for React Native",
+  "homepage": "https://github.com/craftzdog/react-native-aes-gcm-crypto#readme",
+  "license": "MIT",
+  "authors": "Takuya Matsuyama <hi@craftz.dog> (https://github.com/craftzdog)",
+  "platforms": {
+    "ios": "13.0"
+  },
+  "source": {
+    "git": "https://github.com/craftzdog/react-native-aes-gcm-crypto.git",
+    "tag": "0.2.2"
+  },
+  "source_files": "ios/**/*.{h,m,mm,swift}",
+  "dependencies": {
+    "React-Core": [
+
+    ]
+  }
+}

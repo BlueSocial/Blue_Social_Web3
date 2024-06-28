@@ -1,0 +1,6 @@
+framework module react_native_aes_gcm_crypto {
+  umbrella header "react-native-aes-gcm-crypto-umbrella.h"
+
+  export *
+  module * { export * }
+}

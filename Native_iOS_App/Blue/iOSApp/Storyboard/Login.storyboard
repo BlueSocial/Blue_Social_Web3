@@ -1404,7 +1404,7 @@ and Terms of Use</string>
                                         <color key="textColor" name="appBlack_#031227"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish creating your profile to unlock 25 BLUE tokens and have access to features!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmk-jH-H5b">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish creating your profile to unlock 5 BLUE tokens and have access to features!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmk-jH-H5b">
                                         <rect key="frame" x="16" y="67" width="343" height="33"/>
                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                         <color key="textColor" name="appGray_#98A2B1"/>
@@ -3292,7 +3292,7 @@ when they meet you</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4rj-DD-77Y">
-                                        <rect key="frame" x="126.5" y="325" width="161.5" height="24"/>
+                                        <rect key="frame" x="131" y="325" width="152.5" height="24"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For you:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yl3-nh-Sa1">
                                                 <rect key="frame" x="0.0" y="0.0" width="51.5" height="24"/>
@@ -3308,16 +3308,16 @@ when they meet you</string>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nIv-we-X3F">
-                                                <rect key="frame" x="91.5" y="0.0" width="70" height="24"/>
+                                                <rect key="frame" x="91.5" y="0.0" width="61" height="24"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-Jg-nXF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="31.5" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sv-Jg-nXF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="22.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
                                                         <color key="textColor" name="appBlue_#0066FF"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tokens" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="My6-zZ-YUv">
-                                                        <rect key="frame" x="33.5" y="0.0" width="36.5" height="24"/>
+                                                        <rect key="frame" x="24.5" y="0.0" width="36.5" height="24"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                         <color key="textColor" name="appBlue_#0066FF"/>
                                                         <nil key="highlightedColor"/>

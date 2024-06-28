@@ -91,7 +91,7 @@ class WebContentVC: BaseVC, UIWebViewDelegate {
                 self.lblHeaderTitle.text = "Profile Visit"
                 
             case .BuyTokens:
-                self.webviewStr = "https://tokensale.blue.social"
+                self.webviewStr = "https://web3.blue.social"
                 self.lblHeaderTitle.text = "Buy Tokens"
                 
             case .WhitePaper:

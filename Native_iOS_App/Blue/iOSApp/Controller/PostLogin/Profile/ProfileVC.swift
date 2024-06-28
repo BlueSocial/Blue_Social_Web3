@@ -528,9 +528,39 @@ class ProfileVC: BaseVC {
                     
                     if isSuccess {
                         
+                        // @ethan
+                        print("using the free tokens")
+                         DispatchQueue.main.async {
+                             self.waitingForNearByApprove()
+                         }
+                         
+                    }
+                    
+                    else {
+                        // call the react native here @ethan
+ 
+                        print("no more bst")
+                        
+                        print("About to emit event from Swift")
+                        DispatchQueue.main.asyncAfter(deadline: .now()) {
+                            if let emitter = RNEventEmitter.emitter {
+                                emitter.sendEvent(withName: "callBreakTheIce", body: [])
+                            } else {
+                                print("RNEventEmitter is not yet initialized")
+                            }
+                        }
+                        print("Event emission attempted")
+                        
                         DispatchQueue.main.async {
                             self.waitingForNearByApprove()
                         }
+                        // in react native
+                        // call allowance
+                        // we call approve to check BLUE token balance
+                        // if approve is successful, call call sendIceBreaker on the POI contract
+                        // if not, display a message saying you dont have enough
+                        
+                        // if all of this is successsful, call dispatch queue
                     }
                 }
                 

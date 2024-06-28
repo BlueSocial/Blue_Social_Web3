@@ -1,0 +1,31 @@
+{
+  "name": "CoinbaseWalletSDKExpo",
+  "version": "1.0.13",
+  "summary": "Coinbase Wallet Mobile SDK for React Native",
+  "description": "Coinbase Wallet Mobile SDK for React Native",
+  "license": "Apache-2.0",
+  "authors": "Coinbase, Inc.",
+  "homepage": "https://github.com/coinbase/wallet-mobile-sdk#readme",
+  "platforms": {
+    "ios": "13.0"
+  },
+  "swift_versions": "5.4",
+  "source": {
+    "git": "https://github.com/coinbase/wallet-mobile-sdk"
+  },
+  "static_framework": true,
+  "dependencies": {
+    "ExpoModulesCore": [
+
+    ],
+    "CoinbaseWalletSDK/CrossPlatform": [
+      "1.0.4"
+    ]
+  },
+  "pod_target_xcconfig": {
+    "DEFINES_MODULE": "YES",
+    "SWIFT_COMPILATION_MODE": "wholemodule"
+  },
+  "source_files": "**/*.{h,m,swift}",
+  "swift_version": "5.4"
+}

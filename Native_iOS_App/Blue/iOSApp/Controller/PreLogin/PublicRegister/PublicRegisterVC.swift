@@ -80,7 +80,6 @@ class PublicRegisterVC: BaseVC {
         self.txtFirstName.keyboardType = .alphabet
         self.txtLastName.keyboardType = .alphabet
         
-        setupReactNativeButton() // @ethan
     }
     
     deinit {
@@ -159,26 +158,6 @@ class PublicRegisterVC: BaseVC {
             self.phoneCountryNameCode = country.countryCode.lowercased()
         }
     }
-
-    // @ethan
-    func setupReactNativeButton() {
-            let jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackExtension: nil)!
-            let rootView = RCTRootView(
-                bundleURL: jsCodeLocation,
-                moduleName: "ConnectWalletButton",
-                initialProperties: nil,
-                launchOptions: nil
-            )
-            
-            let buttonWidth: CGFloat = self.view.frame.width - 40
-            let buttonHeight: CGFloat = 50
-            let buttonX = CGFloat(20)
-            let buttonY = self.view.frame.height - buttonHeight - 100 // Adjust Y position as needed
-            
-            rootView.frame = CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight)
-            self.view.addSubview(rootView)
-        }
-
     
     @IBAction func onBtnRegister(_ sender: UIButton) {
         print("Button Register Tapped")
@@ -335,7 +314,8 @@ class PublicRegisterVC: BaseVC {
                         
                     } else if response?.status == "Success" && msg == "" {
                         
-                        self.navigateToPhoneOTPVerificationVC()
+                        //self.navigateToPhoneOTPVerificationVC()
+                        self.callRegisterAPI() // @ethan
                     }
                 }
                 
@@ -343,6 +323,21 @@ class PublicRegisterVC: BaseVC {
                 
                 self.showAlertWithOKButton(message: msg)
             }
+        }
+    }
+    
+    //@ethan
+    private func navigateToReactNativeScreen(userDataDict: [String: Any]) {
+        if let navController = self.navigationController {
+            let reactNativeVC = ReactNativeViewController()
+            reactNativeVC.initialProperties = userDataDict
+
+            // Accessing the bridge from AppDelegate directly
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                reactNativeVC.bridge = appDelegate.bridge
+            }
+
+            navController.pushViewController(reactNativeVC, animated: true)
         }
     }
     
@@ -399,13 +394,22 @@ class PublicRegisterVC: BaseVC {
                         arrAccount.append(accountdata)
                         
                         UserLocalData.arrOfAccountData = arrAccount
+                        
                     }
                     
                     self.hideCustomLoader()
                     
-                    let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
-                    tourPageMasterVC.isFromRegister = true
-                    self.navigationController?.pushViewController(tourPageMasterVC, animated: true)
+                    // Navigate to React Native Screen
+                    
+                    print("calling userdata event")
+                    let userDataDict: [String: Any] = ["email": registerUser.email ?? "", "id": registerUser.id ?? ""]
+                    
+                    // Navigate to React Native Screen and dispatch the event
+                    self.navigateToReactNativeScreen(userDataDict: userDataDict)
+                    
+                    //let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
+                    //tourPageMasterVC.isFromRegister = true
+                    //self.navigationController?.pushViewController(tourPageMasterVC, animated: true)
                 }
                 
             } else {
@@ -421,9 +425,9 @@ class PublicRegisterVC: BaseVC {
     // ----------------------------------------------------------
     private func setupUIForBtnRegister() {
         
-        //self.btnRegister.backgroundColor = UIColor.appGray_F2F3F4()
-        //self.btnRegister.setTitleColor(UIColor.appGray_98A2B1(), for: .normal)
-        //self.btnRegister.isUserInteractionEnabled = false
+        self.btnRegister.backgroundColor = UIColor.appGray_F2F3F4()
+        self.btnRegister.setTitleColor(UIColor.appGray_98A2B1(), for: .normal)
+        self.btnRegister.isUserInteractionEnabled = false
     }
     
     private func updateRegisterButtonState() {

@@ -21,7 +21,7 @@
 		0D25241C2AE9454C0089E193 /* LinkStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D25241B2AE9454C0089E193 /* LinkStoreVC.swift */; };
 		0D4A45AB2AE8367100B963B7 /* SocialNetworkTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4A45A92AE8367100B963B7 /* SocialNetworkTblCell.swift */; };
 		0D4A45AC2AE8367100B963B7 /* SocialNetworkTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D4A45AA2AE8367100B963B7 /* SocialNetworkTblCell.xib */; };
-		13D0DFF6179AE8EF36F835AB /* Pods_Blue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9DFFCFE6B28230FA5B5A08B /* Pods_Blue.framework */; };
+		129FFF4644586F8E9595E4CE /* Pods_Blue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CFEC1A87359E704AD4454A7 /* Pods_Blue.framework */; };
 		1800944728B631FF00462DF9 /* NearbyInteraction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1800944628B631FF00462DF9 /* NearbyInteraction.framework */; };
 		1800944928B6320700462DF9 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1800944828B6320700462DF9 /* MultipeerConnectivity.framework */; };
 		18114C9A2A7144CD005C966C /* PublicLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18114C992A7144CD005C966C /* PublicLoginVC.swift */; };
@@ -717,11 +717,19 @@
 		84FE59AB2A8271B5007EA638 /* LeftAlignCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE59AA2A8271B5007EA638 /* LeftAlignCollectionLayout.swift */; };
 		84FEAF132ACF19180081CA40 /* AddSocialNetworkPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAF122ACF19180081CA40 /* AddSocialNetworkPopupVC.swift */; };
 		84FEAF142ACF191F0081CA40 /* AddSocialNetworkPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAF122ACF19180081CA40 /* AddSocialNetworkPopupVC.swift */; };
-		8AFE3CB056D0419CA18228BE /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		8AFE3CB056D0419CA18228BE /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		9BE464139A9FACC8A07CB6EC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0A17BA2FE8E299F25E94E164 /* PrivacyInfo.xcprivacy */; };
+		A926FC28B18F4A931CAFD6CD /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BB3415CA1F1195217A0E7 /* ExpoModulesProvider.swift */; };
+		AA1F5DD82C2A6FB400EADDF2 /* RNEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F5DD72C2A6FB400EADDF2 /* RNEventEmitter.swift */; };
+		AA1F5DDA2C2A6FE400EADDF2 /* RNEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1F5DD92C2A6FE400EADDF2 /* RNEventEmitter.m */; };
 		AA33E6432C1FE876003CB29B /* CustomButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA33E6422C1FE876003CB29B /* CustomButtonManager.swift */; };
-		BC7A61A5977EC8869DB74666 /* Pods_BlueNotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C927CB1D810E484EBD4676 /* Pods_BlueNotificationService.framework */; };
-		EA1CBE841E41D07333418BFF /* Pods_BlueNotificationExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37AB48660AA7B4C6081AE73 /* Pods_BlueNotificationExtension.framework */; };
+		AA91C1B12C24D8EC00BE35AE /* NavigationModuleBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91C1B02C24D8EC00BE35AE /* NavigationModuleBridge.m */; };
+		AA91C1B92C26903A00BE35AE /* WalletInfoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA91C1B82C26903A00BE35AE /* WalletInfoBridge.swift */; };
+		AA91C1BB2C26905E00BE35AE /* WalletInfoBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91C1BA2C26905E00BE35AE /* WalletInfoBridge.m */; };
+		AADF32E92C24D45800D93D16 /* ReactNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF32E82C24D45800D93D16 /* ReactNativeController.swift */; };
+		AADF32EB2C24D67200D93D16 /* NavigationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADF32EA2C24D67200D93D16 /* NavigationModule.swift */; };
+		AEC5ED40025A1432F0DE942E /* Pods_BlueNotificationExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EAE7AB1AC52C1214FA421D /* Pods_BlueNotificationExtension.framework */; };
+		CCB140F8D596375ED587819B /* Pods_BlueNotificationService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDC4D68BC96BFC37D95E741 /* Pods_BlueNotificationService.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -775,7 +783,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		037070DEF69E0A5F0D710904 /* Pods_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		041DF6C725556F8900BB7818 /* BlueApp.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = BlueApp.sqlite; sourceTree = "<group>"; };
 		041DF6C825556F8900BB7818 /* DBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		041DF6C925556F8900BB7818 /* SQLiteDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteDB.swift; sourceTree = "<group>"; };
@@ -922,6 +929,7 @@
 		048F82C6259A13EA00B15550 /* InterestTopic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestTopic.swift; sourceTree = "<group>"; };
 		04A747CD24EB91D2005312EA /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		04A747CF24EB935D005312EA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		07CAB8D94D8956BB7A6C51A9 /* Pods-Blue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blue.debug.xcconfig"; path = "Target Support Files/Pods-Blue/Pods-Blue.debug.xcconfig"; sourceTree = "<group>"; };
 		0A17BA2FE8E299F25E94E164 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = ../PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		0D2524192AE941C20089E193 /* UIPageControlExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControlExtension.swift; sourceTree = "<group>"; };
 		0D25241B2AE9454C0089E193 /* LinkStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkStoreVC.swift; sourceTree = "<group>"; };
@@ -1035,7 +1043,7 @@
 		19E5827B26284A0F0061B8DC /* PageMaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMaster.swift; sourceTree = "<group>"; };
 		19EF187926AE993900C61928 /* UITapGestureExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITapGestureExtension.swift; sourceTree = "<group>"; };
 		19F9B773265785C300D7CD1D /* BlueInsightsProfileDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueInsightsProfileDetail.swift; sourceTree = "<group>"; };
-		1A02904CC937DE655BBDC566 /* Pods-Blue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blue.debug.xcconfig"; path = "Target Support Files/Pods-Blue/Pods-Blue.debug.xcconfig"; sourceTree = "<group>"; };
+		1BDC4D68BC96BFC37D95E741 /* Pods_BlueNotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueNotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34040FC324FE2BE00018374C /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		3427212F2B146A6A000FED5C /* AddNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteVC.swift; sourceTree = "<group>"; };
 		342DEA062B14DB2200C8C8F1 /* Terms_of_use.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Terms_of_use.html; sourceTree = "<group>"; };
@@ -1061,8 +1069,10 @@
 		3E74DEC325CD33E5007E2B47 /* InteractionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractionTableViewCell.swift; sourceTree = "<group>"; };
 		3ED35AC225A432E200B0A719 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		3EE29E7C25FA0B08005E1886 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		588E9A5FB055B6BC2FDC2346 /* Pods-BlueNotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationService.release.xcconfig"; path = "Target Support Files/Pods-BlueNotificationService/Pods-BlueNotificationService.release.xcconfig"; sourceTree = "<group>"; };
-		76FFF2314FB0FCD3B885B1F2 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		51787EA92F87D6426216C20E /* Pods-BlueNotificationExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationExtension.debug.xcconfig"; path = "Target Support Files/Pods-BlueNotificationExtension/Pods-BlueNotificationExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		555BB3415CA1F1195217A0E7 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Blue/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		73EAE7AB1AC52C1214FA421D /* Pods_BlueNotificationExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueNotificationExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CFEC1A87359E704AD4454A7 /* Pods_Blue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8400DD072B57E3C000C6BFAB /* BlueNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlueNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		8400DD092B57E3C000C6BFAB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		8400DD0B2B57E3C000C6BFAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1162,16 +1172,19 @@
 		84FE59A32A826C51007EA638 /* AddPhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoVC.swift; sourceTree = "<group>"; };
 		84FE59AA2A8271B5007EA638 /* LeftAlignCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftAlignCollectionLayout.swift; sourceTree = "<group>"; };
 		84FEAF122ACF19180081CA40 /* AddSocialNetworkPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSocialNetworkPopupVC.swift; sourceTree = "<group>"; };
-		A15B88662E1EA440250E9132 /* Pods-Blue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blue.release.xcconfig"; path = "Target Support Files/Pods-Blue/Pods-Blue.release.xcconfig"; sourceTree = "<group>"; };
-		A37AB48660AA7B4C6081AE73 /* Pods_BlueNotificationExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueNotificationExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A84C2388659FA7C6BA2D3397 /* Pods-BlueNotificationService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationService.release.xcconfig"; path = "Target Support Files/Pods-BlueNotificationService/Pods-BlueNotificationService.release.xcconfig"; sourceTree = "<group>"; };
+		AA1F5DD72C2A6FB400EADDF2 /* RNEventEmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNEventEmitter.swift; sourceTree = "<group>"; };
+		AA1F5DD92C2A6FE400EADDF2 /* RNEventEmitter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNEventEmitter.m; sourceTree = "<group>"; };
 		AA33E63F2C1FE7AA003CB29B /* Blue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Blue-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA33E6422C1FE876003CB29B /* CustomButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonManager.swift; sourceTree = "<group>"; };
-		B20703C90245B3E0F1503EEC /* Pods-BlueNotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationService.debug.xcconfig"; path = "Target Support Files/Pods-BlueNotificationService/Pods-BlueNotificationService.debug.xcconfig"; sourceTree = "<group>"; };
-		BA725E9B533650E6C29901D8 /* Pods-BlueNotificationExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationExtension.release.xcconfig"; path = "Target Support Files/Pods-BlueNotificationExtension/Pods-BlueNotificationExtension.release.xcconfig"; sourceTree = "<group>"; };
-		C9DFFCFE6B28230FA5B5A08B /* Pods_Blue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D738FF16615CFA3D77604086 /* Pods-BlueNotificationExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationExtension.debug.xcconfig"; path = "Target Support Files/Pods-BlueNotificationExtension/Pods-BlueNotificationExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		DF0881CB4D2ABF43FB2C8413 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-OneSignalNotificationServiceExtension/Pods-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		E1C927CB1D810E484EBD4676 /* Pods_BlueNotificationService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueNotificationService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA91C1B02C24D8EC00BE35AE /* NavigationModuleBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationModuleBridge.m; sourceTree = "<group>"; };
+		AA91C1B82C26903A00BE35AE /* WalletInfoBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletInfoBridge.swift; sourceTree = "<group>"; };
+		AA91C1BA2C26905E00BE35AE /* WalletInfoBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletInfoBridge.m; sourceTree = "<group>"; };
+		AADF32E82C24D45800D93D16 /* ReactNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeController.swift; sourceTree = "<group>"; };
+		AADF32EA2C24D67200D93D16 /* NavigationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModule.swift; sourceTree = "<group>"; };
+		AB20B388FEE341FCC5453273 /* Pods-BlueNotificationService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationService.debug.xcconfig"; path = "Target Support Files/Pods-BlueNotificationService/Pods-BlueNotificationService.debug.xcconfig"; sourceTree = "<group>"; };
+		D58E25181D5DDB2B68C34401 /* Pods-BlueNotificationExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueNotificationExtension.release.xcconfig"; path = "Target Support Files/Pods-BlueNotificationExtension/Pods-BlueNotificationExtension.release.xcconfig"; sourceTree = "<group>"; };
+		D959E457588308CF2987FD00 /* Pods-Blue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blue.release.xcconfig"; path = "Target Support Files/Pods-Blue/Pods-Blue.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1190,7 +1203,7 @@
 			files = (
 				19230E522636D5960008800C /* CloudKit.framework in Frameworks */,
 				19230E532636D5960008800C /* CoreNFC.framework in Frameworks */,
-				8AFE3CB056D0419CA18228BE /* (null) in Frameworks */,
+				8AFE3CB056D0419CA18228BE /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,9 +1220,9 @@
 				19CEFC7026B1961600DA431A /* CloudKit.framework in Frameworks */,
 				1825FBAC2AE4F97F0032FF27 /* Instabug in Frameworks */,
 				19CEFC7126B1961600DA431A /* CoreNFC.framework in Frameworks */,
-				13D0DFF6179AE8EF36F835AB /* Pods_Blue.framework in Frameworks */,
 				186C97752AD856C7002FED75 /* OneSignalFramework in Frameworks */,
 				186C97732AD856C7002FED75 /* OneSignalExtension in Frameworks */,
+				129FFF4644586F8E9595E4CE /* Pods_Blue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,7 +1230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC7A61A5977EC8869DB74666 /* Pods_BlueNotificationService.framework in Frameworks */,
+				CCB140F8D596375ED587819B /* Pods_BlueNotificationService.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1227,7 +1240,7 @@
 			files = (
 				84DB6CB82B51091500B02E83 /* UserNotificationsUI.framework in Frameworks */,
 				84DB6CB62B51091500B02E83 /* UserNotifications.framework in Frameworks */,
-				EA1CBE841E41D07333418BFF /* Pods_BlueNotificationExtension.framework in Frameworks */,
+				AEC5ED40025A1432F0DE942E /* Pods_BlueNotificationExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1267,6 +1280,7 @@
 				4B931FC087FBE883BBB7DF7B /* Pods */,
 				187953EC3245E4F03C6E4510 /* PrivacyInfo.xcprivacy */,
 				AA33E63F2C1FE7AA003CB29B /* Blue-Bridging-Header.h */,
+				0DD761227A920621507738B1 /* ExpoModulesProviders */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1458,6 +1472,9 @@
 			children = (
 				8479D2462B4EB66E00EE7C63 /* EmailOTPVerificationVC.swift */,
 				8479D2472B4EB66E00EE7C63 /* PhoneOTPVerificationVC.swift */,
+				AADF32E82C24D45800D93D16 /* ReactNativeController.swift */,
+				AADF32EA2C24D67200D93D16 /* NavigationModule.swift */,
+				AA91C1B02C24D8EC00BE35AE /* NavigationModuleBridge.m */,
 			);
 			path = OTPVerification;
 			sourceTree = "<group>";
@@ -1759,14 +1776,13 @@
 				1975ED99262FEF510015D4A4 /* CardConnectConsumerSDK.framework */,
 				043DE73424DD061200315361 /* CoreNFC.framework */,
 				043DE73224DD060A00315361 /* CloudKit.framework */,
-				C9DFFCFE6B28230FA5B5A08B /* Pods_Blue.framework */,
-				037070DEF69E0A5F0D710904 /* Pods_OneSignalNotificationServiceExtension.framework */,
 				1860BDD32B1A49900046CEF4 /* WidgetKit.framework */,
 				1860BDD52B1A49900046CEF4 /* SwiftUI.framework */,
 				84DB6CB52B51091500B02E83 /* UserNotifications.framework */,
 				84DB6CB72B51091500B02E83 /* UserNotificationsUI.framework */,
-				E1C927CB1D810E484EBD4676 /* Pods_BlueNotificationService.framework */,
-				A37AB48660AA7B4C6081AE73 /* Pods_BlueNotificationExtension.framework */,
+				7CFEC1A87359E704AD4454A7 /* Pods_Blue.framework */,
+				73EAE7AB1AC52C1214FA421D /* Pods_BlueNotificationExtension.framework */,
+				1BDC4D68BC96BFC37D95E741 /* Pods_BlueNotificationService.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1806,6 +1822,14 @@
 				04A747CD24EB91D2005312EA /* Header.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		0DD761227A920621507738B1 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				8E999A671AFD5BAEAB3C8E03 /* Blue */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 		18114C982A7144CD005C966C /* PublicLogin */ = {
@@ -2114,14 +2138,12 @@
 		4B931FC087FBE883BBB7DF7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1A02904CC937DE655BBDC566 /* Pods-Blue.debug.xcconfig */,
-				A15B88662E1EA440250E9132 /* Pods-Blue.release.xcconfig */,
-				DF0881CB4D2ABF43FB2C8413 /* Pods-OneSignalNotificationServiceExtension.debug.xcconfig */,
-				76FFF2314FB0FCD3B885B1F2 /* Pods-OneSignalNotificationServiceExtension.release.xcconfig */,
-				B20703C90245B3E0F1503EEC /* Pods-BlueNotificationService.debug.xcconfig */,
-				588E9A5FB055B6BC2FDC2346 /* Pods-BlueNotificationService.release.xcconfig */,
-				D738FF16615CFA3D77604086 /* Pods-BlueNotificationExtension.debug.xcconfig */,
-				BA725E9B533650E6C29901D8 /* Pods-BlueNotificationExtension.release.xcconfig */,
+				07CAB8D94D8956BB7A6C51A9 /* Pods-Blue.debug.xcconfig */,
+				D959E457588308CF2987FD00 /* Pods-Blue.release.xcconfig */,
+				51787EA92F87D6426216C20E /* Pods-BlueNotificationExtension.debug.xcconfig */,
+				D58E25181D5DDB2B68C34401 /* Pods-BlueNotificationExtension.release.xcconfig */,
+				AB20B388FEE341FCC5453273 /* Pods-BlueNotificationService.debug.xcconfig */,
+				A84C2388659FA7C6BA2D3397 /* Pods-BlueNotificationService.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -2146,6 +2168,8 @@
 				844604F42B8754B500163A80 /* EditProfile */,
 				844604FD2B8758CA00163A80 /* AddNote */,
 				844604FA2B87574D00163A80 /* Menu */,
+				AA1F5DD72C2A6FB400EADDF2 /* RNEventEmitter.swift */,
+				AA1F5DD92C2A6FE400EADDF2 /* RNEventEmitter.m */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -2507,6 +2531,8 @@
 			children = (
 				842891972ABEFDB0001EC6D4 /* RecentTransaction */,
 				84DA51262ABAF18100CE9FEC /* WalletVC.swift */,
+				AA91C1B82C26903A00BE35AE /* WalletInfoBridge.swift */,
+				AA91C1BA2C26905E00BE35AE /* WalletInfoBridge.m */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -2539,6 +2565,14 @@
 				84FE59AA2A8271B5007EA638 /* LeftAlignCollectionLayout.swift */,
 			);
 			path = LeftAlignCollectionLayout;
+			sourceTree = "<group>";
+		};
+		8E999A671AFD5BAEAB3C8E03 /* Blue */ = {
+			isa = PBXGroup;
+			children = (
+				555BB3415CA1F1195217A0E7 /* ExpoModulesProvider.swift */,
+			);
+			name = Blue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2585,14 +2619,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19CEFD3326B1961600DA431A /* Build configuration list for PBXNativeTarget "Blue" */;
 			buildPhases = (
-				B045A1071B404892A31AAA09 /* [CP] Check Pods Manifest.lock */,
+				26AACA3E1FB87C53BE388FB5 /* [CP] Check Pods Manifest.lock */,
+				45F7EA7E3200BB054F1F9FC3 /* [Expo] Configure project */,
 				19CEFBB526B1961600DA431A /* Sources */,
 				19CEFC6F26B1961600DA431A /* Frameworks */,
 				19CEFC7326B1961600DA431A /* Resources */,
 				19CEFD2F26B1961600DA431A /* Embed Foundation Extensions */,
 				19CEFD2E26B1961600DA431A /* Run Script */,
-				B5394B623F8241D0813D8CFF /* [CP] Embed Pods Frameworks */,
-				B0F01F3925D2594C5426318F /* [CP] Copy Pods Resources */,
+				FAFAB1540A57788B236ACC9B /* [CP] Embed Pods Frameworks */,
+				0FA40DA11109197B801D6D32 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2620,7 +2655,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8400DD0F2B57E3C100C6BFAB /* Build configuration list for PBXNativeTarget "BlueNotificationService" */;
 			buildPhases = (
-				D1E08D406E1BEF0B582902FB /* [CP] Check Pods Manifest.lock */,
+				2D25C51D2DC0E80163CF5091 /* [CP] Check Pods Manifest.lock */,
 				8400DD032B57E3C000C6BFAB /* Sources */,
 				8400DD042B57E3C000C6BFAB /* Frameworks */,
 				8400DD052B57E3C000C6BFAB /* Resources */,
@@ -2638,7 +2673,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84DB6CC52B51091600B02E83 /* Build configuration list for PBXNativeTarget "BlueNotificationExtension" */;
 			buildPhases = (
-				E3C932CC4A9C84924BFCFFD3 /* [CP] Check Pods Manifest.lock */,
+				015AFEEEB720380B2350E198 /* [CP] Check Pods Manifest.lock */,
 				84DB6CB02B51091500B02E83 /* Sources */,
 				84DB6CB12B51091500B02E83 /* Frameworks */,
 				84DB6CB22B51091500B02E83 /* Resources */,
@@ -3073,6 +3108,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		015AFEEEB720380B2350E198 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BlueNotificationExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0FA40DA11109197B801D6D32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blue/Pods-Blue-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		19230F022636D5960008800C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3127,7 +3199,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		B045A1071B404892A31AAA09 /* [CP] Check Pods Manifest.lock */ = {
+		26AACA3E1FB87C53BE388FB5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3149,37 +3221,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0F01F3925D2594C5426318F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blue/Pods-Blue-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B5394B623F8241D0813D8CFF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blue/Pods-Blue-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1E08D406E1BEF0B582902FB /* [CP] Check Pods Manifest.lock */ = {
+		2D25C51D2DC0E80163CF5091 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -3201,26 +3243,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E3C932CC4A9C84924BFCFFD3 /* [CP] Check Pods Manifest.lock */ = {
+		45F7EA7E3200BB054F1F9FC3 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[Expo] Configure project";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BlueNotificationExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Blue/expo-configure-project.sh\"\n";
+		};
+		FAFAB1540A57788B236ACC9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Blue/Pods-Blue-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3506,6 +3560,7 @@
 				19CEFC0826B1961600DA431A /* DateExtension.swift in Sources */,
 				18FE2F9C2861F0CF00735655 /* UserLocalData.swift in Sources */,
 				19CEFC0A26B1961600DA431A /* NotificationList.swift in Sources */,
+				AA91C1B12C24D8EC00BE35AE /* NavigationModuleBridge.m in Sources */,
 				842637242B88D3F40057E04C /* LabelChipCVCell.swift in Sources */,
 				34CB3CBA2B0F5D11002A99E1 /* SocialLinkCountFooterTableViewCell.swift in Sources */,
 				844605012B875F6000163A80 /* AddLabelsCVCell.swift in Sources */,
@@ -3515,11 +3570,13 @@
 				8419114D2AC6CF4A0088A807 /* BluetoothStatusVC.swift in Sources */,
 				8412E0A42AF9348A00D65651 /* ShowProfilePhotoVC.swift in Sources */,
 				186CAB0B28B34DCF00C00AB0 /* MathUtilities.swift in Sources */,
+				AA91C1B92C26903A00BE35AE /* WalletInfoBridge.swift in Sources */,
 				84BA1AD72ACC5CB9001917DC /* CalenderTblCell.swift in Sources */,
 				1867F27928DAD91100A4039C /* BLEDevice.swift in Sources */,
 				18AB70E528C86F6500656743 /* NearbyDistanceVC.swift in Sources */,
 				8419115C2AC6E67E0088A807 /* DeleteSocialNetworkVC.swift in Sources */,
 				8479D2482B4EB66E00EE7C63 /* EmailOTPVerificationVC.swift in Sources */,
+				AADF32EB2C24D67200D93D16 /* NavigationModule.swift in Sources */,
 				19CEFC1426B1961600DA431A /* IntExtension.swift in Sources */,
 				84FE59A82A826C51007EA638 /* AddPhotoVC.swift in Sources */,
 				19CEFC1726B1961600DA431A /* TemplateData.swift in Sources */,
@@ -3548,6 +3605,8 @@
 				84DA50D82ABACBB500CE9FEC /* SettingsVC.swift in Sources */,
 				19CEFC2C26B1961600DA431A /* InteractionTableViewCell.swift in Sources */,
 				19CEFC2D26B1961600DA431A /* DBManager.swift in Sources */,
+				AADF32E92C24D45800D93D16 /* ReactNativeController.swift in Sources */,
+				AA1F5DD82C2A6FB400EADDF2 /* RNEventEmitter.swift in Sources */,
 				84DA51272ABAF18100CE9FEC /* WalletVC.swift in Sources */,
 				19CEFC2E26B1961600DA431A /* spinner.swift in Sources */,
 				19CEFC2F26B1961600DA431A /* TourPageMasterViewController.swift in Sources */,
@@ -3570,6 +3629,7 @@
 				3477D3522B0CE366008CD5CD /* InteractionCVCell.swift in Sources */,
 				19CEFC4326B1961600DA431A /* Header.swift in Sources */,
 				19CEFC4426B1961600DA431A /* SocialListModel.swift in Sources */,
+				AA1F5DDA2C2A6FE400EADDF2 /* RNEventEmitter.m in Sources */,
 				19CEFC4626B1961600DA431A /* UITabBarControllerExtension.swift in Sources */,
 				84BA1AC62ACC5C93001917DC /* InsightSocialLinksVC.swift in Sources */,
 				842891B62ABF12A8001EC6D4 /* AddNetworkHeaderTblCell.swift in Sources */,
@@ -3579,6 +3639,7 @@
 				844DC59B2ADD437600D5EB3E /* WelcomeGiftVC.swift in Sources */,
 				18DBDFA328914AF60023F56A /* CardScan.swift in Sources */,
 				19CEFC5126B1961600DA431A /* VPMOTPView.swift in Sources */,
+				AA91C1BB2C26905E00BE35AE /* WalletInfoBridge.m in Sources */,
 				841911532AC6E5E40088A807 /* GeneralInfoVC.swift in Sources */,
 				8428919C2ABEFE8E001EC6D4 /* TransactionCVCell.swift in Sources */,
 				8419113E2AC6ABAA0088A807 /* ProfileCVCell.swift in Sources */,
@@ -3604,6 +3665,7 @@
 				8419115F2AC6ECAB0088A807 /* EditProfileCVCell.swift in Sources */,
 				1867F27B28DAD91100A4039C /* BLEPeripherals.swift in Sources */,
 				0D25241A2AE941C20089E193 /* UIPageControlExtension.swift in Sources */,
+				A926FC28B18F4A931CAFD6CD /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3633,7 +3695,7 @@
 		};
 		189385F82A08D0AB00B316F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 189385F72A08D0AB00B316F7 /* RswiftGenerateInternalResources */;
+			productRef = 189385F72A08D0AB00B316F7 /* plugin:RswiftGenerateInternalResources */;
 		};
 		8400DD0D2B57E3C000C6BFAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3737,7 +3799,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -3809,7 +3874,10 @@
 				LDPLUSPLUS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -3846,6 +3914,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "social.blue.app.Blue-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -3886,6 +3955,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "social.blue.app.Blue-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -3923,7 +3993,7 @@
 				);
 				MARKETING_VERSION = 11.6;
 				NEW_SETTING = "";
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DStaging";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DStaging -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3961,7 +4031,7 @@
 				);
 				MARKETING_VERSION = 11.6;
 				NEW_SETTING = "";
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DStaging";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -DStaging -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3977,7 +4047,7 @@
 		};
 		19CEFD3426B1961600DA431A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A02904CC937DE655BBDC566 /* Pods-Blue.debug.xcconfig */;
+			baseConfigurationReference = 07CAB8D94D8956BB7A6C51A9 /* Pods-Blue.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4137,7 +4207,7 @@
 					"\"WebKit\"",
 					"-ld64",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4154,7 +4224,7 @@
 		};
 		19CEFD3526B1961600DA431A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A15B88662E1EA440250E9132 /* Pods-Blue.release.xcconfig */;
+			baseConfigurationReference = D959E457588308CF2987FD00 /* Pods-Blue.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -4313,7 +4383,7 @@
 					"\"WebKit\"",
 					"-ld64",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4329,7 +4399,7 @@
 		};
 		8400DD102B57E3C100C6BFAB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B20703C90245B3E0F1503EEC /* Pods-BlueNotificationService.debug.xcconfig */;
+			baseConfigurationReference = AB20B388FEE341FCC5453273 /* Pods-BlueNotificationService.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -4352,6 +4422,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app.BlueNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -4368,7 +4439,7 @@
 		};
 		8400DD112B57E3C100C6BFAB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 588E9A5FB055B6BC2FDC2346 /* Pods-BlueNotificationService.release.xcconfig */;
+			baseConfigurationReference = A84C2388659FA7C6BA2D3397 /* Pods-BlueNotificationService.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -4390,6 +4461,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app.BlueNotificationService;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -4405,7 +4477,7 @@
 		};
 		84DB6CC32B51091500B02E83 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D738FF16615CFA3D77604086 /* Pods-BlueNotificationExtension.debug.xcconfig */;
+			baseConfigurationReference = 51787EA92F87D6426216C20E /* Pods-BlueNotificationExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -4428,6 +4500,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app.BlueNotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -4444,7 +4517,7 @@
 		};
 		84DB6CC42B51091500B02E83 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA725E9B533650E6C29901D8 /* Pods-BlueNotificationExtension.release.xcconfig */;
+			baseConfigurationReference = D58E25181D5DDB2B68C34401 /* Pods-BlueNotificationExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -4466,6 +4539,7 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = social.blue.app.BlueNotificationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -4607,7 +4681,7 @@
 			package = 186C97712AD856C7002FED75 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalLocation;
 		};
-		189385F72A08D0AB00B316F7 /* RswiftGenerateInternalResources */ = {
+		189385F72A08D0AB00B316F7 /* plugin:RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 189385F42A08D08600B316F7 /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = "plugin:RswiftGenerateInternalResources";

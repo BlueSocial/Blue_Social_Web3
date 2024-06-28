@@ -1,5 +1,10 @@
 {
-    "name": "MyReactNativeApp",
-    "displayName": "MyReactNativeApp"
+  "name": "MyReactNativeApp",
+  "displayName": "MyReactNativeApp",
+  "android": {
+    "package": "com.anonymous.myreactnativeapp"
+  },
+  "ios": {
+    "bundleIdentifier": "com.anonymous.myreactnativeapp"
   }
-  
+}

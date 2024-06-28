@@ -5,6 +5,7 @@
 //  Created by Blue.
 
 import UIKit
+import React
 
 class PublicLoginVC: BaseVC {
     
@@ -349,6 +350,22 @@ class PublicLoginVC: BaseVC {
         }
     }
     
+    
+    //@ethan
+    private func navigateToReactNativeScreen(userDataDict: [String: Any]) {
+        if let navController = self.navigationController {
+            let reactNativeVC = ReactNativeViewController()
+            reactNativeVC.initialProperties = userDataDict
+
+            // Accessing the bridge from AppDelegate directly
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                reactNativeVC.bridge = appDelegate.bridge
+            }
+
+            navController.pushViewController(reactNativeVC, animated: true)
+        }
+    }
+    
     private func setNaviationProfileFlow() {
         
         //To get and update subscription list
@@ -377,29 +394,42 @@ class PublicLoginVC: BaseVC {
             
             self.hideCustomLoader()
             
-            let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
-            self.navigationController?.pushViewController(tourPageMasterVC, animated: true)
+            //@ethan
+            print("calling userdata event")
+            let userDataDict: [String: Any] = ["email": loginUser?.email ?? "", "id": UserLocalData.UserID]
+            
+            self.navigateToReactNativeScreen(userDataDict: userDataDict)
+            
+            //let tourPageMasterVC = TourPageMasterViewController.instantiate(fromAppStoryboard: .Tour)
+            //self.navigationController?.pushViewController(tourPageMasterVC, animated: true)
             
         } else {
             
             self.hideCustomLoader()
             
-            var rootVC: UIViewController
-            let tabbar = MainTabbarController.instantiate(fromAppStoryboard: .Discover)
-            tabbar.selectedIndex = 1 // Select the desired tab index
+            //@ethan
+            print("calling userdata event")
+            let userDataDict: [String: Any] = ["email": loginUser?.email ?? "", "id": UserLocalData.UserID]
             
-            // Set the tab bar controller as the root view controller
-            rootVC = tabbar
-            let navigationController = UINavigationController(rootViewController: rootVC)
-            navigationController.setNavigationBarHidden(true, animated: true)
+            self.navigateToReactNativeScreen(userDataDict: userDataDict)
             
-            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-                if let window = appDelegate.window {
-                    // Now you have access to the window instance.
-                    window.rootViewController = navigationController
-                    window.makeKeyAndVisible()
-                }
-            }
+            //@ethan
+//            var rootVC: UIViewController
+//            let tabbar = MainTabbarController.instantiate(fromAppStoryboard: .Discover)
+//            tabbar.selectedIndex = 1 // Select the desired tab index
+//            
+//            // Set the tab bar controller as the root view controller
+//            rootVC = tabbar
+//            let navigationController = UINavigationController(rootViewController: rootVC)
+//            navigationController.setNavigationBarHidden(true, animated: true)
+//            
+//            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+//                if let window = appDelegate.window {
+//                    // Now you have access to the window instance.
+//                    window.rootViewController = navigationController
+//                    window.makeKeyAndVisible()
+//                }
+//            }
         }
     }
 }

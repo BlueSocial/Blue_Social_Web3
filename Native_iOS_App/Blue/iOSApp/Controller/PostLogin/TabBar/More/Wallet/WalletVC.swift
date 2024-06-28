@@ -17,6 +17,7 @@ class WalletVC: BaseVC {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblBSTBalance: UILabel!
     @IBOutlet weak var lblBSTInUSD: UILabel!
+    //@IBOutlet weak var lblWalletAddress: UILabel! // @ethan
     @IBOutlet weak var btnViewAll: UIButton!
     
     // ----------------------------------------------------------
@@ -36,12 +37,58 @@ class WalletVC: BaseVC {
         self.tblTransaction.register(InteractionTblCell.nib, forCellReuseIdentifier: InteractionTblCell.identifier)
         self.tblTransaction.estimatedRowHeight = 74.0 // Adjust as needed
         self.tblTransaction.rowHeight = UITableView.automaticDimension
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleBalanceUpdate(notification:)), name: .balanceUpdated, object: nil)
+
+        setupUI()
+    }
+    
+    deinit {
+            NotificationCenter.default.removeObserver(self, name: .balanceUpdated, object: nil)
+        }
+
+    private func setupUI() {
+            let savedBalance = UserDefaults.standard.string(forKey: "userBalance") ?? "0"
+            let savedUsdRate = UserDefaults.standard.string(forKey: "usdRate") ?? "0.0"
+            let savedWalletAddress = UserDefaults.standard.string(forKey: "walletAddress") ?? ""
+            updateBalance(savedBalance, usdRate: savedUsdRate, walletAddress: savedWalletAddress, link: "")
+        }
+
+    private func fetchBalanceFromNative() {
+        let walletInfoBridge = WalletInfoBridge()
+        walletInfoBridge.fetchBalance { [weak self] balance, usdRate, walletAddress, link in
+            self?.updateBalance(balance, usdRate: usdRate, walletAddress: walletAddress, link: link)
+        }
+    }
+
+    @objc private func handleBalanceUpdate(notification: Notification) {
+        if let balance = notification.userInfo?["balance"] as? String,
+           let usdRate = notification.userInfo?["usdRate"] as? String,
+           let walletAddress = notification.userInfo?["walletAddress"] as? String,
+           let link = notification.userInfo?["link"] as? String {
+            updateBalance(balance, usdRate: usdRate, walletAddress: walletAddress, link: link)
+        }
+    }
+
+    func updateBalance(_ balance: String, usdRate: String, walletAddress: String, link: String) {
+        if let balanceDouble = Double(balance), let usdRateDouble = Double(usdRate) {
+            self.lblBSTBalance.text = "\(balanceDouble)"
+            let BSTInUSD = self.returnTwoDigitAfterDecimal(balanceDouble * usdRateDouble)
+            self.lblBSTInUSD.text = "$\(BSTInUSD) USD"
+            print(walletAddress)  // Print the wallet address
+            //self.lblWalletAddress.text = walletAddress // Uncomment this if you want to update the UI label as well
+            // Save balance, USD rate, wallet address, and link to UserDefaults
+            UserDefaults.standard.set(balance, forKey: "userBalance")
+            UserDefaults.standard.set(usdRate, forKey: "usdRate")
+            UserDefaults.standard.set(walletAddress, forKey: "walletAddress")
+            UserDefaults.standard.set(link, forKey: "walletLink")
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.setupUI()
+        fetchBalanceFromNative()
+        //self.setupUI()
         self.showDataFromDB()
     }
     
@@ -196,14 +243,6 @@ class WalletVC: BaseVC {
         }
     }
     
-    private func setupUI() {
-        
-        self.lblBSTBalance.text = "\(loginUser?.totalBST ?? 0)"
-        
-        let BSTInUSD = self.returnTwoDigitAfterDecimal((Double(loginUser?.totalBST ?? 0) * 0.10))
-        self.lblBSTInUSD.text = "$\(BSTInUSD) USD"
-    }
-    
     private func updateDataIntoDB(individualInteraction: String) {
         
         if DBManager.isIndividualProofInteraction(userID: UserLocalData.UserID) {
@@ -268,3 +307,7 @@ extension WalletVC: UITableViewDelegate {
     }
 }
 
+
+extension Notification.Name { //@ethan
+    static let balanceUpdated = Notification.Name("balanceUpdated")
+}

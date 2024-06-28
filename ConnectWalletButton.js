@@ -1,27 +1,17 @@
 import "@thirdweb-dev/react-native-adapter";
-import React from "react";
-import { ThirdwebProvider, ConnectButton, createThirdwebClient } from "thirdweb/react";
-import { createWallet } from "thirdweb/wallets";
+import {useState, useEffect} from "react"
+import { createThirdwebClient } from "thirdweb";
+import {ThirdwebProvider} from "thirdweb/react";
+import ConnectButton from "./ConnectButton"; 
+import SendIceBreaker from "./SendIceBreaker";
 
-const client = createThirdwebClient({
-  clientId: "d3ef52c9a18c17eba1e1fc43d862671c", // Replace with your Thirdweb client ID
-});
+import { chain, client } from "./ThirdwebClient";
 
-const wallets = [
-  createWallet("com.coinbase.wallet"),
-];
-
-const ConnectWalletButton = () => {
+export default function ConnectWalletButton(props) {
+  console.log(props)
   return (
     <ThirdwebProvider>
-    <ConnectButton
-      client={client}
-      wallets={wallets}
-      theme={"dark"}
-      connectModal={{ size: "wide" }}
-    />
-  </ThirdwebProvider>
+      <ConnectButton email = {props.email} userId = {props.id}/>
+    </ThirdwebProvider>
   );
-};
-
-export default ConnectWalletButton;
+}

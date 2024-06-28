@@ -1,0 +1,6 @@
+framework module react_native_quick_crypto {
+  umbrella header "react-native-quick-crypto-umbrella.h"
+
+  export *
+  module * { export * }
+}
