@@ -125,7 +125,6 @@ class Api extends CI_Controller {
 
 		$date = new DateTime($aPost['timestamp']);
         if (!$date) {
-        	log_message('error', 'Web3 Server Invalid timestamp: ' . $aPost['timestamp']);
 
             $this->output
                 ->set_content_type('application/json')
@@ -201,7 +200,6 @@ class Api extends CI_Controller {
                 $error_message = curl_error($ch);
                 curl_close($ch);
 
-                log_message('error', 'Web3 Server cURL error: ' . $error_message);
                 // Return error response
                 $this->output
                     ->set_content_type('application/json')
@@ -221,7 +219,6 @@ class Api extends CI_Controller {
 
             // Check for HTTP errors
             if (isset($responseBody['error'])) {
-            	log_message('error', 'Web3 Server Error posting data: ' . $responseBody['error']['message']);
 
                 $this->output
                     ->set_content_type('application/json')
@@ -233,7 +230,6 @@ class Api extends CI_Controller {
                 return;
             }
 
-        	log_message('error', 'Web3 Server Successful Request Sent');
             // Successful request
             $this->output
                 ->set_content_type('application/json')
@@ -241,7 +237,6 @@ class Api extends CI_Controller {
                 ->set_status_header(200);
                return;
         } catch (Exception $e) {
-        	log_message('error', 'Web3 Server Exception: ' . $e->getMessage());
             $this->output
                 ->set_content_type('application/json')
                 ->set_output(json_encode(['message' => $e->getMessage()]))
@@ -363,8 +358,6 @@ class Api extends CI_Controller {
             $error_message = curl_error($ch);
             curl_close($ch);
 
-            log_message('error', 'Web3 Server cURL error: ' . $error_message);
-
             // Return error response
             $this->output
                 ->set_content_type('application/json')
@@ -384,7 +377,6 @@ class Api extends CI_Controller {
 
         // Check for HTTP errors
         if (isset($responseBody['error'])) {
-        	log_message('error', 'Web3 Server Error posting data: ' . $responseBody['error']['message']);
 
             $this->output
                 ->set_content_type('application/json')
@@ -396,7 +388,6 @@ class Api extends CI_Controller {
             return;
         }
 
-        	log_message('error', 'Web3 Server Successful Request Sent');
         // Successful request
         $this->output
             ->set_content_type('application/json')
