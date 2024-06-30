@@ -11,6 +11,7 @@ Blue Social gamifies real-life social interactions by rewarding users with token
 
 - BLUE Base Sepolia Contract: 0x7dbc1368A738091Da8E960818bDb9488efaB925A
 - Proof-of-Interaction Contract: 0x086F7ec0CFe508882F5e7E9E73BcA766020f4c0e
+- Exchange-of-Contact Contract: 0x96c45b8aeb8136af6e98101f481362c82c097015
 
 ![Proof Of Interaction flow](/POI.png)
 
