@@ -8,23 +8,27 @@ Blue Social gamifies real-life social interactions by rewarding users with token
 
 # Features
 
-- Wallet Integration: Use Coinbase Smart Wallet for easy wallet creation and management.
+- Wallet Integration: Uses Thirdweb In-App Wallet to create/connect wallets via email.
 - User Authentication: Authenticate users based on their wallet addresses.
 - Proof-of-Interaction Protocol: Record and verify social interactions on the blockchain.
 - Token Rewards: Distribute Blue Social tokens as rewards for verified interactions.
-- User Interface Enhancements: Display user token balances, transaction history, and interaction statuses.
-- Backend Integration: Secure storage and management of user interaction data and token balances.
+- User Interface Enhancements: Display user token balances, token rewards and interaction statuses.
+- Backend Integration: Secure storage and management of user interaction data and token balances with Thirdweb Engine.
 - Security Measures: Ensure secure data encryption and smart contract audits.
 
-# Prerequisites
+# Tech Stack
 
-Before you begin, ensure you have met the following requirements:
-
-Xcode installed for iOS development.
-Node.js and npm installed on your machine for backend development.
-An Infura project ID for Ethereum network connections.
-Coinbase Wallet for testing wallet connections.
-
+- Base
+- Solidity
+- React Native
+- Swift
+- Thirdweb Engine
+- Thirdweb Paymaster
+- Thirdweb Smart Wallet
+- PHP
+- AWS
+- Firebase
+  
 # License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
