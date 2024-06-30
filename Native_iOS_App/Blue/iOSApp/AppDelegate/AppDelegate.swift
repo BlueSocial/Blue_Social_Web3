@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         #if DEBUG
         jsCodeLocation = URL(string: "http://192.168.0.156:8081/index.bundle?platform=ios")!
         #else
-        jsCodeLocation = RCTBundleURLProvider.sharedSettings().jsBundleURL(forBundleRoot: "index", fallbackResource: nil)
+        jsCodeLocation = URL(string: "https://profiles.blue/index-4c5913c79a66d8ac0f08620fc79d04ca.hbc")!
         #endif
         
         bridge = RCTBridge(bundleURL: jsCodeLocation, moduleProvider: nil, launchOptions: launchOptions)
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RNEventEmitter.emitter = emitterModule
         } else {
             print("Failed to initialize RNEventEmitter")
-        }
+        }   
         
         BaseVC.sharedInstance.setQRCodeURLForWidget()
         UserLocalData.isbtnBLEOn = true

@@ -133,7 +133,8 @@ class NearbyProofOfInteractionVC: BaseVC {
         print("\(self) lat :: \(lat)")
         print("\(self) lng :: \(lng)")
         
-        let randomInt = Int.random(in: 5 ..< 20)
+        // @ethan
+        let randomInt = 0//Int.random(in: 5 ..< 20)
         print("Random Number form 5 to 20 range :: \(randomInt)")
         
         let param: [String: Any] = [APIParamKey.kSenderId: UserLocalData.UserID,

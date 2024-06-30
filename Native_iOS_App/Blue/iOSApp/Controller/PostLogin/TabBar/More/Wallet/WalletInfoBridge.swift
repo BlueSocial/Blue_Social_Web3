@@ -36,7 +36,16 @@ class WalletInfoBridge: NSObject {
     let link = UserDefaults.standard.string(forKey: "walletLink") ?? ""
     completion(balance, usdRate, walletAddress, link)
   }
-
+    
+    @objc
+    func sendRewardAmount(_ rewardAmount: String) {
+        DispatchQueue.main.async {
+            // Directly pass the reward amount with the notification
+            NotificationCenter.default.post(name: .rewardAmountUpdated, object: nil, userInfo: ["rewardAmount": rewardAmount])
+            print("Reward Amount received in Swift: \(rewardAmount)")
+        }
+    }
+    
   @objc static func requiresMainQueueSetup() -> Bool {
     return true
   }

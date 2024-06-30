@@ -53,18 +53,40 @@ const SendIceBreaker = () => {
         return walletAddressLink
     }
 
+    const getBalance = async () => {
+        try {
+            const amount = await getWalletBalance({
+                address: activeAccount?.address,
+                client,
+                chain,
+                tokenAddress: "0x7dbc1368A738091Da8E960818bDb9488efaB925A"
+            });
+            return amount;
+        } catch (error) {
+            console.error('Error fetching balance:', error);
+        }
+    }
+
     const events = watchContractEvents({
         contract: poiContract,
         events: [myEvent],
         onEvents: (events) => {
-            console.log("hello ethan")
             console.log(events)
             var rewardAmount = toEther(events[0].args.reward)
             console.log(rewardAmount)
             const usd = 0.18
             const link = createHyperLink();
             // update wallet balance here
-            WalletInfoBridge.sendBalance(rewardAmount.toString(), usd.toString(), activeAccount?.address, link);
+            getBalance().then(balance => {
+                console.log('Balance retrieved:', balance.displayValue);
+                WalletInfoBridge.sendBalance(balance.displayValue.toString(), usd.toString(), activeAccount?.address, link);
+            }).catch(err => {
+                console.error('Failed to retrieve balance:', err);
+            });
+
+            WalletInfoBridge.sendRewardAmount(rewardAmount); 
+            // send reward tokens amount
+            
         },
     });
 
@@ -124,11 +146,6 @@ const SendIceBreaker = () => {
         eventEmitter.addListener('callBreakTheIce', handleEvent);
 
     }, []);
-
-    // useEffect(() => {
-    //     console.log("Status:", status);
-    //     console.log("Error:", sendCallsError);
-    // }, [status, sendCallsError]);
 
     return null;
 };

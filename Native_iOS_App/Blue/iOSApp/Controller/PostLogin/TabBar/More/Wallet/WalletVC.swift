@@ -310,4 +310,5 @@ extension WalletVC: UITableViewDelegate {
 
 extension Notification.Name { //@ethan
     static let balanceUpdated = Notification.Name("balanceUpdated")
+    static let rewardAmountUpdated = Notification.Name("rewardAmountUpdated")
 }

@@ -29,7 +29,16 @@ class InteractionBSTVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        self.lblBST.text = BST
+        //self.lblBST.text = BST
+        
+        // Retrieve the reward amount from UserDefaults
+       // let rewardAmount = UserDefaults.standard.string(forKey: "userRewardAmount") ?? "0"
+
+        // Update the label with the reward amount
+        //self.lblBST.text = rewardAmount
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateRewardAmount(notification:)), name: .rewardAmountUpdated, object: nil)
+        updateRewardAmount(notification: Notification(name: .rewardAmountUpdated, userInfo: ["rewardAmount": "0"]))
         
         if loginUser?.totalBST != nil {
             let finalValue = (loginUser?.totalBST ?? 0) + Int(self.BST)!
@@ -43,8 +52,30 @@ class InteractionBSTVC: UIViewController {
         //self.startTimer()
     }
     
+    @objc func updateRewardAmount(notification: Notification) {
+        // Fetch the reward amount from the notification, defaulting to "0" if it's not found
+        let rewardAmount = notification.userInfo?["rewardAmount"] as? String ?? "0"
+
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if rewardAmount == "0" {
+                // Set the button to disabled and change the title to "WAITING"
+                self.btnDone.isEnabled = false
+                self.btnDone.setTitle("Waiting...", for: .normal)
+                self.lblBST.text = "0" // Display "0" when there is no reward
+            } else {
+                // Enable the button and change the title to "CLAIM"
+                self.btnDone.isEnabled = true
+                self.btnDone.setTitle("Claim Reward", for: .normal)
+                self.lblBST.text = rewardAmount // Display the actual reward amount
+            }
+        }
+    }
+
+
     deinit {
         print("deinit successful. No Retain Cycle/Leak! in \(self)")
+        NotificationCenter.default.removeObserver(self)
     }
     
     //--------------------------------------------------------

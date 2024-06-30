@@ -717,7 +717,7 @@
 		84FE59AB2A8271B5007EA638 /* LeftAlignCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE59AA2A8271B5007EA638 /* LeftAlignCollectionLayout.swift */; };
 		84FEAF132ACF19180081CA40 /* AddSocialNetworkPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAF122ACF19180081CA40 /* AddSocialNetworkPopupVC.swift */; };
 		84FEAF142ACF191F0081CA40 /* AddSocialNetworkPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FEAF122ACF19180081CA40 /* AddSocialNetworkPopupVC.swift */; };
-		8AFE3CB056D0419CA18228BE /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		8AFE3CB056D0419CA18228BE /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		9BE464139A9FACC8A07CB6EC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 0A17BA2FE8E299F25E94E164 /* PrivacyInfo.xcprivacy */; };
 		A926FC28B18F4A931CAFD6CD /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555BB3415CA1F1195217A0E7 /* ExpoModulesProvider.swift */; };
 		AA1F5DD82C2A6FB400EADDF2 /* RNEventEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F5DD72C2A6FB400EADDF2 /* RNEventEmitter.swift */; };
@@ -1203,7 +1203,7 @@
 			files = (
 				19230E522636D5960008800C /* CloudKit.framework in Frameworks */,
 				19230E532636D5960008800C /* CoreNFC.framework in Frameworks */,
-				8AFE3CB056D0419CA18228BE /* BuildFile in Frameworks */,
+				8AFE3CB056D0419CA18228BE /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3695,7 +3695,7 @@
 		};
 		189385F82A08D0AB00B316F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = 189385F72A08D0AB00B316F7 /* plugin:RswiftGenerateInternalResources */;
+			productRef = 189385F72A08D0AB00B316F7 /* RswiftGenerateInternalResources */;
 		};
 		8400DD0D2B57E3C000C6BFAB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3799,10 +3799,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -3874,10 +3871,7 @@
 				LDPLUSPLUS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -4055,7 +4049,7 @@
 				CODE_SIGN_ENTITLEMENTS = Blue/Blue.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J5M44YXSC4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4232,7 +4226,7 @@
 				CODE_SIGN_ENTITLEMENTS = Blue/Blue.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = J5M44YXSC4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4681,7 +4675,7 @@
 			package = 186C97712AD856C7002FED75 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignalLocation;
 		};
-		189385F72A08D0AB00B316F7 /* plugin:RswiftGenerateInternalResources */ = {
+		189385F72A08D0AB00B316F7 /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 189385F42A08D08600B316F7 /* XCRemoteSwiftPackageReference "R.swift" */;
 			productName = "plugin:RswiftGenerateInternalResources";

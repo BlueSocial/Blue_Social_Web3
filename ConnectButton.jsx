@@ -134,11 +134,11 @@ const ConnectButton = ( {email, userId} ) => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.headerText}>{screen === 'email' ? 'Create Web3 Wallet' : 'Enter OTP code sent to:'}</Text>
+        <Text style={styles.headerText}>{screen === 'email' ? 'Connect Web3 Wallet' : 'Enter OTP code sent to:'}</Text>
         {screen === 'code' && <Text style={styles.emailText}>{email}</Text>}
         <Text style={styles.descriptionText}>
           {screen === 'email'
-            ? 'Create a Web3 Wallet to have access to the app and functionalities. This wallet will keep track of your spending and rewards for being social.'
+            ? 'Connect a Web3 Wallet to have access to the app and functionalities. This wallet will keep track of your spending and rewards for being social.'
             : ''}
         </Text>
         {!isLoggedIn && (
@@ -158,7 +158,7 @@ const ConnectButton = ( {email, userId} ) => {
                 style={[styles.button, sendingOtp && styles.buttonDisabled]}
                 disabled={sendingOtp}
               >
-                <Text style={styles.buttonText}>{sendingOtp ? 'Sending...' : 'Create Wallet'}</Text>
+                <Text style={styles.buttonText}>{sendingOtp ? 'Sending...' : 'Connect Wallet'}</Text>
               </TouchableOpacity>
             </View>
           ) : (

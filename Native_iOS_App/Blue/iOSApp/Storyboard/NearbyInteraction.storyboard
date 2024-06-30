@@ -3,7 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -533,13 +533,13 @@ right now</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UtT-a0-uYX">
-                                                <rect key="frame" x="16" y="38" width="358" height="21"/>
+                                                <rect key="frame" x="16" y="38" width="358" height="24"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for being social and creating a more connected community." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcp-H7-kne">
-                                                <rect key="frame" x="16" y="67" width="358" height="42"/>
+                                                <rect key="frame" x="16" y="70" width="358" height="47.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Regular" family="Red Hat Display" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -565,32 +565,32 @@ right now</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You earned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7M-9X-Nwe">
-                                                <rect key="frame" x="159.66666666666666" y="618" width="71" height="16.333333333333371"/>
+                                                <rect key="frame" x="159" y="613" width="72" height="18.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0wh-VR-jlq">
-                                                <rect key="frame" x="159.66666666666666" y="646.33333333333337" width="70.666666666666657" height="18.666666666666629"/>
+                                                <rect key="frame" x="157.33333333333334" y="643.66666666666663" width="75.666666666666657" height="21.333333333333371"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tokens_blue_new" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-rz-M0l">
-                                                        <rect key="frame" x="0.0" y="0.0" width="18.666666666666668" height="18.666666666666668"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="21.333333333333332" height="21.333333333333332"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="XZB-rz-M0l" secondAttribute="height" id="MJ7-nM-vNB"/>
                                                             <constraint firstAttribute="width" secondItem="XZB-rz-M0l" secondAttribute="height" id="h2q-11-DbT"/>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="W6g-sr-mQR">
-                                                        <rect key="frame" x="26.666666666666686" y="0.0" width="44" height="18.666666666666668"/>
+                                                        <rect key="frame" x="29.333333333333318" y="0.0" width="46.333333333333343" height="21.333333333333332"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUw-Ql-uci">
-                                                                <rect key="frame" x="0.0" y="0.0" width="9" height="18.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="11" height="21.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
                                                                 <color key="textColor" name="appBlack_#031227"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="BLUE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h9-g4-yqS">
-                                                                <rect key="frame" x="13" y="0.0" width="31" height="18.666666666666668"/>
+                                                                <rect key="frame" x="14.999999999999998" y="0.0" width="31.333333333333329" height="21.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                 <color key="textColor" name="appBlack_#031227"/>
                                                                 <nil key="highlightedColor"/>
@@ -712,13 +712,13 @@ right now</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break the ice" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEG-Za-7zQ">
-                                                <rect key="frame" x="16" y="38" width="358" height="21"/>
+                                                <rect key="frame" x="16" y="38" width="358" height="24"/>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-SemiBold" family="Red Hat Display" pointSize="18"/>
                                                 <color key="textColor" name="appBlack_#031227"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKV-zE-o8C">
-                                                <rect key="frame" x="16" y="67" width="358" height="49"/>
+                                                <rect key="frame" x="16" y="70" width="358" height="55.666666666666657"/>
                                                 <string key="text">Breaking the ice will send a direct Bluetooth notification to the user to be social. You can earn tokens for being social with users nearby</string>
                                                 <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                 <color key="textColor" name="appGray_#98A2B1"/>
@@ -737,35 +737,35 @@ right now</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-Jp-T8B">
-                                                <rect key="frame" x="117.66666666666667" y="606.33333333333337" width="154.66666666666663" height="18.666666666666629"/>
+                                                <rect key="frame" x="117.33333333333333" y="603.66666666666663" width="155.66666666666669" height="21.333333333333371"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Requires:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkk-ef-PQu">
-                                                        <rect key="frame" x="0.0" y="1.3333333333332575" width="59.333333333333336" height="16.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="1.3333333333333712" width="59.333333333333336" height="18.666666666666668"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                         <color key="textColor" name="appGray_#98A2B1"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7WP-h1-ZSv">
-                                                        <rect key="frame" x="71.333333333333343" y="0.0" width="83.333333333333343" height="18.666666666666668"/>
+                                                        <rect key="frame" x="71.333333333333343" y="0.0" width="84.333333333333343" height="21.333333333333332"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tokens_blue_new" translatesAutoresizingMaskIntoConstraints="NO" id="iGV-X0-b7A">
-                                                                <rect key="frame" x="0.0" y="0.0" width="18.666666666666668" height="18.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="21.333333333333332" height="21.333333333333332"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="iGV-X0-b7A" secondAttribute="height" id="0Ay-dQ-7VI"/>
                                                                     <constraint firstAttribute="width" secondItem="iGV-X0-b7A" secondAttribute="height" id="atS-Kd-msr"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qvq-E5-NJW">
-                                                                <rect key="frame" x="26.666666666666654" y="0.0" width="56.666666666666657" height="18.666666666666668"/>
+                                                                <rect key="frame" x="29.333333333333343" y="0.0" width="55" height="21.333333333333332"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3d-Tg-qPH">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="22.333333333333332" height="18.666666666666668"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="21.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="16"/>
                                                                         <color key="textColor" name="appBlack_#031227"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="token" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vJ-6k-9Iz">
-                                                                        <rect key="frame" x="26.333333333333343" y="0.0" width="30.333333333333329" height="18.666666666666668"/>
+                                                                        <rect key="frame" x="23.666666666666657" y="0.0" width="31.333333333333329" height="21.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="12"/>
                                                                         <color key="textColor" name="appBlack_#031227"/>
                                                                         <nil key="highlightedColor"/>
@@ -794,7 +794,7 @@ right now</string>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="2Lx-Pc-v9b">
-                                                <rect key="frame" x="122.66666666666669" y="723" width="145" height="24"/>
+                                                <rect key="frame" x="123.00000000000001" y="723" width="144.33333333333337" height="24"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nb1-jM-Cdf">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -806,7 +806,7 @@ right now</string>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Don’t show again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSA-fB-M3A">
-                                                        <rect key="frame" x="35.999999999999986" y="0.0" width="109.00000000000001" height="24"/>
+                                                        <rect key="frame" x="35.999999999999993" y="0.0" width="108.33333333333331" height="24"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Medium" family="Red Hat Display" pointSize="14"/>
                                                         <color key="textColor" name="appGray_#98A2B1"/>
                                                         <nil key="highlightedColor"/>
@@ -1259,10 +1259,10 @@ verify your social interaction.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVe-eI-ZQQ" userLabel="ProfileViews">
-                                                <rect key="frame" x="0.0" y="64.999999999999972" width="390" height="447.33333333333326"/>
+                                                <rect key="frame" x="0.0" y="65" width="390" height="442"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd7-5c-0x7">
-                                                        <rect key="frame" x="5" y="88.666666666666657" width="380" height="270"/>
+                                                        <rect key="frame" x="5" y="86" width="380" height="270"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_BgSquare20" translatesAutoresizingMaskIntoConstraints="NO" id="msY-iV-Wrd">
                                                                 <rect key="frame" x="80" y="-50" width="350" height="300"/>
@@ -1273,7 +1273,7 @@ verify your social interaction.</string>
                                                                 </constraints>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlR-4w-kzm" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                                <rect key="frame" x="219.55210586625682" y="53.999434956351848" width="70.895788267486381" height="92.001130087296303"/>
+                                                                <rect key="frame" x="225" y="56.333333333333307" width="60" height="87.333333333333314"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-JS-LJ1" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -1303,7 +1303,7 @@ verify your social interaction.</string>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cta-8v-CAL">
-                                                                        <rect key="frame" x="0.0" y="66" width="60" height="18.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="66" width="60" height="21.333333333333329"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="Ifo-qV-T4B"/>
                                                                         </constraints>
@@ -1334,7 +1334,7 @@ verify your social interaction.</string>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKM-JZ-SEy" customClass="CustomView" customModule="Blue" customModuleProvider="target">
-                                                                <rect key="frame" x="90.373590040220847" y="124.52524242396584" width="69.252819919558306" height="90.949515152068329"/>
+                                                                <rect key="frame" x="95" y="126.33333333333331" width="60" height="87.333333333333314"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVv-CM-AKT" customClass="CustomView" customModule="Blue" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -1364,7 +1364,7 @@ verify your social interaction.</string>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RIa-qz-OtV">
-                                                                        <rect key="frame" x="0.0" y="66" width="60" height="18.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="66" width="60" height="21.333333333333329"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="zYU-4D-2NG"/>
                                                                         </constraints>
@@ -1417,7 +1417,7 @@ verify your social interaction.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysq-1p-CN2" userLabel="ProofOfCompleted">
-                                                <rect key="frame" x="16" y="522.33333333333337" width="358" height="27"/>
+                                                <rect key="frame" x="16" y="517" width="358" height="27"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gG-iP-50G">
                                                         <rect key="frame" x="0.0" y="0.0" width="358" height="26"/>
@@ -1447,10 +1447,10 @@ verify your social interaction.</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZP-CJ-aEA" userLabel="ProofOfDescription">
-                                                <rect key="frame" x="16" y="557.33333333333337" width="358" height="39.666666666666629"/>
+                                                <rect key="frame" x="16" y="552" width="358" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You’ve completed a new social interaction. Click continue to collect your BLUE tokens." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMD-oT-8KA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="39.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="358" height="45"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Regular" family="Red Hat Display" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1468,13 +1468,13 @@ verify your social interaction.</string>
                                                 <rect key="frame" x="16" y="607" width="358" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONt-yf-m4k" userLabel="3">
-                                                        <rect key="frame" x="0.0" y="16" width="48" height="28"/>
+                                                        <rect key="frame" x="0.0" y="14" width="48" height="32"/>
                                                         <fontDescription key="fontDescription" name="RedHatDisplay-Bold" family="Red Hat Display" pointSize="24"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/30 Seconds" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52i-NT-ICZ" userLabel="30Seconds">
-                                                        <rect key="frame" x="48" y="20.666666666666629" width="94" height="18.666666666666671"/>
+                                                        <rect key="frame" x="48" y="19.333333333333371" width="94" height="21.333333333333329"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="94" id="sQE-Zu-KWu"/>
                                                         </constraints>
@@ -1483,7 +1483,7 @@ verify your social interaction.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CF6-Dh-82j">
-                                                        <rect key="frame" x="150" y="27.333333333333371" width="200" height="12"/>
+                                                        <rect key="frame" x="150" y="28.666666666666629" width="200" height="12"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="ifw-nv-F5k"/>
                                                         </constraints>
@@ -2266,7 +2266,7 @@ verify your social interaction.</string>
     </scenes>
     <designables>
         <designable name="43i-jm-fUi">
-            <size key="intrinsicContentSize" width="65" height="31"/>
+            <size key="intrinsicContentSize" width="67" height="34"/>
         </designable>
         <designable name="5QX-zx-EpI">
             <size key="intrinsicContentSize" width="62.333332061767578" height="62.333332061767578"/>
@@ -2284,10 +2284,10 @@ verify your social interaction.</string>
             <size key="intrinsicContentSize" width="250" height="250"/>
         </designable>
         <designable name="OC7-7G-q5W">
-            <size key="intrinsicContentSize" width="38" height="31"/>
+            <size key="intrinsicContentSize" width="40" height="34"/>
         </designable>
         <designable name="WXt-oH-BcR">
-            <size key="intrinsicContentSize" width="94" height="31"/>
+            <size key="intrinsicContentSize" width="95" height="34"/>
         </designable>
         <designable name="aSK-Ys-7Os">
             <size key="intrinsicContentSize" width="127.66666666666667" height="146.33333333333334"/>

@@ -1,17 +1,21 @@
-// file: metro.config.js
-
-// Learn more https://docs.expo.io/guides/customizing-metro
 const { getDefaultConfig } = require("expo/metro-config");
 
-/** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname);
 
-// ADD THESE 2 PROPERTIES
 config.resolver.unstable_enablePackageExports = true;
 config.resolver.unstable_conditionNames = [
   "react-native",
   "browser",
   "require",
 ];
+
+config.transformer = {
+  ...config.transformer,
+  getTransformOptions: async () => ({
+    transform: {
+      routerRoot: __dirname // This sets the root directory as the router root
+    },
+  }),
+};
 
 module.exports = config;
