@@ -40,9 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let jsCodeLocation: URL
         
         #if DEBUG
-        jsCodeLocation = URL(string: "http://192.168.0.156:8081/index.bundle?platform=ios")!
+        jsCodeLocation = URL(string: "http://localhost:8081/index.bundle?platform=ios")!
         #else
-        jsCodeLocation = URL(string: "https://profiles.blue/index-4c5913c79a66d8ac0f08620fc79d04ca.hbc")!
+        jsCodeLocation = URL(string: "https://profiles.blue/index-a142a57a1b1180756b7f6b1e5e248df2.hbc")!
         #endif
         
         bridge = RCTBridge(bundleURL: jsCodeLocation, moduleProvider: nil, launchOptions: launchOptions)

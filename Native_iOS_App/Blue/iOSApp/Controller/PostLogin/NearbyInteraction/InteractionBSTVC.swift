@@ -60,12 +60,12 @@ class InteractionBSTVC: UIViewController {
             guard let self = self else { return }
             if rewardAmount == "0" {
                 // Set the button to disabled and change the title to "WAITING"
-                self.btnDone.isEnabled = false
+                //self.btnDone.isEnabled = false
                 self.btnDone.setTitle("Waiting...", for: .normal)
                 self.lblBST.text = "0" // Display "0" when there is no reward
             } else {
                 // Enable the button and change the title to "CLAIM"
-                self.btnDone.isEnabled = true
+                //self.btnDone.isEnabled = true
                 self.btnDone.setTitle("Claim Reward", for: .normal)
                 self.lblBST.text = rewardAmount // Display the actual reward amount
             }
