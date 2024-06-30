@@ -1,6 +1,9 @@
 # Blue Social Web3
 
-Welcome to the Blue Social Web3 repository! This project aims to incorporate Web3 functionalities into the Blue Social iOS app, allowing users to earn rewards through real-life social interactions using the innovative Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
+Welcome to the Blue Social Web3 Public repository! This project aims to incorporate Web3 functionalities into the existing Blue Social iOS Web2 app, allowing users to earn rewards through real-life social interactions using the innovative Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
+
+*The Swift code is private due to IP of Follow-Mee, inc. and shareholders.
+*The POI protocol will be public soon to allow developers and builders to build dapps on top of it.
 
 # Introduction
 
