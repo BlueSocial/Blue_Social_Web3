@@ -5,6 +5,8 @@ Welcome to the Blue Social Web3 Public repository! This project aims to incorpor
 - The Swift code is hidden due to IP of Follow-Mee, inc. and shareholders.
 - The POI protocol will be public early 2025 to allow developers and builders to build apps on top of it.
 
+[Official Website](https://web3.blue.social/)
+
 # Introduction
 
 Blue Social gamifies real-life social interactions by rewarding users with tokens through its Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
