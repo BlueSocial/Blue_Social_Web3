@@ -16,7 +16,7 @@ As Will from @Base told us to share, here is what we had prior to buildathon:
 - We built a way to show users wallet balance in app of BLUE Sepolia Tokens.
 - We built Thirdweb in-app wallets for sign up and sign in.
 - We built smart accounts/wallets for users, sponsoring gas fees.
-- We built website below and integrated Thirdweb Pay to allow users to buy tokens with credit card / crypto.
+- We built the website below and integrated Thirdweb Pay to allow users to buy tokens with credit card / crypto.
 
 [Official Website](https://web3.blue.social/)
 
