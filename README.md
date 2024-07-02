@@ -9,7 +9,9 @@ As Will from @Base told us to share, here is what we had prior to buildathon:
  And what we built during buildathon:
 - We removed a lot of features and built an MVP Web3 version that is on Base during buildathon using React Native components.
 - We built smart contracts for the BLUE token, Exchange Contact & Proof-of-Interaction during BASE buildathon.
-- We built a rewardUser function that rewards users with tokens after a IRL social interaction.
+- We built a sendIceBreaker function that cost 1 BLUE token to send push notification to nearby user.
+- We built a rewardUser function that rewards users with tokens after a verified IRL social interaction.
+- We built a tipUser function in smart contract that allows users to attach a social tip to their iceBreaker function. *(Not in mobile app yet)*
 - We built a PHP backend to talk to Thirdweb Engine during Base buildathon.
 - We built a way to show users wallet balance in app of BLUE Sepolia Tokens.
 - We built Thirdweb in-app wallets for sign up and sign in.
