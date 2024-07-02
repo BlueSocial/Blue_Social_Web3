@@ -5,7 +5,7 @@ Welcome to the Blue Social Web3 Public repository! This project aims to incorpor
 As Will from @Base told us to share, here is what we had prior to buildathon and what we built during:
 - The Swift BLE code is hidden due to IP of Follow-Mee, inc. and shareholders. (Pre-Built)
 - Most of the Native iOS app was built previously before Buildathon in Swift.
-- We removed a lot of features and built an MVP Web3 version that is on Base for buildathon using React Native components.
+- We removed a lot of features and built an MVP Web3 version that is on Base during buildathon using React Native components.
 - We built smart contracts for the BLUE token, Exchange Contact & Proof-of-Interaction during BASE buildathon.
 - We built a PHP backend to talk to Thirdweb Engine during Base buildathon.
 - We built a way to show users wallet balance in app of BLUE Sepolia Tokens.
