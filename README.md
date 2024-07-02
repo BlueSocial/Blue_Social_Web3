@@ -2,12 +2,16 @@
 
 Welcome to the Blue Social Web3 Public repository! This project aims to incorporate Web3 functionalities into the existing Blue Social iOS Web2 app, allowing users to earn rewards through real-life social interactions using the innovative Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
 
+As Will from @Base told us to share, here is what we had prior to buildathon and what we built during:
 - The Swift BLE code is hidden due to IP of Follow-Mee, inc. and shareholders. (Pre-Built)
-- Most of the Native iOS app was built previously before Buildathon in SWIFT.
-- We removed a lot of features and created an MVP Web3 version that is built on Base for buildathon using React Native components.
-- We set up a PHP backend to talk to Thirdweb Engine during Base buildathon.
-- We wrote smart contracts for the Exchange Contact & Proof-of-Interaction during BASE buildathon.
-- We show users wallet balance in app of BLUE Sepolia Tokens.
+- Most of the Native iOS app was built previously before Buildathon in Swift.
+- We removed a lot of features and built an MVP Web3 version that is on Base for buildathon using React Native components.
+- We built smart contracts for the BLUE token, Exchange Contact & Proof-of-Interaction during BASE buildathon.
+- We built a PHP backend to talk to Thirdweb Engine during Base buildathon.
+- We built a way to show users wallet balance in app of BLUE Sepolia Tokens.
+- We built Thirdweb in-app wallets for sign up and sign in.
+- We built smart accounts/wallets for users, sponsoring gas fees.
+- We built landing page below and integrated Thirdweb Pay to allow users to buy tokens with credit card / crypto.
 
 [Official Website](https://web3.blue.social/)
 
