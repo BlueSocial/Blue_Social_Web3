@@ -16,6 +16,8 @@ As Will from @Base told us to share, here is what we had prior to buildathon and
 
 [Official Website](https://web3.blue.social/)
 
+[iOS TestFlight Download](https://testflight.apple.com/join/RlfwnoC0)
+
 # Introduction
 
 Blue Social gamifies real-life social interactions by rewarding users with tokens through its Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
