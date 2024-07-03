@@ -1,6 +1,6 @@
 # Blue Social Web3
 
-Welcome to the Blue Social Web3 Public repository! This project aims to incorporate Web3 functionalities into the existing Blue Social iOS Web2 app, allowing users to earn rewards through real-life social interactions using the innovative Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
+Welcome to the Blue Social Web3 Public repository! This project aims to incorporate Web3 functionalities into the existing Blue Social iOS Web2 app, allowing users to earn rewards through real-life social interactions using the innovative Bluetooth Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
 
 As Will from @Base told us to share, here is what we had prior to buildathon:
 - The Swift BLE code is hidden due to IP of Follow-Mee, inc. and shareholders. (Pre-Built)
@@ -24,7 +24,7 @@ As Will from @Base told us to share, here is what we had prior to buildathon:
 
 # Introduction
 
-Blue Social gamifies real-life social interactions by rewarding users with tokens through its Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
+Blue Social gamifies real-life social interactions by rewarding users with tokens through its Bluetooth Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
 
 - BLUE Base Sepolia Contract: 0x7dbc1368A738091Da8E960818bDb9488efaB925A
 - Proof-of-Interaction Contract: 0x086F7ec0CFe508882F5e7E9E73BcA766020f4c0e
@@ -54,6 +54,7 @@ Blue Social gamifies real-life social interactions by rewarding users with token
 - PHP
 - AWS
 - Firebase
+- Bluetooth Low Energy
 
 # License
 
