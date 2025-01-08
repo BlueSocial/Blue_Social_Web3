@@ -24,6 +24,8 @@ contract HelperConfig is Script {
     constructor() {
         if (block.chainid == 84532) {
             activeNetworkConfig = getSepoliaBaseConfig();
+        } else if (block.chainid == 8453) {
+            activeNetworkConfig = getBaseConfig();
         } else {
             activeNetworkConfig = getOrCreateAnvilEthConfig();
         }
@@ -74,6 +76,25 @@ contract HelperConfig is Script {
             _blueToken: address(blueToken),
             _treasury: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
             _admin: 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266,
+            _timeWeight: 65,
+            _interactionCountWeight: 35
+        });
+    }
+
+    function getBaseConfig()
+        public
+        pure
+        returns (NetworkConfig memory baseConfig)
+    {
+        baseConfig = NetworkConfig({
+            initialOwner: 0x710edaB0C4aB769Efc7F164087acb2bD7Ee01CfC,
+            _rewardRate: 10e18,
+            _minReward: 3e18,
+            _iceBreakerFee: 1e18,
+            _minimumRewardInterval: 1 days,
+            _blueToken: address(0x744952C666990dDba159387a9B9e668e4e72682E),
+            _treasury: 0xb16d0350c583b43f5B7f1DD452E62C7216192201,
+            _admin: 0x710edaB0C4aB769Efc7F164087acb2bD7Ee01CfC,
             _timeWeight: 65,
             _interactionCountWeight: 35
         });
