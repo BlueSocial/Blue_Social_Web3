@@ -1,13 +1,30 @@
 # Blue Social Web3
 
-Welcome to the Blue Social Web3 Public repository! This project aims to incorporate Web3 functionalities into the existing Blue Social iOS Web2 app, allowing users to earn rewards through real-life social interactions using the innovative Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
+Welcome to the Blue Social Web3 Public repository! This project aims to incorporate Web3 functionalities into the existing Blue Social iOS Web2 app, allowing users to earn rewards through real-life social interactions using the innovative Bluetooth Proof-of-Interaction (POI) protocol. Our platform fosters meaningful connections and engagement through a Socialize-to-Earn model.
 
-- The Swift code is hidden due to IP of Follow-Mee, inc. and shareholders.
-- The POI protocol will be public early 2025 to allow developers and builders to build apps on top of it.
+As Will from @Base told us to share, here is what we had prior to buildathon:
+- The Swift BLE code is hidden due to IP of Follow-Mee, inc. and shareholders. (Pre-Built)
+- Most of the Native iOS app was built previously before Buildathon in Swift.
+
+ And what we built during buildathon:
+- We removed a lot of features and built an MVP Web3 version that is on Base during buildathon using React Native components.
+- We built smart contracts for the BLUE token, Exchange Contact & Proof-of-Interaction during BASE buildathon.
+- We built a sendIceBreaker function that cost 1 BLUE token to send push notification to nearby user.
+- We built a rewardUser function that rewards users with tokens after a verified IRL social interaction.
+- We built a tipUser function in smart contract that allows users to attach a social tip to their iceBreaker function. *(Not in mobile app yet)*
+- We built a PHP backend to talk to Thirdweb Engine during Base buildathon.
+- We built a way to show users wallet balance in app of BLUE Sepolia Tokens.
+- We built Thirdweb in-app wallets for sign up and sign in.
+- We built smart accounts/wallets for users, sponsoring gas fees.
+- We built the website below and integrated Thirdweb Pay to allow users to buy tokens with credit card / crypto.
+
+[Official Website](https://web3.blue.social/)
+
+[iOS TestFlight Download](https://testflight.apple.com/join/RlfwnoC0)
 
 # Introduction
 
-Blue Social gamifies real-life social interactions by rewarding users with tokens through its Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
+Blue Social gamifies real-life social interactions by rewarding users with tokens through its Bluetooth Proof-of-Interaction (POI) protocol. The platform aims to foster meaningful connections and engagement through its innovative Socialize-to-Earn model. Think Pokémon-Go but for meeting people.
 
 - BLUE Base Sepolia Contract: 0x7dbc1368A738091Da8E960818bDb9488efaB925A
 - Proof-of-Interaction Contract: 0x086F7ec0CFe508882F5e7E9E73BcA766020f4c0e
@@ -37,6 +54,7 @@ Blue Social gamifies real-life social interactions by rewarding users with token
 - PHP
 - AWS
 - Firebase
+- Bluetooth Low Energy
 
 # License
 
